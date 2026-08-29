@@ -2,9 +2,9 @@
 
 **The lines of text you paste all the time, kept in your bookmarks.**
 
-[Website](https://lightmorphic.github.io/pastemorphic/) ·
-[Help](https://lightmorphic.github.io/pastemorphic/help.html) ·
-[Questions](https://lightmorphic.github.io/pastemorphic/faq.html) ·
+[Website](https://pastemorphic.lightmorphic.com/) ·
+[Help](https://pastemorphic.lightmorphic.com/help.html) ·
+[Questions](https://pastemorphic.lightmorphic.com/faq.html) ·
 [Download](https://github.com/lightmorphic/pastemorphic/releases)
 
 A small browser extension for the short pieces of text you type over and over —

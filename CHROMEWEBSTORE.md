@@ -91,11 +91,11 @@ Productivity / Workflow & Planning
 
 ## Privacy policy URL
 
-    https://lightmorphic.github.io/pastemorphic/privacy.html
+    https://pastemorphic.lightmorphic.com/privacy.html
 
 ## Website / support URLs
 
-    Website:  https://lightmorphic.github.io/pastemorphic/
+    Website:  https://pastemorphic.lightmorphic.com/
     Support:  https://github.com/lightmorphic/pastemorphic/issues
 
 ## Single purpose policy

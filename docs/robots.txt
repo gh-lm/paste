@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lightmorphic.github.io/pastemorphic/sitemap.xml
+Sitemap: https://pastemorphic.lightmorphic.com/sitemap.xml
