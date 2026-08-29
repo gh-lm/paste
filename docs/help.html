@@ -19,6 +19,17 @@
 <link rel="icon" href="img/favicon-32.png" sizes="32x32" />
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
 <link rel="stylesheet" href="style.css" />
+<script>
+/* Set the theme before anything paints, so there is no flash of the wrong one.
+   Nothing is stored until the reader actually chooses. */
+(function () {
+  try {
+    var t = localStorage.getItem('pm-theme');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* private window: fall back to the browser's own setting */ }
+})();
+</script>
+
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"TechArticle",
  "headline":"How to use Pastemorphic",
@@ -35,6 +46,8 @@
 <header class="masthead">
   <img src="img/favicon.svg" alt="" width="26" height="26" />
   <a class="name" href="./">Pastemorphic</a>
+    <button class="themer" id="themer" type="button"
+      title="Light or dark" aria-label="Switch between light and dark"></button>
   <nav aria-label="Sections">
     <a href="./">Overview</a>
     <a href="help.html">Help</a>
@@ -165,4 +178,36 @@
   <p><a href="privacy.html">Privacy</a></p>
   <p><a href="https://github.com/lightmorphic/pastemorphic">GitHub</a></p>
 </footer>
-</div></body></html>
+</div><script>
+(function () {
+  var SUN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M4.4 4.4l1.6 1.6M18 18l1.6 1.6M2.6 12h2.2M19.2 12h2.2M4.4 19.6l1.6-1.6M18 6l1.6-1.6"/></svg>';
+  var MOON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>';
+  var root = document.documentElement;
+  var btn = document.getElementById('themer');
+  if (!btn) return;
+
+  function showing() {
+    var set = root.getAttribute('data-theme');
+    if (set) return set;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  function paint() {
+    var now = showing();
+    /* the icon shows what you are looking at; clicking gives you the other */
+    btn.innerHTML = now === 'dark' ? MOON : SUN;
+    btn.title = now === 'dark' ? 'Dark — click for light' : 'Light — click for dark';
+    btn.setAttribute('aria-label', btn.title);
+  }
+  btn.addEventListener('click', function () {
+    var next = showing() === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('pm-theme', next); } catch (e) {}
+    paint();
+  });
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
+    if (!root.getAttribute('data-theme')) paint();
+  });
+  paint();
+})();
+</script>
+</body></html>
