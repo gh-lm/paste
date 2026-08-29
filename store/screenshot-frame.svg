@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800">
+  <rect width="1280" height="800" fill="#f6f3ec"/>
+  <g>
+    <path d="M1140 0h22v58l-11-9-11 9z" fill="#fbc711"/>
+    <path d="M1170 0h22v42l-11-7-11 7z" fill="#7fb2a6"/>
+    <path d="M1200 0h22v74l-11-10-11 10z" fill="#d98a6a"/>
+    <path d="M1230 0h22v48l-11-8-11 8z" fill="#8f8bc4"/>
+  </g>
+  <rect x="80" y="72" width="34" height="34" rx="9" fill="#111827"/>
+  <rect x="88" y="81" width="13" height="4.5" rx="2.2" fill="#fbc711"/>
+  <rect x="88" y="89" width="19" height="4.5" rx="2.2" fill="#fbc711"/>
+  <rect x="88" y="97" width="10" height="4.5" rx="2.2" fill="#fbc711"/>
+  <text x="126" y="97" font-family="system-ui, -apple-system, sans-serif"
+        font-weight="700" font-size="21" fill="#17171c">Pastemorphic</text>
+  <g font-family="'Iowan Old Style', Palatino, Georgia, serif" fill="#17171c">
+    <text x="80" y="230" font-size="52">Click a line.</text>
+    <text x="80" y="292" font-size="52">It is on your clipboard.</text>
+  </g>
+  <g font-family="'Iowan Old Style', Palatino, Georgia, serif" fill="#56545f" font-size="22">
+    <text x="80" y="360">Every note is an ordinary bookmark, so they follow you</text>
+    <text x="80" y="392">between computers with no account and no server.</text>
+  </g>
+  <text x="80" y="720" font-family="ui-monospace, Menlo, monospace" font-size="13"
+        letter-spacing="2.6" fill="#56545f">NO ACCOUNT · NO SERVER · FREE SOFTWARE</text>
+  <!-- where the real popup grab is composited -->
+  <rect x="760" y="130" width="400" height="540" rx="10" fill="#ffffff" stroke="#ddd6c7"/>
+  <text x="760" y="700" font-family="ui-monospace, Menlo, monospace" font-size="12"
+        fill="#a8a294">popup goes here — 400 x 540</text>
+</svg>

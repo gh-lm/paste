@@ -454,6 +454,8 @@ footer {
   font-size: 0.75rem;
   letter-spacing: 0.06em;
   color: var(--ink-soft);
+}
+.footer-row {
   display: flex;
   gap: 1.6rem;
   flex-wrap: wrap;
@@ -461,6 +463,22 @@ footer {
 }
 footer p { margin: 0; max-width: none; }
 footer .spacer { flex: 1 1 auto; }
+
+/* Who is behind this. A UK company has to show its name, registered number,
+   where it is registered and its registered office on its own sites, so this
+   is quiet but plainly readable rather than hidden behind anything. */
+.who {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 1.6rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--rule);
+  font-style: normal;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  max-width: 34rem;
+}
 
 .skip {
   position: absolute;
