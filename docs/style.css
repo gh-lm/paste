@@ -226,6 +226,9 @@ main { grid-column: 2; min-width: 0; }
   text-transform: uppercase;
 }
 
+/* the light and dark switch sits last, hard against the right edge */
+.masthead .themer { margin-left: 1.4rem; align-self: center; }
+
 /* ---- headings and text -------------------------------------------------- */
 
 h1 {
