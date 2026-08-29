@@ -191,7 +191,10 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
 .rail li:nth-child(4) a::before { background: var(--ribbon-4); }
 .rail li:nth-child(5) a::before { background: var(--ribbon-2); }
 .rail li:nth-child(6) a::before { background: var(--ribbon-3); }
-.rail a:hover { color: #2b2200; }
+/* left over from when these sat on a yellow block: on hover they went almost
+   black, which vanishes against a dark page */
+.rail a:hover,
+.rail a:focus-visible { color: var(--ink); }
 
 main { grid-column: 2; min-width: 0; }
 @media (max-width: 56rem) { main { grid-column: 1; } }
