@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 210" role="img"
+     aria-label="A browser with a line running to a crossed-out server, showing that nothing is sent anywhere.">
+  <style>
+    .ink { fill: none; stroke: #17171c; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .thin { fill: none; stroke: #17171c; stroke-width: 1.2; stroke-linecap: round; opacity: .45; }
+    .mark { fill: #fbc711; }
+    .paper { fill: #ffffff; }
+    .strike { stroke: #c8452f; stroke-width: 3; stroke-linecap: round; }
+    .lbl { font: 10px ui-monospace, Menlo, monospace; fill: #56545f; letter-spacing: .1em; }
+    @media (prefers-color-scheme: dark) {
+      .ink, .thin { stroke: #f1eee4; } .paper { fill: #1b1b23; } .lbl { fill: #a5a2ae; }
+      .strike { stroke: #e4705a; }
+    }
+  </style>
+
+  <g transform="translate(30 46)">
+    <rect class="paper" x="0" y="0" width="180" height="118" rx="8"/>
+    <rect class="ink" x="0" y="0" width="180" height="118" rx="8"/>
+    <path class="ink" d="M0 26h180"/>
+    <circle class="thin" cx="14" cy="13" r="3.5"/><circle class="thin" cx="27" cy="13" r="3.5"/>
+    <path class="mark" d="M18 44h74v7H18z"/>
+    <path class="mark" d="M18 60h52v7H18z" opacity=".65"/>
+    <path class="thin" d="M18 80h136M18 96h100"/>
+    <text class="lbl" x="0" y="-10">EVERYTHING HAPPENS HERE</text>
+  </g>
+
+  <path class="thin" d="M222 105h150"/>
+  <g transform="translate(268 84)">
+    <line class="strike" x1="0" y1="0" x2="46" y2="42"/>
+    <line class="strike" x1="46" y1="0" x2="0" y2="42"/>
+  </g>
+
+  <g transform="translate(408 52)">
+    <rect class="paper" x="0" y="0" width="164" height="34" rx="5"/>
+    <rect class="thin" x="0" y="0" width="164" height="34" rx="5"/>
+    <circle class="thin" cx="18" cy="17" r="4"/>
+    <path class="thin" d="M36 17h110"/>
+    <rect class="paper" x="0" y="44" width="164" height="34" rx="5"/>
+    <rect class="thin" x="0" y="44" width="164" height="34" rx="5"/>
+    <circle class="thin" cx="18" cy="61" r="4"/>
+    <path class="thin" d="M36 61h110"/>
+    <text class="lbl" x="0" y="100">NO SERVER. NO ACCOUNT.</text>
+    <text class="lbl" x="0" y="116">NOTHING TO SIGN UP FOR.</text>
+  </g>
+</svg>

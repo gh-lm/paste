@@ -1,0 +1,63 @@
+{
+  "manifest_version": 3,
+  "name": "Pastemorphic",
+  "version": "1.0.0",
+  "description": "Keep lines of text in your browser. Click one to copy it. Stored in your bookmarks, so it syncs with no account.",
+  "minimum_chrome_version": "102",
+  "action": {
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "24": "icons/icon-24.png",
+      "32": "icons/icon-32.png"
+    },
+    "default_title": "Pastemorphic",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "permissions": [
+    "bookmarks",
+    "storage",
+    "contextMenus",
+    "scripting",
+    "activeTab",
+    "clipboardWrite"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "commands": {
+    "slot1": {
+      "description": "Paste slot 1",
+      "suggested_key": {
+        "default": "Ctrl+Shift+1"
+      }
+    },
+    "slot2": {
+      "description": "Paste slot 2",
+      "suggested_key": {
+        "default": "Ctrl+Shift+2"
+      }
+    },
+    "slot3": {
+      "description": "Paste slot 3",
+      "suggested_key": {
+        "default": "Ctrl+Shift+3"
+      }
+    },
+    "slot4": {
+      "description": "Paste slot 4",
+      "suggested_key": {
+        "default": "Ctrl+Shift+4"
+      }
+    }
+  }
+}

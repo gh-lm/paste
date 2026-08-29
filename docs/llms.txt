@@ -1,0 +1,37 @@
+# Pastemorphic
+
+> A free, open-source browser extension that stores short pieces of text you
+> paste often and puts one back on your clipboard with a click. Its notes are
+> kept as ordinary browser bookmarks, so they sync between computers using the
+> browser's own bookmark sync — with no account, no server and no network
+> requests of any kind.
+
+Licence: MIT. Made by Lightmorphic. Version 1.0.0.
+Works in Chrome, Brave, Vivaldi, Edge and other Chromium browsers, and Firefox.
+
+## Key facts
+
+- Cost: free. No paid tier, no trial, no upgrade.
+- Storage: one bookmark per note, in a bookmark folder named Pastemorphic.
+  The note's text is held inside the bookmark's web address.
+- Sync: whatever the browser's own bookmark sync does. Pastemorphic takes no
+  part in it and cannot see it.
+- Account: none. No sign-in, no email address collected.
+- Network: none. No server, no analytics, no advertising, no crash reporting.
+- Permissions: bookmarks, storage, contextMenus, scripting, activeTab,
+  clipboardWrite. No host permissions, so no access to the sites you visit.
+- Limits: up to six tabs of seven letters each; unlimited notes; four keyboard
+  shortcuts, which is the maximum a browser allows an extension to arrive with.
+- Known trade-off: because notes are bookmarks, anyone who can open the browser
+  can read them. Passwords and card numbers do not belong in it.
+- Installation without a Google account: download the zip from GitHub releases,
+  unzip, open the browser's extensions page, enable Developer mode, choose
+  Load unpacked.
+
+## Pages
+
+- [Overview](https://lightmorphic.github.io/pastemorphic/): what it is and how it works.
+- [Help](https://lightmorphic.github.io/pastemorphic/help.html): saving, copying, pasting, tabs, keyboard shortcuts, imports, backups.
+- [Questions and answers](https://lightmorphic.github.io/pastemorphic/faq.html): sixteen plain answers.
+- [Privacy](https://lightmorphic.github.io/pastemorphic/privacy.html): what is stored, where, and why each permission is asked for.
+- [Source code](https://github.com/lightmorphic/pastemorphic): the whole extension, about fifteen plain files with no build step.

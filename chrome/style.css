@@ -1,0 +1,717 @@
+@font-face {
+  font-family: 'Manrope';
+  src: url('fonts/Manrope.woff2') format('woff2');
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff;  --fg: #09090b;
+  --panel: #ffffff;  --panel-border: rgba(24, 24, 40, 0.10);
+  --border: #e4e4e7;  --muted: #f4f4f5;  --muted-fg: #71717a;
+  --shadow-panel: 0 1px 2px rgba(24,24,40,.05), 0 8px 24px -16px rgba(24,24,40,.18);
+
+  --brand-navy: #111827;
+  --link: #1b74bc;
+  --danger: #cc372d;   --danger-bg: #fef2f1;
+  --success: #38813a;  --success-bg: #f2f9f3;
+  --warning: #8f6c03;  --warning-bg: #fffbee;
+  --info: #1b74bc;     --info-bg: #f0f8fe;
+
+  --radius: 0.875rem;
+  --panel-radius: 1.375rem;
+
+  --on-accent: #645007;
+  --accent: var(--accent-light, #fbc711);
+  --accent-hover: var(--accent-hover-light, #ddaf0f);
+  --accent-container: var(--accent-container-light, #fff8e2);
+  --on-accent-container: var(--on-accent-container-light, #5f4c06);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #09090b;  --fg: #fafafa;
+    --panel: #1b1d29;  --panel-border: rgba(255,255,255,.09);
+    --border: #27272a;  --muted: #1c1c1f;  --muted-fg: #a1a1aa;
+    --shadow-panel: 0 1px 2px rgba(0,0,0,.35), 0 8px 24px -16px rgba(0,0,0,.6);
+    --link: #2295f1;
+    --danger: #f34236;   --danger-bg: #350f0c;
+    --success: #4bae4f;  --success-bg: #102611;
+    --warning: #ffc006;  --warning-bg: #382a01;
+    --info: #2295f1;     --info-bg: #072135;
+    --accent: var(--accent-dark, #fbc711);
+    --accent-hover: var(--accent-hover-dark, #ddaf0f);
+    --accent-container: var(--accent-container-dark, #4b3c05);
+    --on-accent-container: var(--on-accent-container-dark, #fde694);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #09090b;  --fg: #fafafa;
+  --panel: #1b1d29;  --panel-border: rgba(255,255,255,.09);
+  --border: #27272a;  --muted: #1c1c1f;  --muted-fg: #a1a1aa;
+  --shadow-panel: 0 1px 2px rgba(0,0,0,.35), 0 8px 24px -16px rgba(0,0,0,.6);
+  --link: #2295f1;
+  --danger: #f34236;   --danger-bg: #350f0c;
+  --success: #4bae4f;  --success-bg: #102611;
+  --warning: #ffc006;  --warning-bg: #382a01;
+  --info: #2295f1;     --info-bg: #072135;
+  --accent: var(--accent-dark, #fbc711);
+  --accent-hover: var(--accent-hover-dark, #ddaf0f);
+  --accent-container: var(--accent-container-dark, #4b3c05);
+  --on-accent-container: var(--on-accent-container-dark, #fde694);
+}
+
+/* ---- the eleven named accents; brand yellow is the default above, and a
+       colour of your own is applied as inline variables ------------------ */
+
+:root[data-accent="red"] {
+  --accent-light: #f34236; --accent-hover-light: #d63a30;
+  --accent-container-light: #fee8e7; --on-accent-container-light: #5c1915;
+  --accent-dark: #f34236; --accent-hover-dark: #f4594e;
+  --accent-container-dark: #491410; --on-accent-container-dark: #faaaa5;
+  --on-accent: #350f0c;
+}
+:root[data-accent="pink"] {
+  --accent-light: #e8207e; --accent-hover-light: #cc1c6f;
+  --accent-container-light: #fce4f0; --on-accent-container-light: #580c30;
+  --accent-dark: #e8207e; --accent-hover-dark: #eb3b8d;
+  --accent-container-dark: #460a26; --on-accent-container-dark: #f59bc5;
+  --on-accent: #1e0410;
+}
+:root[data-accent="purple"] {
+  --accent-light: #9b26ae; --accent-hover-light: #882199;
+  --accent-container-light: #f3e5f5; --on-accent-container-light: #3b0e42;
+  --accent-dark: #b763c5; --accent-hover-dark: #c076cc;
+  --accent-container-dark: #46114e; --on-accent-container-dark: #d29ddb;
+  --on-accent: #ffffff;
+}
+:root[data-accent="indigo"] {
+  --accent-light: #3d51b4; --accent-hover-light: #36479e;
+  --accent-container-light: #e8eaf6; --on-accent-container-light: #171f44;
+  --accent-dark: #7382c9; --accent-hover-dark: #8491cf;
+  --accent-container-dark: #1b2451; --on-accent-container-dark: #a8b1dd;
+  --on-accent: #ffffff;
+}
+:root[data-accent="blue"] {
+  --accent-light: #2295f1; --accent-hover-light: #1e83d4;
+  --accent-container-light: #e4f2fd; --on-accent-container-light: #0d395c;
+  --accent-dark: #2295f1; --accent-hover-dark: #3da2f3;
+  --accent-container-dark: #0a2d48; --on-accent-container-dark: #9ccff9;
+  --on-accent: #0a2a43;
+}
+:root[data-accent="cyan"] {
+  --accent-light: #00bcd3; --accent-hover-light: #00a5ba;
+  --accent-container-light: #e0f7fa; --on-accent-container-light: #004750;
+  --accent-dark: #00bcd3; --accent-hover-dark: #00a9be;
+  --accent-container-dark: #00383f; --on-accent-container-dark: #8ce1eb;
+  --on-accent: #00464e;
+}
+:root[data-accent="teal"] {
+  --accent-light: #019587; --accent-hover-light: #018377;
+  --accent-container-light: #e1f2f1; --on-accent-container-light: #003933;
+  --accent-dark: #019587; --accent-hover-dark: #1fa295;
+  --accent-container-dark: #002d29; --on-accent-container-dark: #8dcfc9;
+  --on-accent: #00211e;
+}
+:root[data-accent="green"] {
+  --accent-light: #4bae4f; --accent-hover-light: #429946;
+  --accent-container-light: #e9f5ea; --on-accent-container-light: #1c421e;
+  --accent-dark: #4bae4f; --accent-hover-dark: #61b864;
+  --accent-container-dark: #173418; --on-accent-container-dark: #aedbb0;
+  --on-accent: #173618;
+}
+:root[data-accent="orange"] {
+  --accent-light: #fe9700; --accent-hover-light: #e08500;
+  --accent-container-light: #fff3e0; --on-accent-container-light: #613900;
+  --accent-dark: #fe9700; --accent-hover-dark: #e58800;
+  --accent-container-dark: #4c2d00; --on-accent-container-dark: #ffd08c;
+  --on-accent: #5e3800;
+}
+:root[data-accent="brown"] {
+  --accent-light: #795649; --accent-hover-light: #6a4c40;
+  --accent-container-light: #efebe9; --on-accent-container-light: #2e211c;
+  --accent-dark: #9f857c; --accent-hover-dark: #aa948c;
+  --accent-container-dark: #362721; --on-accent-container-dark: #c3b3ad;
+  --on-accent: #ffffff;
+}
+:root[data-accent="grey"] {
+  --accent-light: #9e9d9e; --accent-hover-light: #8b8a8b;
+  --accent-container-light: #f3f3f3; --on-accent-container-light: #3c3c3c;
+  --accent-dark: #9e9d9e; --accent-hover-dark: #aaa9aa;
+  --accent-container-dark: #2f2f2f; --on-accent-container-dark: #d3d3d3;
+  --on-accent: #363536;
+}
+
+/* ---- shared ------------------------------------------------------------- */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button { cursor: pointer; }
+
+:where(button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.btn {
+  border: 1px solid var(--border);
+  background: var(--muted);
+  border-radius: var(--radius);
+  padding: 0.4rem 0.85rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+.btn:hover { border-color: var(--muted-fg); }
+
+.btn.primary {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: transparent;
+}
+.btn.primary:hover { background: var(--accent-hover); }
+
+.btn.danger { color: var(--danger); border-color: var(--danger); background: var(--danger-bg); }
+.btn.armed { background: var(--danger); color: #fff; border-color: var(--danger); }
+
+.input {
+  display: block;
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9375rem;
+}
+
+.icon-btn {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--muted-fg);
+  flex: none;
+}
+.icon-btn:hover { background: var(--muted); color: var(--fg); }
+.icon-btn svg { width: 17px; height: 17px; display: block; }
+.icon-btn.armed { background: var(--danger); color: #fff; }
+
+.hint { font-size: 0.8125rem; color: var(--muted-fg); }
+
+/* ---- popup -------------------------------------------------------------- */
+
+body.popup { width: 400px; height: 540px; display: flex; flex-direction: column; position: relative; }
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 10px 8px;
+  border-bottom: 1px solid var(--border);
+  flex: none;
+}
+
+/* Tabs wrap onto as many lines as they need rather than scrolling sideways.
+   A sideways strip needs a gesture most people never find, and a tab pushed off
+   the left edge may as well not exist. */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-height: 4.05rem;          /* exactly two rows of tabs, never a third */
+  overflow-y: auto;
+  scrollbar-width: thin;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.tab {
+  flex: none;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted-fg);
+  border-radius: 999px;
+  padding: 3px 11px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.tab:hover { background: var(--muted); color: var(--fg); }
+.tab[aria-selected="true"] {
+  background: var(--accent-container);
+  color: var(--on-accent-container);
+  border-color: var(--accent);
+}
+
+.searchwrap { padding: 8px 12px 0; flex: none; }
+
+.list {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 8px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.note {
+  display: flex;
+  align-items: stretch;
+  gap: 2px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+.note:hover { border-color: var(--panel-border); background: var(--muted); }
+.note.dragging { opacity: 0.4; }
+.note.dropbefore { box-shadow: 0 -2px 0 0 var(--accent); }
+.note.dropafter { box-shadow: 0 2px 0 0 var(--accent); }
+
+.grip {
+  width: 16px;
+  display: grid;
+  place-items: center;
+  color: transparent;
+  cursor: grab;
+  flex: none;
+}
+.note:hover .grip { color: var(--muted-fg); }
+
+.note-main {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 8px 4px;
+  display: block;
+}
+.note-title {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.note-preview {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--muted-fg);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.35;
+}
+
+.slot {
+  align-self: center;
+  flex: none;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: var(--accent-container);
+  color: var(--on-accent-container);
+}
+
+.acts { display: flex; align-items: center; gap: 0; flex: none; visibility: hidden; }
+.note:hover .acts, .note:focus-within .acts { visibility: visible; }
+
+.empty {
+  margin: auto;
+  text-align: center;
+  color: var(--muted-fg);
+  font-size: 0.9375rem;
+  padding: 0 24px;
+}
+
+footer.bar {
+  border-bottom: none;
+  border-top: 1px solid var(--border);
+  padding: 8px 10px;
+}
+/* Messages float over the bottom of the list now that there is no footer. */
+.toast {
+  /* left/right rather than a 50% offset, or the box can only use the half of
+     the window to the right of its own left edge and wraps far too early */
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  margin: 0 auto;
+  width: fit-content;
+  max-width: 100%;
+  text-align: center;
+  z-index: 4;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: var(--fg);
+  color: var(--bg);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-panel);
+  pointer-events: none;
+}
+.toast[hidden] { display: none; }
+.toast.good { background: var(--success); color: #fff; }
+
+/* the one filled, coloured button: adding a note */
+.round-btn {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--on-accent);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.round-btn:hover { background: var(--accent-hover); }
+.round-btn svg { width: 17px; height: 17px; display: block; }
+.round-btn:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+
+/* ---- editor sheet ------------------------------------------------------- */
+
+.sheet {
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  gap: 10px;
+}
+.sheet[hidden] { display: none; }
+.sheet h2 { margin: 0; font-size: 1.0625rem; font-weight: 600; }
+.sheet label { font-size: 0.9375rem; font-weight: 600; display: block; margin-bottom: 4px; }
+.sheet textarea { flex: 1 1 auto; min-height: 140px; resize: none; line-height: 1.5; }
+.row { display: flex; gap: 10px; }
+.row > * { flex: 1 1 0; min-width: 0; }
+.sheet-actions { display: flex; gap: 8px; align-items: center; }
+/* pushes whatever follows it over to the right, wherever it is used */
+.spacer { flex: 1 1 auto; }
+
+/* ---- options page ------------------------------------------------------- */
+
+body.options { padding: 32px 20px 64px; }
+.wrap { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+/* scoped to the heading so it wins wherever .logo lands in this file */
+h1 .logo { width: 32px; height: 32px; margin-right: 0; }
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--panel-radius);
+  box-shadow: var(--shadow-panel);
+  padding: 1.5rem;
+}
+.panel h2 { font-size: 1.0625rem; font-weight: 600; margin: 0 0 0.75rem; }
+.panel p { margin: 0 0 1rem; max-width: 65ch; }
+
+.swatches { display: flex; flex-wrap: wrap; gap: 8px; }
+.swatch {
+  width: 34px; height: 34px; border-radius: 10px;
+  border: 2px solid transparent; padding: 0;
+  position: relative;
+}
+.swatch[aria-pressed="true"] { border-color: var(--fg); }
+.swatch span {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  color: #fff; font-weight: 800; font-size: 0.9rem;
+  text-shadow: 0 0 3px rgba(0,0,0,.6);
+}
+.swatch[aria-pressed="false"] span { display: none; }
+
+.field { margin-bottom: 1rem; }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.note-msg { font-size: 0.9375rem; }
+.note-msg.good { color: var(--success); }
+.note-msg.bad { color: var(--danger); }
+
+table { width: 100%; border-collapse: collapse; font-size: 0.9375rem; }
+caption { text-align: left; font-size: 0.8125rem; color: var(--muted-fg); margin-bottom: 0.5rem; }
+th { text-align: left; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted-fg); padding: 6px 8px; }
+td { padding: 6px 8px; border-top: 1px solid var(--border); }
+
+body.popup { position: relative; }
+
+/* a slot whose keys the browser has not been given yet */
+.slot.unset {
+  background: transparent;
+  color: var(--muted-fg);
+  border: 1px dashed var(--border);
+  padding: 0 6px;
+}
+
+/* the light/dark button, when the browser is the one choosing */
+#btnTheme { position: relative; }
+#btnTheme.auto::after {
+  content: '';
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* tab strip: scrolls when there are more than fit, with a fade at whichever
+   end still has tabs beyond it */
+.tabwrap {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.tabwrap::before,
+.tabwrap::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 18px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.tabwrap::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--bg), transparent);
+}
+.tabwrap::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--bg), transparent);
+}
+.tabwrap.more-above::before,
+.tabwrap.more-below::after { opacity: 1; }
+
+/* Seven letters is the cap, and 100px holds seven of almost any letter. Three
+   of these fit across the strip, so two rows hold the six tabs allowed. Wider
+   names from an older version are trimmed with an ellipsis. */
+.tab {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* the line between the two groups of buttons in the header */
+.divider {
+  flex: none;
+  width: 1px;
+  height: 20px;
+  margin: 0 3px;
+  background: var(--border);
+}
+.icon-btn:disabled { opacity: 0.35; cursor: default; }
+
+/* two rows: the app and its settings above, the tabs on their own line, so a
+   handful of tabs is readable rather than a 200px smear */
+.bar-top { padding-bottom: 6px; border-bottom: none; }
+.bar-tabs { padding-top: 0; padding-bottom: 6px; align-items: flex-start; }
+
+.logo {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  display: block;
+  margin-right: -2px;
+}
+
+.wordmark {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+.btn:disabled { opacity: 0.4; cursor: default; }
+
+/* a colour of your own, beside the twelve */
+.custom-accent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+.custom-accent label {
+  font-weight: 400;
+  color: var(--muted-fg);
+  margin: 0;
+}
+.custom-accent .input {
+  width: 8.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+#accentPick {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 2px;
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  background: var(--panel);
+  cursor: pointer;
+}
+
+/* the custom swatch is empty until a colour is set, so show it as an outline */
+.swatch-custom {
+  border: 1px dashed var(--border);
+  background-image:
+    linear-gradient(45deg, var(--muted) 25%, transparent 25%, transparent 75%, var(--muted) 75%),
+    linear-gradient(45deg, var(--muted) 25%, transparent 25%, transparent 75%, var(--muted) 75%);
+  background-size: 10px 10px;
+  background-position: 0 0, 5px 5px;
+}
+
+/* on/off switch, used for the copy-and-paste setting */
+.toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.toggle-row label {
+  font-weight: 400;
+  margin: 0;
+  cursor: pointer;
+}
+/* Off, this has to read clearly against the panel behind it, so the outline and
+   the knob both use the muted text colour rather than a panel-coloured fill. */
+.toggle {
+  flex: none;
+  width: 46px;
+  height: 26px;
+  padding: 0;
+  border: 2px solid var(--muted-fg);
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.15s, border-color 0.15s;
+}
+.toggle .knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--muted-fg);
+  transition: transform 0.15s, background 0.15s;
+}
+.toggle:hover { border-color: var(--fg); }
+.toggle:hover .knob { background: var(--fg); }
+.toggle[aria-checked="true"] {
+  background: var(--accent);
+  /* a slightly darker rim, so a pale accent still has an edge on white */
+  border-color: var(--accent-hover);
+}
+.toggle[aria-checked="true"] .knob {
+  transform: translateX(20px);
+  background: var(--on-accent);
+}
+.toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* a delete that has been asked once: the bin becomes a tick and turns red */
+.icon-btn.danger { color: var(--danger); }
+.icon-btn.danger:hover { background: var(--danger-bg); color: var(--danger); }
+.icon-btn.armed,
+.icon-btn.danger.armed {
+  background: var(--danger);
+  color: #fff;
+}
+.danger-text { color: var(--danger); font-weight: 600; }
+
+/* small popover for renaming or deleting a tab, instead of a whole screen */
+.popover-back {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+}
+.popover-back[hidden] { display: none; }
+
+.popover {
+  position: absolute;
+  z-index: 6;
+  width: 244px;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-panel);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.popover[hidden] { display: none; }
+.popover label { font-size: 0.875rem; font-weight: 600; display: block; }
+.popover-row { display: flex; gap: 8px; align-items: center; }
+.popover-row .input { flex: 1 1 auto; }
+.icon-btn.ok { color: var(--on-accent); background: var(--accent); }
+.icon-btn.ok:hover { background: var(--accent-hover); color: var(--on-accent); }
+
+/* dragging a tab into a new position */
+.tab.dragging { opacity: 0.4; }
+
+/* the grip is the handle for dragging a note into a new position */
+.grip.draghandle { cursor: grab; touch-action: none; }
+.grip.draghandle:active { cursor: grabbing; }
+.tab { touch-action: none; }
+.note.dragging { opacity: 0.4; }
+
+/* where the dragged thing will land: a plain line in the gap, in the text
+   colour rather than the accent, so it reads as an insertion point */
+.dropline {
+  position: absolute;
+  background: var(--fg);
+  border-radius: 1px;
+  pointer-events: none;
+  z-index: 2;
+}
+.dropline[hidden] { display: none; }
+
+.tabs { position: relative; }
+.list { position: relative; }
+
+/* the one-off notice shown on first use */
+.sheet.notice { z-index: 8; gap: 12px; }
+.sheet.notice p { margin: 0; font-size: 0.9375rem; line-height: 1.5; }
+.sheet.notice strong { color: var(--fg); }
+
+/* the standing reminder about bookmarks being readable */
+.warn {
+  border-left: 3px solid var(--warning);
+  background: var(--warning-bg);
+  padding: 0.6rem 0.8rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}

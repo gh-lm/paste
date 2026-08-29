@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img"
+     aria-label="The Pastemorphic list: a row of tabs across the top and saved lines of text beneath, each with a keyboard shortcut beside it.">
+  <style>
+    .ink { fill: none; stroke: #17171c; stroke-width: 1.8; stroke-linejoin: round; }
+    .thin { fill: none; stroke: #17171c; stroke-width: 1.1; opacity: .45; stroke-linecap: round; }
+    .mark { fill: #fbc711; }
+    .paper { fill: #ffffff; }
+    .t { font: 12px 'Manrope', system-ui, sans-serif; fill: #17171c; }
+    .t.b { font-weight: 700; }
+    .s { font: 9px ui-monospace, Menlo, monospace; fill: #56545f; }
+    @media (prefers-color-scheme: dark) {
+      .ink, .thin { stroke: #f1eee4; } .paper { fill: #1b1b23; }
+      .t { fill: #f1eee4; } .s { fill: #a5a2ae; }
+    }
+  </style>
+
+  <rect class="paper" x="8" y="8" width="384" height="284" rx="10"/>
+  <rect class="ink" x="8" y="8" width="384" height="284" rx="10"/>
+
+  <!-- header -->
+  <rect class="mark" x="24" y="26" width="14" height="14" rx="4"/>
+  <text class="t b" x="46" y="38">Pastemorphic</text>
+  <circle class="mark" cx="152" cy="33" r="11"/>
+  <path class="ink" d="M147 30h7M147 34h5" stroke-width="1.4"/>
+  <path class="ink" d="M157 31v6M154 34h6" stroke-width="1.4"/>
+  <circle class="thin" cx="300" cy="33" r="6"/><path class="thin" d="M305 38l4 4"/>
+  <circle class="thin" cx="330" cy="33" r="7"/>
+  <circle class="thin" cx="360" cy="33" r="7"/><circle class="thin" cx="360" cy="33" r="2.5"/>
+  <path class="thin" d="M24 52h352"/>
+
+  <!-- tabs -->
+  <rect class="mark" x="24" y="64" width="58" height="22" rx="11"/>
+  <text class="t" x="38" y="79">Work</text>
+  <rect class="thin" x="90" y="64" width="66" height="22" rx="11"/>
+  <text class="t" x="103" y="79">Money</text>
+  <rect class="thin" x="164" y="64" width="60" height="22" rx="11"/>
+  <text class="t" x="177" y="79">Code</text>
+
+  <!-- notes -->
+  <g>
+    <text class="t" x="24" y="122">Email address</text>
+    <text class="s" x="24" y="138">charlie@example.com</text>
+    <rect class="mark" x="286" y="110" width="88" height="16" rx="8"/>
+    <text class="s" x="296" y="122">Ctrl+Shift+1</text>
+    <path class="thin" d="M24 152h352"/>
+  </g>
+  <g>
+    <text class="t" x="24" y="180">Sign off</text>
+    <text class="s" x="24" y="196">Kind regards, Charlie</text>
+    <rect class="mark" x="286" y="168" width="88" height="16" rx="8"/>
+    <text class="s" x="296" y="180">Ctrl+Shift+2</text>
+    <path class="thin" d="M24 210h352"/>
+  </g>
+  <g>
+    <text class="t" x="24" y="238">Invoice line</text>
+    <text class="s" x="24" y="254">Consultancy, one day</text>
+    <path class="thin" d="M24 268h352"/>
+  </g>
+</svg>

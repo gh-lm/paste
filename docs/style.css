@@ -1,0 +1,434 @@
+/* ---------------------------------------------------------------------------
+   Pastemorphic — site styles
+
+   The look is editorial rather than product-page: a warm paper ground, a serif
+   for anything you actually read, and a monospace only for labels and numbers.
+   The single accent is a marker-pen stroke, drawn behind words rather than
+   under them, so nothing on the page is underlined.
+--------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('fonts/Manrope.woff2') format('woff2');
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light dark;
+
+  --paper: #f6f3ec;
+  --paper-deep: #efeadf;
+  --ink: #17171c;
+  --ink-soft: #56545f;
+  --rule: #ddd6c7;
+  --mark: #fbc711;
+  --mark-soft: #fde9a4;
+  --ribbon-1: #fbc711;
+  --ribbon-2: #7fb2a6;
+  --ribbon-3: #d98a6a;
+  --ribbon-4: #8f8bc4;
+
+  --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua',
+    Georgia, 'Times New Roman', serif;
+  --mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas,
+    'Liberation Mono', monospace;
+  --sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --measure: 34rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #14141a;
+    --paper-deep: #1b1b23;
+    --ink: #f1eee4;
+    --ink-soft: #a5a2ae;
+    --rule: #2e2e39;
+    --mark-soft: #4a3c07;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- the marker pen ----------------------------------------------------- */
+
+/* A stroke laid behind the words, sitting low like a highlighter that has been
+   dragged a little unevenly. Never text-decoration. */
+.mark {
+  position: relative;
+  white-space: nowrap;
+}
+.mark::before {
+  content: '';
+  position: absolute;
+  left: -0.18em;
+  right: -0.18em;
+  bottom: 0.02em;
+  height: 0.42em;
+  background: var(--mark);
+  border-radius: 0.3em 0.6em 0.4em 0.5em;
+  transform: rotate(-0.6deg);
+  z-index: -1;
+  opacity: 0.85;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 0.06em;
+  background-image: linear-gradient(var(--mark), var(--mark));
+  background-repeat: no-repeat;
+  background-position: 0 88%;
+  background-size: 100% 0.16em;
+  transition: background-size 0.18s ease;
+}
+a:hover,
+a:focus-visible {
+  background-size: 100% 0.72em;
+}
+a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+/* ---- page frame --------------------------------------------------------- */
+
+.page {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 6rem;
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 0 3rem;
+}
+
+@media (max-width: 56rem) {
+  .page { grid-template-columns: 1fr; gap: 0; }
+}
+
+/* the ribbon rail: section links drawn as bookmark tails */
+.rail {
+  grid-column: 1;
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+  padding-top: 8.5rem;
+}
+@media (max-width: 56rem) { .rail { display: none; } }
+
+.rail ol { list-style: none; margin: 0; padding: 0; }
+.rail li { margin: 0 0 0.35rem; }
+.rail a {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: none;
+  padding: 0.4rem 0.7rem 0.4rem 1.6rem;
+  position: relative;
+}
+.rail a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  width: 0.55rem;
+  height: 1.15rem;
+  background: var(--ribbon-1);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%);
+}
+.rail li:nth-child(2) a::before { background: var(--ribbon-2); }
+.rail li:nth-child(3) a::before { background: var(--ribbon-3); }
+.rail li:nth-child(4) a::before { background: var(--ribbon-4); }
+.rail li:nth-child(5) a::before { background: var(--ribbon-2); }
+.rail li:nth-child(6) a::before { background: var(--ribbon-3); }
+.rail a:hover { color: var(--ink); background: none; }
+
+main { grid-column: 2; min-width: 0; }
+@media (max-width: 56rem) { main { grid-column: 1; } }
+
+/* ---- masthead ----------------------------------------------------------- */
+
+.masthead {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  padding: 2.2rem 0 1.4rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+.masthead img { width: 26px; height: 26px; align-self: center; }
+.masthead .name {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 1.0625rem;
+  letter-spacing: -0.015em;
+  background: none;
+}
+.masthead nav {
+  margin-left: auto;
+  display: flex;
+  gap: 1.4rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ---- headings and text -------------------------------------------------- */
+
+h1 {
+  font-size: clamp(2.6rem, 7vw, 4.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  font-weight: 400;
+  margin: 0 0 1.6rem;
+  max-width: 16ch;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3.4vw, 2.1rem);
+  line-height: 1.16;
+  letter-spacing: -0.018em;
+  font-weight: 400;
+  margin: 4.5rem 0 1.1rem;
+  max-width: 24ch;
+}
+
+h3 {
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  margin: 2.4rem 0 0.5rem;
+}
+
+p, li { max-width: var(--measure); }
+p { margin: 0 0 1.2rem; }
+
+.lead {
+  font-size: 1.3125rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 32rem;
+}
+
+.small {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+section { scroll-margin-top: 2rem; }
+
+/* a number in the margin, the way a printed page numbers its notes */
+.numbered { position: relative; }
+.numbered > .num {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.1em;
+}
+@media (min-width: 56.01rem) {
+  .numbered > .num {
+    position: absolute;
+    left: -3.3rem;
+    top: 0.85rem;
+  }
+}
+
+/* ---- figures ------------------------------------------------------------ */
+
+figure {
+  margin: 2.2rem 0 2.6rem;
+  max-width: 42rem;
+}
+figure svg, figure img { width: 100%; height: auto; display: block; }
+figcaption {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  margin-top: 0.7rem;
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--mark);
+  max-width: 30rem;
+  text-transform: none;
+}
+
+/* ---- the install strip -------------------------------------------------- */
+
+.ways {
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  margin: 2rem 0 1rem;
+  max-width: 44rem;
+}
+.way {
+  border: 1px solid var(--rule);
+  padding: 1.3rem 1.3rem 1.5rem;
+  background: var(--paper-deep);
+  position: relative;
+}
+.way h3 { margin-top: 0; }
+.way p { font-size: 1rem; margin-bottom: 0; }
+.way .tag {
+  position: absolute;
+  top: -0.6rem;
+  left: 1.1rem;
+  background: var(--mark);
+  color: #3d3103;
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+}
+
+/* ---- steps -------------------------------------------------------------- */
+
+ol.steps { counter-reset: s; list-style: none; padding: 0; margin: 1.4rem 0; }
+ol.steps > li {
+  counter-increment: s;
+  position: relative;
+  padding-left: 2.6rem;
+  margin-bottom: 1rem;
+}
+ol.steps > li::before {
+  content: counter(s);
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+}
+
+ul.plain { list-style: none; padding: 0; }
+ul.plain li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+ul.plain li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 0.6rem;
+  height: 2px;
+  background: var(--mark);
+}
+
+kbd {
+  font-family: var(--mono);
+  font-size: 0.8125em;
+  border: 1px solid var(--rule);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 0.05em 0.4em;
+  background: var(--paper-deep);
+  white-space: nowrap;
+}
+
+code {
+  font-family: var(--mono);
+  font-size: 0.875em;
+  background: var(--mark-soft);
+  padding: 0.08em 0.32em;
+}
+
+/* ---- questions ---------------------------------------------------------- */
+
+.qa { border-top: 1px solid var(--rule); margin-top: 3rem; }
+.qa details {
+  border-bottom: 1px solid var(--rule);
+  padding: 0;
+}
+.qa summary {
+  cursor: pointer;
+  padding: 1.15rem 2.5rem 1.15rem 0;
+  position: relative;
+  font-size: 1.1875rem;
+  line-height: 1.4;
+  list-style: none;
+}
+.qa summary::-webkit-details-marker { display: none; }
+.qa summary::after {
+  content: '';
+  position: absolute;
+  right: 0.4rem;
+  top: 1.6rem;
+  width: 0.75rem;
+  height: 2px;
+  background: var(--ink);
+}
+.qa summary::before {
+  content: '';
+  position: absolute;
+  right: 0.75rem;
+  top: 1.23rem;
+  width: 2px;
+  height: 0.75rem;
+  background: var(--ink);
+  transition: transform 0.16s;
+}
+.qa details[open] summary::before { transform: rotate(90deg); opacity: 0; }
+.qa details > div { padding: 0 0 1.4rem; }
+.qa details > div p:last-child { margin-bottom: 0; }
+
+/* ---- footer ------------------------------------------------------------- */
+
+footer {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--rule);
+  margin-top: 5rem;
+  padding-top: 1.6rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+}
+footer p { margin: 0; max-width: none; }
+footer .spacer { flex: 1 1 auto; }
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  background: var(--mark);
+  color: #3d3103;
+  padding: 0.6rem 1rem;
+  z-index: 10;
+}

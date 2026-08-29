@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Pastemorphic</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="popup">
+    <header class="bar bar-top">
+      <img class="logo" src="icons/icon-32.png" alt="" width="20" height="20" />
+      <span class="wordmark">Pastemorphic</span>
+      <span class="spacer"></span>
+      <button class="round-btn" id="btnAdd" title="New note" aria-label="New note"></button>
+      <span class="spacer"></span>
+      <button class="icon-btn" id="btnSearch" title="Search" aria-label="Search notes"></button>
+      <button class="icon-btn" id="btnTheme" title="Light or dark" aria-label="Light or dark"></button>
+      <button class="icon-btn" id="btnSettings" title="Settings" aria-label="Open settings"></button>
+      <span class="divider" role="separator"></span>
+      <button class="icon-btn" id="btnTabAdd" title="New tab" aria-label="Add a tab"></button>
+      <button class="icon-btn" id="btnTabMenu" title="Rename or delete this tab" aria-label="Tab options"></button>
+    </header>
+
+    <div class="bar bar-tabs">
+      <div class="tabwrap" id="tabWrap">
+        <div class="tabs" id="tabs" role="tablist"></div>
+      </div>
+    </div>
+
+    <div class="searchwrap" id="searchWrap" hidden>
+      <input class="input" id="search" placeholder="Search your notes" aria-label="Search your notes" />
+    </div>
+
+    <main class="list" id="list"></main>
+
+    <div class="toast" id="status" role="status" aria-live="polite" hidden></div>
+
+    <section class="sheet" id="editor" hidden aria-label="Edit note">
+      <h2 id="editorTitle">New note</h2>
+      <div>
+        <label for="fTitle">Name</label>
+        <input class="input" id="fTitle" maxlength="80" placeholder="Optional — the first line is used if blank" />
+      </div>
+      <div style="display:flex;flex-direction:column;flex:1 1 auto;min-height:0">
+        <label for="fBody">Text</label>
+        <textarea class="input" id="fBody" placeholder="The text you want to copy"></textarea>
+      </div>
+      <div class="row">
+        <div>
+          <label for="fTab">Tab</label>
+          <select class="input" id="fTab"></select>
+        </div>
+        <div>
+          <label for="fSlot">Keyboard slot</label>
+          <select class="input" id="fSlot"></select>
+        </div>
+      </div>
+      <div class="sheet-actions">
+        <button class="icon-btn danger" id="btnDelete" title="Delete this note"
+          aria-label="Delete this note"></button>
+        <span class="hint" id="noteDeleteHint">Delete</span>
+        <span class="spacer"></span>
+        <button class="btn" id="btnCancel">Cancel</button>
+        <button class="btn primary" id="btnSave">Save</button>
+      </div>
+    </section>
+
+    <section class="sheet notice" id="notice" hidden aria-label="Before you start">
+      <h2>Before you start</h2>
+      <p>Everything you save here is kept as a bookmark in your browser. That is what
+        lets your notes follow you between computers with no account, no server and
+        nothing to sign up for.</p>
+      <p>It also means your notes are as visible as any other bookmark. Anyone who can
+        open your browser can read them, and they travel wherever your bookmark sync
+        goes.</p>
+      <p><strong>So keep passwords, card numbers, and anything else private out of
+        Pastemorphic.</strong> Use a password manager for those.</p>
+      <div style="flex:1 1 auto"></div>
+      <div class="sheet-actions">
+        <span class="spacer"></span>
+        <button class="btn primary" id="btnNoticeOk">I understand</button>
+      </div>
+    </section>
+
+    <div class="popover-back" id="tabPopBack" hidden></div>
+    <div class="popover" id="tabPop" hidden role="dialog" aria-label="Tab name and delete">
+      <div class="popover-row">
+        <input class="input" id="fTabName" maxlength="7" placeholder="Tab name"
+          aria-label="Name of this tab, up to seven letters" />
+        <button class="icon-btn ok" id="btnTabSave" title="Save the name"
+          aria-label="Save the name"></button>
+      </div>
+      <div class="popover-row">
+        <button class="icon-btn danger" id="btnTabDelete" title="Delete this tab"
+          aria-label="Delete this tab"></button>
+        <span class="hint" id="tabDeleteHint">Delete this tab</span>
+      </div>
+      <p class="hint" id="tabHint"></p>
+    </div>
+
+    <script src="lib/store.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

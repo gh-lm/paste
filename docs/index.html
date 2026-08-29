@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pastemorphic — the lines you paste all the time, kept in your bookmarks</title>
+<meta name="description" content="A small browser extension that stores short pieces of text and puts one back on your clipboard with a click. No account, no server: your notes are bookmarks, so they sync the way your bookmarks already do." />
+<link rel="canonical" href="https://lightmorphic.github.io/pastemorphic/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Pastemorphic" />
+<meta property="og:title" content="Pastemorphic — the lines you paste all the time, kept in your bookmarks" />
+<meta property="og:description" content="A small browser extension that stores short pieces of text and puts one back on your clipboard with a click. No account, no server: your notes are bookmarks, so they sync the way your bookmarks already do." />
+<meta property="og:url" content="https://lightmorphic.github.io/pastemorphic/" />
+<meta property="og:image" content="https://lightmorphic.github.io/pastemorphic/img/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#14141a" media="(prefers-color-scheme: dark)" />
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="img/favicon-32.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+<link rel="stylesheet" href="style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://lightmorphic.github.io/pastemorphic/#app",
+      "name": "Pastemorphic",
+      "applicationCategory": "BrowserApplication",
+      "applicationSubCategory": "Browser extension",
+      "operatingSystem": "Windows, macOS, Linux, ChromeOS",
+      "browserRequirements": "Chromium-based browsers (Chrome, Brave, Vivaldi, Edge) and Firefox",
+      "description": "A browser extension that stores short pieces of text you paste often and puts one back on your clipboard with a click. Notes are kept as bookmarks, so they sync between computers with no account and no server.",
+      "url": "https://lightmorphic.github.io/pastemorphic/",
+      "downloadUrl": "https://github.com/lightmorphic/pastemorphic/releases",
+      "softwareVersion": "1.0.0",
+      "license": "https://opensource.org/licenses/MIT",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+      "featureList": [
+        "Click a saved line to copy it to the clipboard",
+        "Paste it straight into the box you were typing in",
+        "Group notes into tabs and drag them into order",
+        "Four keyboard shortcuts for the notes you use most",
+        "Right-click selected text on any page to save it",
+        "Search across every tab at once",
+        "Follows the browser's light or dark setting",
+        "Backup to a file and restore from one"
+      ],
+      "author": { "@id": "https://lightmorphic.github.io/pastemorphic/#author" },
+      "privacyPolicy": "https://lightmorphic.github.io/pastemorphic/privacy.html"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://lightmorphic.github.io/pastemorphic/#author",
+      "name": "Lightmorphic",
+      "url": "https://github.com/lightmorphic"
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://lightmorphic.github.io/pastemorphic/#install",
+      "name": "How to install Pastemorphic from GitHub without a Google account",
+      "totalTime": "PT2M",
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Download", "text": "Download the latest zip from the GitHub releases page and unzip it." },
+        { "@type": "HowToStep", "position": 2, "name": "Open the extensions page", "text": "In your browser, open the extensions page: chrome://extensions, brave://extensions, edge://extensions or vivaldi://extensions." },
+        { "@type": "HowToStep", "position": 3, "name": "Turn on Developer mode", "text": "Switch on Developer mode, usually a toggle in the top right corner." },
+        { "@type": "HowToStep", "position": 4, "name": "Load it", "text": "Click Load unpacked and choose the folder you unzipped." }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://lightmorphic.github.io/pastemorphic/#site",
+      "name": "Pastemorphic",
+      "url": "https://lightmorphic.github.io/pastemorphic/",
+      "inLanguage": "en-GB"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="page">
+<a class="skip" href="#main">Skip to the content</a>
+<header class="masthead">
+  <img src="img/favicon.svg" alt="" width="26" height="26" />
+  <a class="name" href="./">Pastemorphic</a>
+  <nav aria-label="Sections">
+    <a href="./">Overview</a>
+    <a href="help.html">Help</a>
+    <a href="faq.html">Questions</a>
+    <a href="https://github.com/lightmorphic/pastemorphic">Source</a>
+  </nav>
+</header>
+
+<aside class="rail" aria-label="On this page">
+  <ol>
+    <li><a href="#what">What it is</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#install">Install it</a></li>
+    <li><a href="#private">What it never does</a></li>
+    <li><a href="#open">Open source</a></li>
+    <li><a href="#answers">Short answers</a></li>
+  </ol>
+</aside>
+
+<main id="main">
+
+  <h1>The lines you paste all the time, kept in <span class="mark">your bookmarks</span>.</h1>
+
+  <p class="lead">Your email address. A postal address. A sign-off. A reference
+  number. Pastemorphic keeps them a click away — and stores them as ordinary
+  bookmarks, so they follow you between computers with no account and no server
+  anywhere.</p>
+
+  <figure>
+    <img src="img/sync.svg" alt="One note saved in a bookmark folder, appearing in three different browsers, with no server between them." width="640" height="300" loading="eager" />
+    <figcaption>Your browser already syncs bookmarks. Pastemorphic just puts your notes where that sync can find them.</figcaption>
+  </figure>
+
+  <section id="what" class="numbered">
+    <span class="num">01</span>
+    <h2>A short list of text, one click away</h2>
+    <p>Click the toolbar icon and your saved lines are there. Click one and it
+    is on your clipboard. Turn on one setting and a click drops the text
+    straight into whatever box you were typing in instead.</p>
+    <p>Notes go into tabs — up to six, seven letters each — so a handful of
+    them stays a handful rather than a wall. Drag them into whatever order
+    suits you.</p>
+    <figure>
+      <img src="img/popup.svg" alt="The Pastemorphic list: a row of tabs across the top and saved lines of text beneath, each with a keyboard shortcut beside it." width="400" height="300" loading="lazy" />
+      <figcaption>Four of your notes can hold a keyboard shortcut, so the ones you reach for most never need the list at all.</figcaption>
+    </figure>
+  </section>
+
+  <section id="how" class="numbered">
+    <span class="num">02</span>
+    <h2>Why bookmarks, of all things</h2>
+    <p>Every other tool like this needs somewhere to keep your text. That means
+    an account, a server, a company, and a promise. Pastemorphic uses something
+    your browser already syncs, already backs up, and already lets you see:
+    a bookmark folder.</p>
+    <p>A note is one bookmark. Its name is the note's name. The text itself is
+    tucked into the bookmark's web address, which is why it travels wherever
+    your bookmarks travel.</p>
+    <figure>
+      <img src="img/anatomy.svg" alt="A note pulled apart: the bookmark's name is the note's name, and the text of the note is stored inside the bookmark's web address." width="640" height="250" loading="lazy" />
+      <figcaption>Nothing clever, nothing hidden. Open your bookmark manager and there they are.</figcaption>
+    </figure>
+    <p>That has a consequence worth saying out loud, and Pastemorphic says it
+    to you the first time you open it: <strong>your notes are as visible as any
+    other bookmark.</strong> Anyone who can open your browser can read them.
+    Keep passwords and card numbers out of it and use a password manager for
+    those.</p>
+  </section>
+
+  <section id="install" class="numbered">
+    <span class="num">03</span>
+    <h2>Two ways to install it</h2>
+    <div class="ways">
+      <div class="way">
+        <span class="tag">From GitHub</span>
+        <h3>No Google account needed</h3>
+        <p>Download the zip, unzip it, and load the folder in your browser.
+        Two minutes, nothing to sign up for, and you can read every line of
+        what you are installing first.</p>
+      </div>
+      <div class="way">
+        <span class="tag">From the store</span>
+        <h3>Automatic updates</h3>
+        <p>Coming to the Chrome Web Store, which works for Chrome, Brave,
+        Vivaldi and Edge. Updates arrive on their own.</p>
+      </div>
+    </div>
+
+    <h3>Installing it from GitHub</h3>
+    <ol class="steps">
+      <li>Download the latest zip from the
+        <a href="https://github.com/lightmorphic/pastemorphic/releases">releases page</a>
+        and unzip it.</li>
+      <li>Open your browser's extensions page: <code>chrome://extensions</code>,
+        <code>brave://extensions</code>, <code>edge://extensions</code> or
+        <code>vivaldi://extensions</code>.</li>
+      <li>Turn on <strong>Developer mode</strong>, usually a switch in the top
+        right corner.</li>
+      <li>Click <strong>Load unpacked</strong> and choose the folder you
+        unzipped.</li>
+    </ol>
+    <p class="small">Firefox: open <code>about:debugging</code>, choose This
+    Firefox, then Load Temporary Add-on and pick the manifest file. Firefox
+    drops temporary add-ons when it closes.</p>
+  </section>
+
+  <section id="private" class="numbered">
+    <span class="num">04</span>
+    <h2>What it never does</h2>
+    <p>Pastemorphic makes no network requests of any kind. Not one. There is no
+    server to talk to, no analytics, no advertising, no crash reporting, and
+    nothing that could be switched on later without you noticing — because the
+    code is right there for you to read.</p>
+    <figure>
+      <img src="img/nothing-leaves.svg" alt="A browser with a line running to a crossed-out server, showing that nothing is sent anywhere." width="640" height="210" loading="lazy" />
+    </figure>
+    <ul class="plain">
+      <li>No account, no sign-in, no email address collected.</li>
+      <li>No tracking of any kind.</li>
+      <li>It asks for no access to the websites you visit.</li>
+      <li>Uninstalling it leaves your notes behind, because they are bookmarks.</li>
+    </ul>
+  </section>
+
+  <section id="open" class="numbered">
+    <span class="num">05</span>
+    <h2>Open source, and small enough to actually read</h2>
+    <p>The whole extension is about fifteen files of plain JavaScript, HTML and
+    CSS. No build step, no bundler, no minifier, no framework. What is in the
+    repository is exactly what runs in your browser — you can read it in an
+    afternoon and satisfy yourself it does what this page claims.</p>
+    <p>It is MIT licensed, so you can use it, change it, or take pieces of it
+    for something else.</p>
+    <p><a href="https://github.com/lightmorphic/pastemorphic">Read the source on GitHub</a></p>
+  </section>
+
+  <section id="answers" class="numbered">
+    <span class="num">06</span>
+    <h2>Short answers</h2>
+    <div class="qa">
+      <details>
+        <summary>Is Pastemorphic free?</summary>
+        <div><p>Yes. It is free, open source under the MIT licence, and there
+        is nothing to pay for now or later. There is no paid tier.</p></div>
+      </details>
+      <details>
+        <summary>Do my notes sync between computers?</summary>
+        <div><p>Yes, if your browser's own bookmark sync is turned on. Notes
+        are bookmarks, so they travel with the rest of your bookmarks.
+        Pastemorphic is not involved in the syncing and cannot see it.</p></div>
+      </details>
+      <details>
+        <summary>Which browsers does it work in?</summary>
+        <div><p>Chrome, Brave, Vivaldi, Edge and any other Chromium-based
+        browser, plus Firefox.</p></div>
+      </details>
+      <details>
+        <summary>Can I use it without a Google account?</summary>
+        <div><p>Yes. Download it from GitHub and load it yourself. The Chrome
+        Web Store is offered only as a convenience for automatic updates.</p></div>
+      </details>
+      <details>
+        <summary>Is it safe to keep passwords in it?</summary>
+        <div><p>No. Notes are bookmarks, so anyone who can open your browser
+        can read them. Use a password manager for passwords, card numbers and
+        anything else private.</p></div>
+      </details>
+    </div>
+    <p style="margin-top:1.6rem"><a href="faq.html">More questions and answers</a></p>
+  </section>
+
+</main>
+<footer>
+  <p>Pastemorphic is free and open source, MIT licensed.</p>
+  <span class="spacer"></span>
+  <p><a href="privacy.html">Privacy</a></p>
+  <p><a href="https://github.com/lightmorphic/pastemorphic">GitHub</a></p>
+</footer>
+</div></body></html>

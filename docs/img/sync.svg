@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" role="img"
+     aria-label="One note saved in a bookmark folder, appearing in three different browsers with no server between them.">
+  <style>
+    .ink { fill: none; stroke: #17171c; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .thin { fill: none; stroke: #17171c; stroke-width: 1.2; stroke-linecap: round; opacity: .55; }
+    .mark { fill: #fbc711; }
+    .paper { fill: #ffffff; }
+    .dash { stroke-dasharray: 5 6; }
+    .lbl { font: 10px ui-monospace, Menlo, monospace; fill: #56545f; letter-spacing: .1em; }
+    @media (prefers-color-scheme: dark) {
+      .ink, .thin { stroke: #f1eee4; }
+      .paper { fill: #1b1b23; }
+      .lbl { fill: #a5a2ae; }
+    }
+  </style>
+
+  <!-- the folder in the middle: a bookmark tab shape -->
+  <g transform="translate(258 96)">
+    <path class="paper" d="M4 14h44l7 11h63a4 4 0 0 1 4 4v70a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V18a4 4 0 0 1 4-4z"/>
+    <path class="ink" d="M4 14h44l7 11h63a4 4 0 0 1 4 4v70a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V18a4 4 0 0 1 4-4z"/>
+    <path class="mark" d="M14 43h94v7H14z"/>
+    <path class="mark" d="M14 57h72v7H14z" opacity=".7"/>
+    <path class="mark" d="M14 71h84v7H14z" opacity=".45"/>
+    <text class="lbl" x="0" y="-8">ONE BOOKMARK FOLDER</text>
+  </g>
+
+  <!-- three browser windows, drawn slightly off-square on purpose -->
+  <g transform="translate(24 40) rotate(-1.2)">
+    <rect class="paper" x="0" y="0" width="150" height="104" rx="7"/>
+    <rect class="ink" x="0" y="0" width="150" height="104" rx="7"/>
+    <path class="ink" d="M0 22h150"/>
+    <circle class="thin" cx="12" cy="11" r="3"/><circle class="thin" cx="23" cy="11" r="3"/>
+    <path class="mark" d="M14 38h60v6H14z"/>
+    <path class="thin" d="M14 56h110M14 70h84M14 84h96"/>
+  </g>
+  <g transform="translate(24 168) rotate(.9)">
+    <rect class="paper" x="0" y="0" width="150" height="104" rx="7"/>
+    <rect class="ink" x="0" y="0" width="150" height="104" rx="7"/>
+    <path class="ink" d="M0 22h150"/>
+    <circle class="thin" cx="12" cy="11" r="3"/><circle class="thin" cx="23" cy="11" r="3"/>
+    <path class="mark" d="M14 38h60v6H14z"/>
+    <path class="thin" d="M14 56h110M14 70h84M14 84h96"/>
+  </g>
+  <g transform="translate(466 104) rotate(1.4)">
+    <rect class="paper" x="0" y="0" width="150" height="104" rx="7"/>
+    <rect class="ink" x="0" y="0" width="150" height="104" rx="7"/>
+    <path class="ink" d="M0 22h150"/>
+    <circle class="thin" cx="12" cy="11" r="3"/><circle class="thin" cx="23" cy="11" r="3"/>
+    <path class="mark" d="M14 38h60v6H14z"/>
+    <path class="thin" d="M14 56h110M14 70h84M14 84h96"/>
+  </g>
+
+  <!-- the sync lines, hand-wobbled rather than straight -->
+  <path class="ink dash" d="M176 88q42 6 78 34"/>
+  <path class="ink dash" d="M176 214q44 -4 78 -32"/>
+  <path class="ink dash" d="M384 150q42 2 78 6"/>
+
+  <text class="lbl" x="24" y="26">YOUR LAPTOP</text>
+  <text class="lbl" x="24" y="286">YOUR DESKTOP</text>
+  <text class="lbl" x="466" y="90">A BORROWED MACHINE</text>
+</svg>
