@@ -91,7 +91,12 @@ Productivity / Workflow & Planning
 
 ## Privacy policy URL
 
-    Host PRIVACY.md somewhere public and put the address here.
+    https://lightmorphic.github.io/pastemorphic/privacy.html
+
+## Website / support URLs
+
+    Website:  https://lightmorphic.github.io/pastemorphic/
+    Support:  https://github.com/lightmorphic/pastemorphic/issues
 
 ## Single purpose policy
 
