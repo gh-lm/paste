@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 /* Pastemorphic storage layer.
    Everything lives in bookmarks, so the browser's own sync carries it.
 

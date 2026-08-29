@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 /* Popup: the list of notes, and the two sheets that sit over it. */
 
 const $ = (id) => document.getElementById(id);

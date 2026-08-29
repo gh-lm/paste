@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 /* Service worker: keyboard slots, right-click menus, and pasting into a page. */
 
 // Chrome runs this as a service worker and pulls the store in here; Firefox

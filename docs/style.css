@@ -24,6 +24,7 @@
   --rule: #ddd6c7;
   --mark: #fbc711;
   --mark-soft: #fde9a4;
+  --link: #1f5c53;
   --ribbon-1: #fbc711;
   --ribbon-2: #7fb2a6;
   --ribbon-3: #d98a6a;
@@ -46,6 +47,7 @@
     --ink-soft: #a5a2ae;
     --rule: #2e2e39;
     --mark-soft: #4a3c07;
+    --link: #8ecabe;
   }
 }
 
@@ -64,44 +66,36 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ---- the marker pen ----------------------------------------------------- */
+/* ---- emphasis: a ribbon, not a highlighter ------------------------------ */
 
-/* A stroke laid behind the words, sitting low like a highlighter that has been
-   dragged a little unevenly. Never text-decoration. */
+/* Emphasised words sit on a solid block with a notch cut out of the foot of
+   it, so the phrase reads as a bookmark tail rather than as a line of
+   highlighter under the text. Nothing on this site is underlined. */
 .mark {
-  position: relative;
+  display: inline-block;
+  background: var(--mark);
+  color: #2b2200;
+  padding: 0.02em 0.34em 0.16em;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 88%, 0 100%);
   white-space: nowrap;
 }
-.mark::before {
-  content: '';
-  position: absolute;
-  left: -0.18em;
-  right: -0.18em;
-  bottom: 0.02em;
-  height: 0.42em;
-  background: var(--mark);
-  border-radius: 0.3em 0.6em 0.4em 0.5em;
-  transform: rotate(-0.6deg);
-  z-index: -1;
-  opacity: 0.85;
-}
 
+/* Links carry their own colour and take a solid block on hover. No line at
+   rest, no line on hover, no line ever. */
 a {
-  color: inherit;
+  color: var(--link);
   text-decoration: none;
-  position: relative;
-  padding-bottom: 0.06em;
-  background-image: linear-gradient(var(--mark), var(--mark));
-  background-repeat: no-repeat;
-  background-position: 0 88%;
-  background-size: 100% 0.16em;
-  transition: background-size 0.18s ease;
+  border-radius: 2px;
+  padding: 0 0.1em;
+  margin: 0 -0.1em;
+  transition: background-color 0.14s ease, color 0.14s ease;
 }
 a:hover,
 a:focus-visible {
-  background-size: 100% 0.72em;
+  background: var(--mark);
+  color: #2b2200;
 }
-a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
 /* ---- page frame --------------------------------------------------------- */
 
@@ -137,7 +131,6 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
   letter-spacing: 0.11em;
   text-transform: uppercase;
   color: var(--ink-soft);
-  background: none;
   padding: 0.4rem 0.7rem 0.4rem 1.6rem;
   position: relative;
 }
@@ -156,7 +149,7 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 .rail li:nth-child(4) a::before { background: var(--ribbon-4); }
 .rail li:nth-child(5) a::before { background: var(--ribbon-2); }
 .rail li:nth-child(6) a::before { background: var(--ribbon-3); }
-.rail a:hover { color: var(--ink); background: none; }
+.rail a:hover { color: #2b2200; }
 
 main { grid-column: 2; min-width: 0; }
 @media (max-width: 56rem) { main { grid-column: 1; } }
@@ -179,7 +172,7 @@ main { grid-column: 2; min-width: 0; }
   font-weight: 800;
   font-size: 1.0625rem;
   letter-spacing: -0.015em;
-  background: none;
+  color: var(--ink);
 }
 .masthead nav {
   margin-left: auto;

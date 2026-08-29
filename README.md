@@ -22,7 +22,7 @@ advertising, no crash reporting. The whole thing is about fifteen files of plain
 JavaScript, HTML and CSS with no build step, so what is in this repository is
 exactly what runs in your browser.
 
-MIT licensed.
+Licensed under the GNU General Public License, version 3.
 
     Other bookmarks/
       Pastemorphic/

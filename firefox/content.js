@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 /* Injected on demand. Drops text into whatever field has the cursor,
    and falls back to the clipboard when the page will not take it. */
 

@@ -15,7 +15,7 @@ mk(t1.id,'',E('The quick brown fox jumps over the lazy dog and keeps going well 
 mk(t1.id,'Phone',E('+44 7700 900123'));
 mk(t2.id,'Sign off',E('Kind regards,\nCharlie'));
 mk(t2.id,'Invoice line',E('Consultancy, one day'));
-mk(t3.id,'Licence header',E('SPDX-License-Identifier: MIT',4));
+mk(t3.id,'Licence header',E('SPDX-License-Identifier: GPL-3.0',4));
 const kids=id=>(nodes.get(id).children||[]).map(i=>({...nodes.get(i)}));
 window.chrome={bookmarks:{
  getChildren:(id,cb)=>cb(kids(id)),

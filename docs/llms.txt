@@ -6,7 +6,7 @@
 > browser's own bookmark sync — with no account, no server and no network
 > requests of any kind.
 
-Licence: MIT. Made by Lightmorphic. Version 1.0.0.
+Licence: GNU GPL v3. Made by Lightmorphic. Version 1.0.0.
 Works in Chrome, Brave, Vivaldi, Edge and other Chromium browsers, and Firefox.
 
 ## Key facts
