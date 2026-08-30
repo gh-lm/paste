@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="glow" cx="76%" cy="40%" r="58%">
+      <stop offset="0%"  stop-color="#fbc711" stop-opacity="0.16"/>
+      <stop offset="60%" stop-color="#fbc711" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#fbc711" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="lift" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0b0b0f"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <rect x="80" y="72" width="40" height="40" rx="11" fill="#fbc711"/>
+  <rect x="89" y="82"  width="15" height="5" rx="2.5" fill="#111827"/>
+  <rect x="89" y="91"  width="22" height="5" rx="2.5" fill="#111827"/>
+  <rect x="89" y="100" width="11" height="5" rx="2.5" fill="#111827"/>
+  <text x="134" y="100" font-family="Manrope" font-weight="800" font-size="23"
+        fill="#fafafa" letter-spacing="-0.4">Lightmorphic Paste</text>
+
+  <text x="80" y="272" font-family="Manrope" font-weight="800" font-size="62"
+        fill="#fafafa" letter-spacing="-2.2">Stop retyping</text>
+  <text x="80" y="348" font-family="Manrope" font-weight="800" font-size="62"
+        fill="#fbc711" letter-spacing="-2.2">the same lines.</text>
+
+  <text x="80" y="416" font-family="Manrope" font-weight="500" font-size="23"
+        fill="#a1a1aa">Every note is an ordinary bookmark, so they follow</text>
+  <text x="80" y="450" font-family="Manrope" font-weight="500" font-size="23"
+        fill="#a1a1aa">you between computers. No account. No server.</text>
+
+  <text x="80" y="546" font-family="Manrope" font-weight="700" font-size="14"
+        fill="#6b6b76" letter-spacing="3">FREE · OPEN SOURCE · NOTHING LEAVES YOUR BROWSER</text>
+
+  <g transform="translate(772 150)">
+    <rect x="30" y="186" width="316" height="60" rx="15" fill="#16171f" stroke="url(#edge)"/>
+    <rect x="52" y="207" width="106" height="9" rx="4.5" fill="#6f7180"/>
+    <rect x="52" y="225" width="158" height="8" rx="4" fill="#3a3c47"/>
+
+    <rect x="18" y="108" width="330" height="64" rx="15" fill="#1b1d29" stroke="url(#edge)"/>
+    <rect x="42" y="130" width="118" height="10" rx="5" fill="#c9cbd6"/>
+    <rect x="42" y="150" width="176" height="8" rx="4" fill="#54566a"/>
+    <rect x="268" y="132" width="56" height="20" rx="10" fill="#3a2f06"/>
+    <rect x="276" y="139" width="40" height="6" rx="3" fill="#fbc711"/>
+
+    <g transform="translate(-10 6) rotate(-3.4 172 36)" filter="url(#lift)">
+      <rect x="0" y="0" width="344" height="70" rx="17" fill="#21232f"
+            stroke="#fbc711" stroke-opacity="0.5"/>
+      <rect x="26" y="22" width="136" height="11" rx="5.5" fill="#fafafa"/>
+      <rect x="26" y="44" width="192" height="9" rx="4.5" fill="#8a8c9c"/>
+      <rect x="266" y="24" width="56" height="22" rx="11" fill="#fbc711"/>
+    </g>
+  </g>
+
+  <g transform="translate(796 448)">
+    <rect x="0" y="0" width="344" height="58" rx="14" fill="#0e0f16" stroke="#33353f"/>
+    <rect x="22" y="25" width="148" height="8" rx="4" fill="#fbc711"/>
+    <rect x="178" y="18" width="2.5" height="22" rx="1.2" fill="#fafafa"/>
+  </g>
+</svg>
