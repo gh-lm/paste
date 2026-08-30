@@ -22,7 +22,9 @@ advertising, no crash reporting. The whole thing is about fifteen files of plain
 JavaScript, HTML and CSS with no build step, so what is in this repository is
 exactly what runs in your browser.
 
-Licensed under the GNU General Public License, version 3.
+Licensed under the GNU General Public License, version 3. The interface is set
+in Manrope by Mikhail Sharanda, under the SIL Open Font License — see
+[CREDITS.md](CREDITS.md).
 
     Other bookmarks/
       Pastemorphic/
