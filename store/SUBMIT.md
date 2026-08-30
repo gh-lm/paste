@@ -66,22 +66,25 @@ the font licence are both inside, and no developer-only file is.
 | Asset | File | Status |
 |---|---|---|
 | Store icon 128×128 | taken from the package | ready |
-| Screenshot 1280×800 | — | **yours to take**, see below |
+| Screenshot 1280×800 | `store/screenshot-1280x800.png` | ready |
 | Small tile 440×280 | `store/promo-tile-440x280.png` | ready |
 | Marquee tile 1400×560 | `store/marquee-1400x560.png` | ready, optional |
 
 Both tiles are 24-bit PNG with no alpha, which the store requires. Both were
 redrawn after the rename and read Lightmorphic Paste.
 
-**The screenshot has to be a genuine capture of the extension running.** Load
-the current build first — the popup was 400px wide and is now 460, so an older
-capture will show the name wrapped onto two lines. Restore
-`store/sample-work-notes.json`, delete the "Out of office" note so nothing
-scrolls, then capture the popup and drop it onto the backdrop:
+The screenshot is a real capture of the popup running in Brave on 30 August
+2026, cropped out of the full screen and set on the backdrop. It shows the
+four keyboard shortcuts as the browser actually registered them, which the
+listing cannot claim any other way. The notes in it are invented, so no real
+details are in a public image.
 
+To remake it from a fresh capture:
+
+    magick screen.png -crop 460x540+X+Y +repage popup.png
     rsvg-convert -w 1280 -h 800 store/screenshot-frame.svg -o frame.png
-    magick frame.png popup-grab.png -geometry +746+129 -composite \
-      store/screenshot-1280x800.png
+    magick frame.png popup.png -geometry +722+130 -composite \
+      -background '#0b0b0f' -alpha remove PNG24:store/screenshot-1280x800.png
 
 ### Support links
 

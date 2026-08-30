@@ -2,7 +2,8 @@
 
 - `promo-tile-440x280.png` — the small promotional tile. Ready to upload.
 - `marquee-1400x560.png` — the wide banner used for featured placement.
-- `screenshot-frame.svg` — the backdrop the listing screenshot is built on.
+- `screenshot-1280x800.png` — the listing screenshot. Ready to upload.
+- `screenshot-frame.svg` — the backdrop it is built on.
 - `sample-work-notes.json` — invented notes to restore before taking a
   screenshot, so no real details appear in a public image.
 - `share-card-source.svg` — the drawing the website's share image is made from.
@@ -11,18 +12,16 @@
 
 Both PNGs are 24-bit with no alpha, which is what the store requires.
 
-## The screenshot still has to be taken
+## The screenshot
 
-It must be a genuine capture of the extension running, so it cannot be
-generated here.
+`screenshot-1280x800.png` is a real capture of the popup running in Brave on
+30 August 2026, cropped from the full screen and set on `screenshot-frame.svg`.
+It shows the four keyboard shortcuts as the browser registered them. The notes
+are invented, so no real details appear in a public image.
 
-Load the current build before capturing. The popup was 400px wide and is now
-460, so anything captured earlier shows the name wrapped onto two rows.
+To remake it, capture the popup, find its edges, then:
 
-Restore `sample-work-notes.json`, delete the "Out of office" note so the list
-does not scroll, open the popup, capture it, then drop the crop onto the
-backdrop.
-
+    magick screen.png -crop 460x540+X+Y +repage popup.png
     rsvg-convert -w 1280 -h 800 screenshot-frame.svg -o frame.png
-    magick frame.png popup-grab.png -geometry +746+129 -composite \
-      screenshot-1280x800.png
+    magick frame.png popup.png -geometry +722+130 -composite \
+      -background '#0b0b0f' -alpha remove PNG24:screenshot-1280x800.png
