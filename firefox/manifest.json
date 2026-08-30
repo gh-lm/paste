@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Pastemorphic",
+  "name": "Lightmorphic Paste",
   "version": "1.0.0",
   "description": "Keep lines of text in your browser. Click one to copy or paste it. Stored in your bookmarks, so it syncs with no account.",
   "action": {
@@ -9,7 +9,7 @@
       "24": "icons/icon-24.png",
       "32": "icons/icon-32.png"
     },
-    "default_title": "Pastemorphic",
+    "default_title": "Lightmorphic Paste",
     "default_popup": "popup.html"
   },
   "icons": {
@@ -67,7 +67,7 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "pastemorphic@charlie.cx",
+      "id": "lightmorphic-paste@charlie.cx",
       "strict_min_version": "115.0"
     }
   }

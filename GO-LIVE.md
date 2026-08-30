@@ -1,6 +1,6 @@
 # Go-live pass — 30 August 2026
 
-Standalone GitHub Pages site at https://pastemorphic.lightmorphic.com, not a
+Standalone GitHub Pages site at https://paste.lightmorphic.com, not a
 Site Manager site, so the injection-compatibility section does not apply.
 20 files, 232 KB.
 
@@ -17,7 +17,7 @@ notes on every machine you use.
 
 **Images** moved from `img/` to `images/` per the house rule, and renamed from
 `sync.svg`-style names to descriptive ones like
-`pastemorphic-notes-sync-between-computers.svg`, which is a real signal for
+`lightmorphic-paste-notes-sync-between-computers.svg`, which is a real signal for
 image search.
 
 **Findability.** The home page title was 70 characters and its description 215;
@@ -78,7 +78,7 @@ rather than pick a side.
 - Submit `sitemap.xml` to Google Search Console and to Bing Webmaster Tools.
   Bing matters because ChatGPT draws on it.
 - Test one URL's link preview, for example by pasting it into Slack. The share
-  card is at `/images/pastemorphic-share-card.png` and returns 200.
+  card is at `/images/lightmorphic-paste-share-card.png` and returns 200.
 - No Google Business Profile is needed. This is a software product, not a
   local business.
 - Rankings build over months. The site now deserves them; it will not get them

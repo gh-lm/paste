@@ -19,7 +19,7 @@ m['background'] = {'scripts': ['lib/store.js', 'background.js']}
 m.pop('minimum_chrome_version', None)
 m['options_ui'] = {'page': m.pop('options_page'), 'open_in_tab': True}
 m['browser_specific_settings'] = {
-    'gecko': {'id': 'pastemorphic@charlie.cx', 'strict_min_version': '115.0'}
+    'gecko': {'id': 'lightmorphic-paste@charlie.cx', 'strict_min_version': '115.0'}
 }
 (here / 'firefox' / 'manifest.json').write_text(json.dumps(m, indent=2) + '\n')
 PY

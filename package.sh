@@ -20,7 +20,7 @@ done
 rm -rf "$here/dist"
 mkdir -p "$here/dist"
 for folder in chrome firefox; do
-  out="$here/dist/pastemorphic-$folder-$version.zip"
+  out="$here/dist/lightmorphic-paste-$folder-$version.zip"
   # the GPL asks for its text to travel with the work, so it goes in the package
   cp "$here/LICENSE" "$here/$folder/LICENSE"
   ( cd "$here/$folder" && zip -qr "$out" . -x '.*' )
@@ -30,7 +30,7 @@ done
 
 # the font licence must ship beside the font itself
 for folder in chrome firefox; do
-  if ! unzip -l "$here/dist/pastemorphic-$folder-$version.zip" | grep -q 'fonts/OFL.txt'; then
+  if ! unzip -l "$here/dist/lightmorphic-paste-$folder-$version.zip" | grep -q 'fonts/OFL.txt'; then
     echo "Refusing: fonts/OFL.txt is missing from the $folder package." >&2
     echo "Manrope is under the SIL Open Font License, which requires it." >&2
     exit 1
@@ -39,4 +39,4 @@ done
 
 echo
 echo "contents:"
-unzip -l "$here/dist/pastemorphic-chrome-$version.zip" | tail -n +4 | head -20
+unzip -l "$here/dist/lightmorphic-paste-chrome-$version.zip" | tail -n +4 | head -20

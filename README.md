@@ -1,11 +1,11 @@
-# Pastemorphic
+# Lightmorphic Paste
 
 **The lines of text you paste all the time, kept in your bookmarks.**
 
-[Website](https://pastemorphic.lightmorphic.com/) ·
-[Help](https://pastemorphic.lightmorphic.com/help.html) ·
-[Questions](https://pastemorphic.lightmorphic.com/faq.html) ·
-[Download](https://github.com/lightmorphic/pastemorphic/releases)
+[Website](https://paste.lightmorphic.com/) ·
+[Help](https://paste.lightmorphic.com/help.html) ·
+[Questions](https://paste.lightmorphic.com/faq.html) ·
+[Download](https://github.com/lightmorphic/paste/releases)
 
 A small browser extension for the short pieces of text you type over and over —
 your email address, a postal address, a sign-off, a licence header, a reference
@@ -27,7 +27,7 @@ in Manrope by Mikhail Sharanda, under the SIL Open Font License — see
 [CREDITS.md](CREDITS.md).
 
     Other bookmarks/
-      Pastemorphic/
+      Lightmorphic Paste/
         Personal/            <- a tab
           Email address      <- a note; the text lives in the bookmark's URL
           Home address
@@ -38,14 +38,14 @@ is inside it, not by its name, so nothing breaks.
 
 > **One thing worth knowing.** Because notes are bookmarks, they are as visible
 > as any other bookmark. Anyone who can open your browser can read them.
-> Pastemorphic says so the first time you open it. Keep passwords and card
+> Lightmorphic Paste says so the first time you open it. Keep passwords and card
 > numbers out of it and use a password manager for those.
 
 ## Installing
 
 ### From a release — no Google account needed
 
-1. Download the latest zip from [releases](https://github.com/lightmorphic/pastemorphic/releases)
+1. Download the latest zip from [releases](https://github.com/lightmorphic/paste/releases)
    and unzip it
 2. Open `brave://extensions` (or `vivaldi://extensions`, `edge://extensions`,
    `chrome://extensions`)
@@ -151,7 +151,7 @@ tab. `package.sh` refuses to build if they are still lying about.
     ./dev/clean.sh
     ./package.sh
 
-Writes `dist/pastemorphic-chrome-<version>.zip` and the Firefox one beside it.
+Writes `dist/lightmorphic-paste-chrome-<version>.zip` and the Firefox one beside it.
 
 ## The first-run notice
 
@@ -176,7 +176,7 @@ to live.
 - Edit `chrome/` only, then run `./build-firefox.sh`. The two folders are
   identical apart from the manifest.
 - A note's text sits in the bookmark's URL as
-  `https://pastemorphic.invalid/#pm1:...`. `.invalid` is a reserved name that
+  `https://lightmorphic.invalid/#pm1:...`. `.invalid` is a reserved name that
   can never resolve, so a stray click goes nowhere. Notes saved by the very
   first build used a `javascript:` URL instead; those are still read, and are
   quietly rewritten the next time you edit them.

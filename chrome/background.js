@@ -35,7 +35,7 @@ async function pasteIntoPage(text) {
     return;
   }
   try {
-    await chrome.tabs.sendMessage(tab.id, { from: 'pastemorphic', text: text });
+    await chrome.tabs.sendMessage(tab.id, { from: 'lightmorphic-paste', text: text });
   } catch (e) {
     /* the page went away mid-flight */
   }
@@ -72,7 +72,7 @@ async function rebuildMenus() {
 
   chrome.contextMenus.create({
     id: MENU_ADD,
-    title: 'Add to Pastemorphic',
+    title: 'Add to Lightmorphic Paste',
     contexts: ['selection']
   }, quietly);
 
@@ -80,7 +80,7 @@ async function rebuildMenus() {
 
   chrome.contextMenus.create({
     id: MENU_PASTE_ROOT,
-    title: 'Pastemorphic',
+    title: 'Lightmorphic Paste',
     contexts: ['editable']
   }, quietly);
 

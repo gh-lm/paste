@@ -5,10 +5,10 @@ let seq = 10; const nodes = new Map();
 nodes.get('0').children=['1','2'];
 function mk(parentId,title,url,index){const id=String(++seq);nodes.set(id,{id,parentId,title,url,children:url?undefined:[]});
  const a=nodes.get(parentId).children;a.splice(index===undefined?a.length:index,0,id);return nodes.get(id);}
-const root=mk('2','Pastemorphic');
+const root=mk('2','Lightmorphic Paste');
 const t1=mk(root.id,'Personal'), t2=mk(root.id,'Work'), t3=mk(root.id,'Code');
 ['Money','WWWWWWW','Address'].forEach(n=>mk(root.id,n));
-const E=(b,s)=>'https://pastemorphic.invalid/#pm1:'+encodeURIComponent(JSON.stringify(s?{c:b,s}:{c:b})).replace(/['()!*~]/g,c=>'%'+c.charCodeAt(0).toString(16).toUpperCase());
+const E=(b,s)=>'https://lightmorphic.invalid/#pm1:'+encodeURIComponent(JSON.stringify(s?{c:b,s}:{c:b})).replace(/['()!*~]/g,c=>'%'+c.charCodeAt(0).toString(16).toUpperCase());
 mk(t1.id,'Email address',E('charlie@example.com',1));
 mk(t1.id,'Home address',E('12 High Street\nSomewhere\nAB1 2CD',2));
 mk(t1.id,'',E('The quick brown fox jumps over the lazy dog and keeps going well past the edge'));

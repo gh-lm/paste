@@ -174,7 +174,7 @@ function renderTabs() {
   const add = $('btnTabAdd');
   const full = state.tabs.length >= PM.MAX_TABS;
   add.disabled = full;
-  add.title = full ? PM.MAX_TABS + ' tabs is as many as Pastemorphic holds' : 'New tab';
+  add.title = full ? PM.MAX_TABS + ' tabs is as many as Lightmorphic Paste holds' : 'New tab';
   markTabOverflow();
 }
 
@@ -355,7 +355,7 @@ function noteElements() {
 // around called "New".
 function newTab() {
   if (state.tabs.length >= PM.MAX_TABS) {
-    return say('That is the most tabs Pastemorphic holds — ' + PM.MAX_TABS + '.');
+    return say('That is the most tabs Lightmorphic Paste holds — ' + PM.MAX_TABS + '.');
   }
   openTabPop(true);
 }

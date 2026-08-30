@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img"
-     aria-label="The Pastemorphic list: a row of tabs across the top and saved lines of text beneath, each with a keyboard shortcut beside it.">
+     aria-label="The Lightmorphic Paste list: a row of tabs across the top and saved lines of text beneath, each with a keyboard shortcut beside it.">
   <style>
     .ink { fill: none; stroke: #17171c; stroke-width: 1.8; stroke-linejoin: round; }
     .thin { fill: none; stroke: #17171c; stroke-width: 1.1; opacity: .45; stroke-linecap: round; }
@@ -19,7 +19,7 @@
 
   <!-- header -->
   <rect class="mark" x="24" y="26" width="14" height="14" rx="4"/>
-  <text class="t b" x="46" y="38">Pastemorphic</text>
+  <text class="t b" x="46" y="38">Lightmorphic Paste</text>
   <circle class="mark" cx="152" cy="33" r="11"/>
   <path class="ink" d="M147 30h7M147 34h5" stroke-width="1.4"/>
   <path class="ink" d="M157 31v6M154 34h6" stroke-width="1.4"/>

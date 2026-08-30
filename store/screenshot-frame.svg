@@ -15,7 +15,7 @@
   <rect x="97" y="99"  width="22" height="5" rx="2.5" fill="#111827"/>
   <rect x="97" y="108" width="11" height="5" rx="2.5" fill="#111827"/>
   <text x="142" y="108" font-family="Manrope" font-weight="800" font-size="23"
-        fill="#fafafa" letter-spacing="-0.4">Pastemorphic</text>
+        fill="#fafafa" letter-spacing="-0.4">Lightmorphic Paste</text>
 
   <text x="88" y="288" font-family="Manrope" font-weight="800" font-size="60"
         fill="#fafafa" letter-spacing="-2.2">Click a line.</text>

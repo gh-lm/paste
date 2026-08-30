@@ -2,8 +2,8 @@
 /* Injected on demand. Drops text into whatever field has the cursor,
    and falls back to the clipboard when the page will not take it. */
 
-if (!window.__pastemorphicReady) {
-  window.__pastemorphicReady = true;
+if (!window.__lightmorphic-pasteReady) {
+  window.__lightmorphic-pasteReady = true;
 
   const fire = (el, type, init) => el.dispatchEvent(new (type === 'input' ? InputEvent : Event)(type, init));
 
@@ -70,7 +70,7 @@ if (!window.__pastemorphicReady) {
   }
 
   chrome.runtime.onMessage.addListener((msg, sender, respond) => {
-    if (!msg || msg.from !== 'pastemorphic' || typeof msg.text !== 'string') return;
+    if (!msg || msg.from !== 'lightmorphic-paste' || typeof msg.text !== 'string') return;
     const el = document.activeElement;
     let done = false;
     if (el && el !== document.body) {
@@ -83,8 +83,8 @@ if (!window.__pastemorphicReady) {
     }
     toClipboard(msg.text).then((copied) => {
       toast(copied
-        ? 'Pastemorphic: no text box in focus, so it was copied instead.'
-        : 'Pastemorphic could not paste or copy on this page.');
+        ? 'Lightmorphic Paste: no text box in focus, so it was copied instead.'
+        : 'Lightmorphic Paste could not paste or copy on this page.');
       respond({ ok: true, pasted: false, copied: copied });
     });
     return true;

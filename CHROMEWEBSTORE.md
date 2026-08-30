@@ -6,7 +6,7 @@ this, holding the listing copy and a justification for every permission.
 
 ## Name
 
-    Pastemorphic
+    Lightmorphic Paste
 
 ## Short description (132 characters max, currently 121)
 
@@ -18,19 +18,19 @@ Productivity / Workflow & Planning
 
 ## Single purpose (Google asks for this in one sentence)
 
-    Pastemorphic stores short pieces of text the user saves and lets them copy or
+    Lightmorphic Paste stores short pieces of text the user saves and lets them copy or
     paste one back with a click or a keyboard shortcut.
 
 ## Detailed description
 
-    Pastemorphic keeps the lines of text you type over and over — your email
+    Lightmorphic Paste keeps the lines of text you type over and over: your email
     address, a postal address, a sign-off, a licence header, a reference number.
-    Click the toolbar icon, click the line you want, and it is on your clipboard
-    — or straight into the box you were typing in, if you prefer.
+    Click the toolbar icon, click the line you want, and it is on your clipboard,
+    or straight into the box you were typing in if you prefer.
 
     The unusual part is where it puts them. Every note is an ordinary bookmark in
-    a folder called Pastemorphic. That means your notes travel between your
-    computers on your browser's own bookmark sync — no account to make, no server
+    a folder called Lightmorphic Paste. That means your notes travel between your
+    computers on your browser's own bookmark sync. No account to make, no server
     to trust, nothing to pay for, and nothing that can be switched off from
     somewhere else. If you can see your bookmarks, you can see your notes.
 
@@ -38,7 +38,7 @@ Productivity / Workflow & Planning
 
     • Click a note to copy it to the clipboard
     • Or turn on copy-and-paste, so a click also drops it into the box you were
-      typing in — notes then read "Copy and paste" when you hover over them
+      typing in, and notes then read "Copy and paste" when you hover over them
     • Either way, every note has its own paste button as well
     • Group notes into tabs, and drag them into the order you want
     • Four keyboard shortcuts for the notes you reach for most, pasting straight
@@ -56,7 +56,7 @@ Productivity / Workflow & Planning
     no advertising. It makes no network requests at all.
 
     Because your notes are bookmarks, they are as visible as any other bookmark.
-    Pastemorphic tells you so the first time you open it: keep passwords and card
+    Lightmorphic Paste tells you so the first time you open it: keep passwords and card
     numbers out of it, and use a password manager for those.
 
 ## Permission justifications (Google asks for each one separately)
@@ -71,7 +71,7 @@ Productivity / Workflow & Planning
     was last open.
 
     contextMenus
-    Adds "Add to Pastemorphic" when text is selected, and a list of the user's own
+    Adds "Add to Lightmorphic Paste" when text is selected, and a list of the user's own
     notes when right-clicking a text box, so a note can be pasted without opening
     the popup.
 
@@ -93,16 +93,16 @@ Productivity / Workflow & Planning
 
 ## Privacy policy URL
 
-    https://pastemorphic.lightmorphic.com/privacy.html
+    https://paste.lightmorphic.com/privacy.html
 
 ## Website / support URLs
 
-    Website:  https://pastemorphic.lightmorphic.com/
-    Support:  https://github.com/lightmorphic/pastemorphic/issues
+    Website:  https://paste.lightmorphic.com/
+    Support:  https://github.com/lightmorphic/paste/issues
 
 ## Single purpose policy
 
-Google enforces one purpose per extension. Pastemorphic has one: storing short
+Google enforces one purpose per extension. Lightmorphic Paste has one: storing short
 pieces of text and putting one back on request. Everything in it serves that —
 the tabs group them, the search finds them, the shortcuts recall them, the
 import brings them in, the backup takes them out. Nothing does anything else.

@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
-/* Pastemorphic storage layer.
+/* Lightmorphic Paste storage layer.
    Everything lives in bookmarks, so the browser's own sync carries it.
 
    Bookmarks/Other bookmarks/
-     Pastemorphic Data (do not edit)/
+     Lightmorphic Paste Data (do not edit)/
        <tab name>/                 one folder per tab
          <note title>              one bookmark per note
                                    url holds the note body + shortcut slot
@@ -13,12 +13,16 @@
 */
 
 var PM = (function () {
-  const ROOT_TITLE = 'Pastemorphic';
-  const OLD_TITLES = ['Pastemorphic Data (do not edit)'];
+  const ROOT_TITLE = 'Lightmorphic Paste';
+  // names this folder has had before, so an existing install is adopted and
+  // quietly renamed rather than left behind with a second folder beside it
+  const OLD_TITLES = ['Pastemorphic', 'Pastemorphic Data (do not edit)'];
   // The note text is parked in the bookmark's url. A reserved .invalid host is
   // used so a stray click goes nowhere and no browser treats it as code.
-  const HEAD = 'https://pastemorphic.invalid/#pm1:';
+  const HEAD = 'https://lightmorphic.invalid/#pm1:';
   const TAIL = '';
+  // notes saved by earlier versions, still read so nobody loses anything
+  const OLD_HEADS = ['https://pastemorphic.invalid/#pm1:'];
   const OLD_HEAD = "javascript:void('pm1:";
   const OLD_TAIL = "')";
   // Four, because that is every shortcut a browser lets an extension arrive
@@ -192,6 +196,9 @@ var PM = (function () {
     let raw = null;
     if (url.slice(0, HEAD.length) === HEAD) {
       raw = url.slice(HEAD.length);
+    } else if (OLD_HEADS.some((h) => url.slice(0, h.length) === h)) {
+      const hit = OLD_HEADS.find((h) => url.slice(0, h.length) === h);
+      raw = url.slice(hit.length);
     } else if (url.slice(0, OLD_HEAD.length) === OLD_HEAD) {
       raw = url.slice(OLD_HEAD.length, url.length - OLD_TAIL.length);
     }
@@ -334,7 +341,7 @@ var PM = (function () {
 
   let firstTabPending = null;
 
-  // "Other bookmarks / Pastemorphic", for showing people where to look.
+  // "Other bookmarks / Lightmorphic Paste", for showing people where to look.
   async function getRootPath() {
     const rootId = await getRootId();
     const names = [];
@@ -368,7 +375,7 @@ var PM = (function () {
     const rootId = await getRootId();
     const existing = (await getChildren(rootId)).filter((k) => !k.url);
     if (existing.length >= MAX_TABS) {
-      throw new Error('Pastemorphic holds ' + MAX_TABS + ' tabs at most.');
+      throw new Error('Lightmorphic Paste holds ' + MAX_TABS + ' tabs at most.');
     }
     const problem = await tabNameProblem(title);
     if (problem) throw new Error(problem);
@@ -610,7 +617,7 @@ var PM = (function () {
 
   async function exportAll() {
     const tabs = await getTabs();
-    const out = { format: 'pastemorphic-1', tabs: [] };
+    const out = { format: 'lightmorphic-paste-1', tabs: [] };
     for (const t of tabs) {
       const notes = await getNotes(t.id);
       out.tabs.push({
@@ -622,7 +629,7 @@ var PM = (function () {
   }
 
   async function importAll(data) {
-    if (!data || data.format !== 'pastemorphic-1') throw new Error('Not a Pastemorphic backup file.');
+    if (!data || data.format !== 'lightmorphic-paste-1') throw new Error('Not a Lightmorphic Paste backup file.');
     const rootId = await getRootId();
     let imported = 0;
     for (const t of data.tabs || []) {

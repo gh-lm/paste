@@ -23,7 +23,7 @@
   <rect x="105" y="95"  width="22" height="5" rx="2.5" fill="#111827"/>
   <rect x="105" y="104" width="11" height="5" rx="2.5" fill="#111827"/>
   <text x="150" y="104" font-family="Manrope" font-weight="800" font-size="23"
-        fill="#fafafa" letter-spacing="-0.4">Pastemorphic</text>
+        fill="#fafafa" letter-spacing="-0.4">Lightmorphic Paste</text>
 
   <!-- the line -->
   <text x="96" y="252" font-family="Manrope" font-weight="800" font-size="66"

@@ -1,4 +1,4 @@
-# Pastemorphic
+# Lightmorphic Paste
 
 > A free, open-source browser extension that stores short pieces of text you
 > paste often and puts one back on your clipboard with a click. Its notes are
@@ -10,15 +10,15 @@ Licence: GNU GPL v3. Version 1.0.0.
 Published by Lightmorphic Ltd, 82a James Carter Road, Mildenhall, IP28 7DE,
 United Kingdom. Registered in England and Wales, company number 17423646:
 https://find-and-update.company-information.service.gov.uk/company/17423646
-Contact: pastemorphic@lightmorphic.com
+Contact: paste@lightmorphic.com
 Works in Chrome, Brave, Vivaldi, Edge and other Chromium browsers, and Firefox.
 
 ## Key facts
 
 - Cost: free. No paid tier, no trial, no upgrade.
-- Storage: one bookmark per note, in a bookmark folder named Pastemorphic.
+- Storage: one bookmark per note, in a bookmark folder named Lightmorphic Paste.
   The note's text is held inside the bookmark's web address.
-- Sync: whatever the browser's own bookmark sync does. Pastemorphic takes no
+- Sync: whatever the browser's own bookmark sync does. Lightmorphic Paste takes no
   part in it and cannot see it.
 - Account: none. No sign-in, no email address collected.
 - Network: none. No server, no analytics, no advertising, no crash reporting.
@@ -34,8 +34,8 @@ Works in Chrome, Brave, Vivaldi, Edge and other Chromium browsers, and Firefox.
 
 ## Pages
 
-- [Overview](https://pastemorphic.lightmorphic.com/): what it is and how it works.
-- [Help](https://pastemorphic.lightmorphic.com/help.html): saving, copying, pasting, tabs, keyboard shortcuts, imports, backups.
-- [Questions and answers](https://pastemorphic.lightmorphic.com/faq.html): sixteen plain answers.
-- [Privacy](https://pastemorphic.lightmorphic.com/privacy.html): what is stored, where, and why each permission is asked for.
-- [Source code](https://github.com/lightmorphic/pastemorphic): the whole extension, nine plain files with no build step.
+- [Overview](https://paste.lightmorphic.com/): what it is and how it works.
+- [Help](https://paste.lightmorphic.com/help.html): saving, copying, pasting, tabs, keyboard shortcuts, imports, backups.
+- [Questions and answers](https://paste.lightmorphic.com/faq.html): sixteen plain answers.
+- [Privacy](https://paste.lightmorphic.com/privacy.html): what is stored, where, and why each permission is asked for.
+- [Source code](https://github.com/lightmorphic/paste): the whole extension, nine plain files with no build step.

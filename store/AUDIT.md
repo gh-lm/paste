@@ -1,6 +1,6 @@
 # Pre-submission audit — 29 August 2026
 
-Pastemorphic 1.0.0. Every section passed. One tidy-up applied.
+Lightmorphic Paste 1.0.0. Every section passed. One tidy-up applied.
 
 ## Critical issues
 
@@ -78,7 +78,7 @@ holds.
 - All three are 24-bit PNG with no alpha channel, and nothing is clipped at an
   edge.
 - Privacy policy: live at
-  https://pastemorphic.lightmorphic.com/privacy.html (returns 200).
+  https://paste.lightmorphic.com/privacy.html (returns 200).
 - Keyboard shortcuts: Ctrl+Shift+1 to 4. None clash with a reserved Chrome
   shortcut, and four is the maximum allowed.
 

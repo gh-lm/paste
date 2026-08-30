@@ -1,6 +1,6 @@
 # Credits and third-party licences
 
-Pastemorphic itself is free software under the **GNU General Public License
+Lightmorphic Paste itself is free software under the **GNU General Public License
 v3 or later**. The full text is in [LICENSE](LICENSE), and it travels inside
 the packaged extension as well, because the GPL requires the licence to be
 conveyed with the work.

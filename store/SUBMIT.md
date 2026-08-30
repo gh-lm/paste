@@ -4,7 +4,7 @@ Everything below was checked against the actual zip, not the source folder.
 
 ## Upload this
 
-    dist/pastemorphic-chrome-1.0.0.zip     84 KB, 18 files
+    dist/lightmorphic-paste-chrome-1.0.0.zip     84 KB, 18 files
 
 Unpacked and verified: every file the manifest names exists, every file the two
 pages ask for exists, every script parses, and there are no developer or stray
@@ -12,7 +12,7 @@ files in it.
 
 ## The form, field by field
 
-**Name** — Pastemorphic
+**Name** — Lightmorphic Paste
 
 **Short description** (132 max, this is 121)
 
@@ -34,15 +34,15 @@ files in it.
 **Marquee promotional tile** — `store/marquee-1400x560.png` (optional; it is
 what Google uses if the extension is ever featured)
 
-**Website** — https://pastemorphic.lightmorphic.com/
+**Website** — https://paste.lightmorphic.com/
 
-**Support URL** — https://github.com/lightmorphic/pastemorphic/issues
+**Support URL** — https://github.com/lightmorphic/paste/issues
 
 ## Privacy tab
 
 **Single purpose**
 
-    Pastemorphic stores short pieces of text the user saves and lets them copy
+    Lightmorphic Paste stores short pieces of text the user saves and lets them copy
     or paste one back with a click or a keyboard shortcut.
 
 **Permission justifications** — all six are written out in
@@ -60,7 +60,7 @@ at all; it makes zero network requests. Then certify all three statements:
 
 **Privacy policy URL**
 
-    https://pastemorphic.lightmorphic.com/privacy.html
+    https://paste.lightmorphic.com/privacy.html
 
 ## Distribution
 

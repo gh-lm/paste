@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   $('whereWarning').textContent =
     'Because they are bookmarks, your notes are as visible as any other bookmark. ' +
     'Anyone who can open your browser can read them. Keep passwords, card numbers ' +
-    'and anything else private out of Pastemorphic.';
+    'and anything else private out of Lightmorphic Paste.';
 
   const path = await PM.getRootPath();
   $('wherePath').textContent = path.join('  ›  ');
@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = 'pastemorphic-backup.json';
+    a.download = 'lightmorphic-paste-backup.json';
     a.click();
     setTimeout(() => URL.revokeObjectURL(a.href), 5000);
     msg('backupMsg', 'Saved.', true);
