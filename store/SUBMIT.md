@@ -14,10 +14,10 @@ files in it.
 
 **Name** — Pastemorphic
 
-**Short description** (132 max, this is 112)
+**Short description** (132 max, this is 121)
 
-    Keep lines of text in your browser. Click one to copy it. Stored in your
-    bookmarks, so it syncs with no account.
+    Keep lines of text in your browser. Click one to copy or paste it. Stored
+    in your bookmarks, so it syncs with no account.
 
 **Detailed description** — in `CHROMEWEBSTORE.md`, ready to paste.
 

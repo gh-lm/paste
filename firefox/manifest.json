@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Pastemorphic",
   "version": "1.0.0",
-  "description": "Keep lines of text in your browser. Click one to copy it. Stored in your bookmarks, so it syncs with no account.",
+  "description": "Keep lines of text in your browser. Click one to copy or paste it. Stored in your bookmarks, so it syncs with no account.",
   "action": {
     "default_icon": {
       "16": "icons/icon-16.png",

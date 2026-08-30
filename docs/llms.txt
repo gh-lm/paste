@@ -38,4 +38,4 @@ Works in Chrome, Brave, Vivaldi, Edge and other Chromium browsers, and Firefox.
 - [Help](https://pastemorphic.lightmorphic.com/help.html): saving, copying, pasting, tabs, keyboard shortcuts, imports, backups.
 - [Questions and answers](https://pastemorphic.lightmorphic.com/faq.html): sixteen plain answers.
 - [Privacy](https://pastemorphic.lightmorphic.com/privacy.html): what is stored, where, and why each permission is asked for.
-- [Source code](https://github.com/lightmorphic/pastemorphic): the whole extension, about fifteen plain files with no build step.
+- [Source code](https://github.com/lightmorphic/pastemorphic): the whole extension, nine plain files with no build step.

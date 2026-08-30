@@ -18,7 +18,7 @@ bookmark sync — no account to make, no server to trust, nothing to pay for, an
 nothing that can be switched off from somewhere else.
 
 It makes **no network requests of any kind**. No server, no analytics, no
-advertising, no crash reporting. The whole thing is about fifteen files of plain
+advertising, no crash reporting. The whole thing is nine files of plain
 JavaScript, HTML and CSS with no build step, so what is in this repository is
 exactly what runs in your browser.
 
@@ -124,16 +124,19 @@ extension.
       options.html/.js settings, import, backup
       lib/store.js     everything that touches bookmarks
       style.css        one stylesheet, no framework
-      fonts/           Manrope, self-hosted
-      icons/
+      fonts/           Manrope and its OFL licence, self-hosted
+      icons/           the extension's own, plus the Lightmorphic mark
     firefox/           built from chrome/ by build-firefox.sh
     docs/              the website, published by GitHub Pages
     dev/               preview.sh / clean.sh, and the fake-browser stub
     dist/              the zips package.sh builds; not in git
+    store/             the listing artwork, the audit, and the submission notes
     build-firefox.sh   run after changing anything in chrome/
-    package.sh         builds the store zips, refusing if dev files are present
-    PRIVACY.md         the privacy statement, needs hosting somewhere public
+    package.sh         builds the store zips; refuses if a dev file or the font
+                       licence is missing, and copies LICENSE into the package
+    PRIVACY.md         the privacy statement, served at /privacy.html on the site
     CHROMEWEBSTORE.md  listing text, single purpose, and permission wording
+    CREDITS.md         third-party licences — Manrope under the SIL OFL
 
 ## Previewing without a browser install
 

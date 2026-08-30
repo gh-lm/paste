@@ -8,9 +8,9 @@ this, holding the listing copy and a justification for every permission.
 
     Pastemorphic
 
-## Short description (132 characters max, currently 112)
+## Short description (132 characters max, currently 121)
 
-    Keep lines of text in your browser. Click one to copy it. Stored in your bookmarks, so it syncs with no account.
+    Keep lines of text in your browser. Click one to copy or paste it. Stored in your bookmarks, so it syncs with no account.
 
 ## Category
 
@@ -25,7 +25,8 @@ Productivity / Workflow & Planning
 
     Pastemorphic keeps the lines of text you type over and over — your email
     address, a postal address, a sign-off, a licence header, a reference number.
-    Click the toolbar icon, click the line you want, and it is on your clipboard.
+    Click the toolbar icon, click the line you want, and it is on your clipboard
+    — or straight into the box you were typing in, if you prefer.
 
     The unusual part is where it puts them. Every note is an ordinary bookmark in
     a folder called Pastemorphic. That means your notes travel between your
@@ -35,9 +36,10 @@ Productivity / Workflow & Planning
 
     What it does:
 
-    • Click a note to copy it
-    • Or turn on copy-and-paste so a click also drops it into the box you were
-      typing in - notes then say "Copy and paste" when you hover over them
+    • Click a note to copy it to the clipboard
+    • Or turn on copy-and-paste, so a click also drops it into the box you were
+      typing in — notes then read "Copy and paste" when you hover over them
+    • Either way, every note has its own paste button as well
     • Group notes into tabs, and drag them into the order you want
     • Four keyboard shortcuts for the notes you reach for most, pasting straight
       into whatever you are typing in
@@ -105,7 +107,13 @@ pieces of text and putting one back on request. Everything in it serves that —
 the tabs group them, the search finds them, the shortcuts recall them, the
 import brings them in, the backup takes them out. Nothing does anything else.
 
-## Still to make
+## Artwork
 
-    • One screenshot at 1280x800 or 640x400 (up to five allowed)
-    • Small promotional tile, 440x280 PNG
+    Screenshot 1280x800:   store/screenshot-1280x800.png
+    Promotional tile:      store/promo-tile-440x280.png
+    Store icon 128x128:    taken from the package
+
+## Ready
+
+Everything the form asks for is prepared. `store/SUBMIT.md` walks it field by
+field.
