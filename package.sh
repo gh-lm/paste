@@ -17,6 +17,21 @@ done
 
 "$here/build-firefox.sh" > /dev/null
 
+# Every script must parse. A rename once turned an identifier into
+# __lightmorphic-pasteReady, which is a syntax error, and the content script
+# would have shipped dead with pasting silently broken.
+if command -v node > /dev/null; then
+  for folder in chrome firefox; do
+    while IFS= read -r js; do
+      if ! node --check "$js" 2> /dev/null; then
+        echo "Refusing to package: $js does not parse." >&2
+        node --check "$js"
+        exit 1
+      fi
+    done < <(find "$here/$folder" -name '*.js')
+  done
+fi
+
 rm -rf "$here/dist"
 mkdir -p "$here/dist"
 for folder in chrome firefox; do

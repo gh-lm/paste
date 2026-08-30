@@ -2,8 +2,8 @@
 /* Injected on demand. Drops text into whatever field has the cursor,
    and falls back to the clipboard when the page will not take it. */
 
-if (!window.__lightmorphic-pasteReady) {
-  window.__lightmorphic-pasteReady = true;
+if (!window.__lightmorphicPasteReady) {
+  window.__lightmorphicPasteReady = true;
 
   const fire = (el, type, init) => el.dispatchEvent(new (type === 'input' ? InputEvent : Event)(type, init));
 
