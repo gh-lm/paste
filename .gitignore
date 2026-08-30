@@ -1,3 +1,7 @@
 chrome/dev-*
 firefox/dev-*
 dist/
+
+# raw desktop grabs: these catch bookmarks, tab titles and whatever else was on
+# screen, so they stay local. Only the finished store images are committed.
+screenshot/

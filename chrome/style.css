@@ -23,6 +23,9 @@
   --radius: 0.875rem;
   --panel-radius: 1.375rem;
 
+  --scroll: rgba(24, 24, 40, 0.22);
+  --scroll-over: rgba(24, 24, 40, 0.42);
+
   --on-accent: #645007;
   --accent: var(--accent-light, #fbc711);
   --accent-hover: var(--accent-hover-light, #ddaf0f);
@@ -37,6 +40,8 @@
     --border: #27272a;  --muted: #1c1c1f;  --muted-fg: #a1a1aa;
     --shadow-panel: 0 1px 2px rgba(0,0,0,.35), 0 8px 24px -16px rgba(0,0,0,.6);
     --link: #2295f1;
+    --scroll: rgba(255, 255, 255, 0.20);
+    --scroll-over: rgba(255, 255, 255, 0.38);
     --danger: #f34236;   --danger-bg: #350f0c;
     --success: #4bae4f;  --success-bg: #102611;
     --warning: #ffc006;  --warning-bg: #382a01;
@@ -62,6 +67,8 @@
   --accent-hover: var(--accent-hover-dark, #ddaf0f);
   --accent-container: var(--accent-container-dark, #4b3c05);
   --on-accent-container: var(--on-accent-container-dark, #fde694);
+  --scroll: rgba(255, 255, 255, 0.20);
+  --scroll-over: rgba(255, 255, 255, 0.38);
 }
 
 /* ---- the eleven named accents; brand yellow is the default above, and a
@@ -240,7 +247,6 @@ body.popup { width: 400px; height: 540px; display: flex; flex-direction: column;
   gap: 4px;
   max-height: 4.05rem;          /* exactly two rows of tabs, never a third */
   overflow-y: auto;
-  scrollbar-width: thin;
   flex: 1 1 auto;
   min-width: 0;
 }
@@ -716,3 +722,34 @@ body.popup { position: relative; }
   padding: 0.6rem 0.8rem;
   border-radius: 0 var(--radius) var(--radius) 0;
 }
+
+
+/* ---- scrollbars --------------------------------------------------------- */
+
+/* Thin, no track, a rounded thumb held away from the edge so it reads as an
+   overlay rather than a gutter carved out of the panel. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll);
+  border-radius: 999px;
+  /* a transparent border with background-clip is the only way to inset the
+     thumb; without it the bar touches both edges and looks like a trench */
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scroll-over);
+}
+::-webkit-scrollbar-button { display: none; }

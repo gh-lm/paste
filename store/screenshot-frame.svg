@@ -12,18 +12,18 @@
   <rect x="88" y="97" width="10" height="4.5" rx="2.2" fill="#fbc711"/>
   <text x="126" y="97" font-family="system-ui, -apple-system, sans-serif"
         font-weight="700" font-size="21" fill="#17171c">Pastemorphic</text>
+
   <g font-family="'Iowan Old Style', Palatino, Georgia, serif" fill="#17171c">
-    <text x="80" y="230" font-size="52">Click a line.</text>
-    <text x="80" y="292" font-size="52">It is on your clipboard.</text>
+    <text x="80" y="250" font-size="52">Click a line.</text>
+    <text x="80" y="312" font-size="52">It goes where you need it.</text>
   </g>
-  <g font-family="'Iowan Old Style', Palatino, Georgia, serif" fill="#56545f" font-size="22">
-    <text x="80" y="360">Every note is an ordinary bookmark, so they follow you</text>
-    <text x="80" y="392">between computers with no account and no server.</text>
+
+  <g font-family="'Iowan Old Style', Palatino, Georgia, serif" fill="#56545f" font-size="23">
+    <text x="80" y="382">Onto your clipboard, or straight into the box you</text>
+    <text x="80" y="416">were typing in. Every note is an ordinary bookmark,</text>
+    <text x="80" y="450">so they follow you between computers.</text>
   </g>
-  <text x="80" y="720" font-family="ui-monospace, Menlo, monospace" font-size="13"
+
+  <text x="80" y="700" font-family="ui-monospace, Menlo, monospace" font-size="13"
         letter-spacing="2.6" fill="#56545f">NO ACCOUNT · NO SERVER · FREE SOFTWARE</text>
-  <!-- where the real popup grab is composited -->
-  <rect x="760" y="130" width="400" height="540" rx="10" fill="#ffffff" stroke="#ddd6c7"/>
-  <text x="760" y="700" font-family="ui-monospace, Menlo, monospace" font-size="12"
-        fill="#a8a294">popup goes here — 400 x 540</text>
 </svg>

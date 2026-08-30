@@ -1,0 +1,45 @@
+{
+  "format": "pastemorphic-1",
+  "tabs": [
+    {
+      "name": "Work",
+      "notes": [
+        {
+          "title": "John Smith",
+          "body": "07700 900482",
+          "slot": 1
+        },
+        {
+          "title": "Sally Jones",
+          "body": "sally.jones@example.com",
+          "slot": 2
+        },
+        {
+          "title": "Office phone",
+          "body": "020 7946 0113",
+          "slot": 3
+        },
+        {
+          "title": "Sign off",
+          "body": "Kind regards,\nAlex",
+          "slot": 4
+        },
+        {
+          "title": "Office address",
+          "body": "Unit 4, Kingsway Business Park\nAshford\nTN23 1QQ",
+          "slot": 0
+        },
+        {
+          "title": "Purchase order",
+          "body": "PO-2026-0447",
+          "slot": 0
+        },
+        {
+          "title": "Out of office",
+          "body": "I am away until Monday and will reply when I am back.",
+          "slot": 0
+        }
+      ]
+    }
+  ]
+}
