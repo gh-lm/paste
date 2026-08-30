@@ -31,6 +31,9 @@ files in it.
 
 **Small promotional tile** — `store/promo-tile-440x280.png`
 
+**Marquee promotional tile** — `store/marquee-1400x560.png` (optional; it is
+what Google uses if the extension is ever featured)
+
 **Website** — https://pastemorphic.lightmorphic.com/
 
 **Support URL** — https://github.com/lightmorphic/pastemorphic/issues

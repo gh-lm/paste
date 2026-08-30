@@ -110,8 +110,11 @@ import brings them in, the backup takes them out. Nothing does anything else.
 ## Artwork
 
     Screenshot 1280x800:   store/screenshot-1280x800.png
-    Promotional tile:      store/promo-tile-440x280.png
+    Small tile 440x280:    store/promo-tile-440x280.png
+    Marquee tile 1400x560: store/marquee-1400x560.png
     Store icon 128x128:    taken from the package
+
+    All are 24-bit PNG with no alpha channel, which is what the store asks for.
 
 ## Ready
 
