@@ -3,9 +3,9 @@
 Everything the form asks for, in the order it asks. Copy each block as it is.
 
 **Upload this file:** `dist/lightmorphic-paste-chrome-1.0.0.zip` — 84 KB, 18
-files. Unpacked and checked: every file the manifest names is present, every
-file the pages ask for resolves, every script parses, and nothing
-developer-only is inside.
+files. Unpacked and checked after building: the manifest says Lightmorphic
+Paste 1.0.0, every file it names is present, every script parses, the GPL and
+the font licence are both inside, and no developer-only file is.
 
 ---
 
@@ -66,19 +66,21 @@ developer-only is inside.
 | Asset | File | Status |
 |---|---|---|
 | Store icon 128×128 | taken from the package | ready |
-| Screenshot 1280×800 | — | **still to take**, see below |
+| Screenshot 1280×800 | — | **yours to take**, see below |
 | Small tile 440×280 | `store/promo-tile-440x280.png` | ready |
 | Marquee tile 1400×560 | `store/marquee-1400x560.png` | ready, optional |
 
-Both tiles are 24-bit PNG with no alpha, which the store requires.
+Both tiles are 24-bit PNG with no alpha, which the store requires. Both were
+redrawn after the rename and read Lightmorphic Paste.
 
-**The screenshot has to be a real capture of the extension running**, so it
-cannot be generated. Restore `store/sample-work-notes.json` first — it holds
-seven invented notes, so no real details of yours end up in a public image.
-Then capture the popup and composite it:
+**The screenshot has to be a genuine capture of the extension running.** Load
+the current build first — the popup was 400px wide and is now 460, so an older
+capture will show the name wrapped onto two lines. Restore
+`store/sample-work-notes.json`, delete the "Out of office" note so nothing
+scrolls, then capture the popup and drop it onto the backdrop:
 
     rsvg-convert -w 1280 -h 800 store/screenshot-frame.svg -o frame.png
-    magick frame.png popup-grab.png -geometry +806+129 -composite \
+    magick frame.png popup-grab.png -geometry +746+129 -composite \
       store/screenshot-1280x800.png
 
 ### Support links
@@ -191,7 +193,12 @@ and address are then published on the listing.
 **The extension was called Pastemorphic until 30 August 2026.** If anyone
 installs this over that version nothing is lost: the bookmark folder is found
 by what is inside it, both former folder names are still recognised, and notes
-saved by either earlier version are still read.
+saved by either earlier version are still read. Those two old names are the
+only place the old word survives in the code, and they have to stay.
+
+**The popup is 460px wide, not 400.** The longer name wrapped the header onto
+two rows at the old width. Widening it also stopped the longest sample note
+being cut off. Nothing else changed.
 
 **Licences ship inside the package.** `LICENSE` is the GNU GPL v3, which asks
 for its text to travel with the work. `fonts/OFL.txt` is the SIL Open Font
