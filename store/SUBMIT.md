@@ -27,7 +27,9 @@ files in it.
 
 **Store icon** — taken from the package, 128×128.
 
-**Screenshot** — `store/screenshot-1280x800.png`
+**Screenshot** — still to take. The old one showed the previous name and was
+removed. `store/README.md` has the two commands that rebuild it from a fresh
+capture of the popup.
 
 **Small promotional tile** — `store/promo-tile-440x280.png`
 
