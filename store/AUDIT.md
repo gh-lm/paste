@@ -61,10 +61,11 @@ telling people not to store them.
 
 ## Later addition
 
-A credit was added to the foot of the settings page — the Lightmorphic mark
-with a link to lightmorphic.com, plus links to the website and the source. This
-is permitted: it is attribution inside the extension's own page, not
-advertising and not injected into anyone's browsing. The mark is a bundled
+A credit was added to the settings page and to the foot of the popup —
+"Created by", the Lightmorphic mark, then the name, linking to
+lightmorphic.com. The settings one also carries links to the website and the
+source. This is permitted: it is attribution inside the extension's own pages,
+not advertising and not injected into anyone's browsing. The mark is a bundled
 file, never fetched, so the "no network requests of any kind" claim still
 holds.
 

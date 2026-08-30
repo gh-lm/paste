@@ -365,7 +365,7 @@ footer.bar {
   position: absolute;
   left: 12px;
   right: 12px;
-  bottom: 12px;
+  bottom: 38px;                 /* clear of the credit row */
   margin: 0 auto;
   width: fit-content;
   max-width: 100%;
@@ -785,3 +785,28 @@ body.popup { position: relative; }
 .made-by img { border-radius: 5px; display: block; }
 .made-by strong { color: var(--fg); font-weight: 700; }
 .made-by-sep { opacity: 0.45; }
+
+/* the same credit in the popup, tucked into the bottom right and kept slim
+   so it costs the list as little height as possible */
+.by {
+  flex: none;
+  display: flex;
+  justify-content: flex-end;
+  padding: 3px 10px 5px;
+  border-top: 1px solid var(--border);
+}
+.by a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.6875rem;
+  color: var(--muted-fg);
+  text-decoration: none;
+  padding: 2px 5px;
+  border-radius: 6px;
+  transition: color 0.14s ease, background-color 0.14s ease;
+}
+.by a:hover { color: var(--fg); background: var(--muted); }
+.by a:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.by img { border-radius: 4px; display: block; }
+.by strong { font-weight: 700; color: var(--fg); }
