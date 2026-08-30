@@ -3,7 +3,7 @@
 > A free, open-source browser extension that stores short pieces of text you
 > paste often and puts one back on your clipboard with a click. Its notes are
 > kept as ordinary browser bookmarks, so they sync between computers using the
-> browser's own bookmark sync — with no account, no server and no network
+> browser's own bookmark sync, with no account, no server and no network
 > requests of any kind.
 
 Licence: GNU GPL v3. Version 1.0.0.

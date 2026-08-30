@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Help — Pastemorphic</title>
+<title>Help | Pastemorphic</title>
 <meta name="description" content="How to use Pastemorphic: saving a line, copying it, pasting it, tabs, keyboard shortcuts, importing old notes, backups, and where your notes actually live." />
 <link rel="canonical" href="https://pastemorphic.lightmorphic.com/help.html" />
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="Pastemorphic" />
-<meta property="og:title" content="Help — Pastemorphic" />
+<meta property="og:title" content="Help | Pastemorphic" />
 <meta property="og:description" content="How to use Pastemorphic: saving a line, copying it, pasting it, tabs, keyboard shortcuts, importing old notes, backups, and where your notes actually live." />
 <meta property="og:url" content="https://pastemorphic.lightmorphic.com/help.html" />
-<meta property="og:image" content="https://pastemorphic.lightmorphic.com/img/og.png" />
+<meta property="og:image" content="https://pastemorphic.lightmorphic.com/images/pastemorphic-share-card.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)" />
 <meta name="theme-color" content="#14141a" media="(prefers-color-scheme: dark)" />
-<link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
-<link rel="icon" href="img/favicon-32.png" sizes="32x32" />
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="images/favicon-32.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
 <link rel="stylesheet" href="style.css" />
 <script>
 /* Set the theme before anything paints, so there is no flash of the wrong one.
@@ -71,7 +71,7 @@
 <div class="page">
 <a class="skip" href="#main">Skip to the content</a>
 <header class="masthead">
-  <img src="img/favicon.svg" alt="" width="26" height="26" />
+  <img src="images/favicon.svg" alt="" width="26" height="26" />
   <a class="name" href="./">Pastemorphic</a>
   <nav aria-label="Sections">
     <a href="./">Overview</a>
@@ -102,7 +102,7 @@
     <span class="num">01</span>
     <h2>Saving a line of text</h2>
     <p>There are two ways. Click the toolbar icon and press the round yellow
-    button next to the name — that opens an empty note for you to type or paste
+    button next to the name. That opens an empty note for you to type or paste
     into. Give it a name if you like; if you do not, the first few words become
     the name.</p>
     <p>Or, on any web page, select some text, right-click it and choose
@@ -131,7 +131,7 @@
   <section id="tabs" class="numbered">
     <span class="num">03</span>
     <h2>Tabs</h2>
-    <p>Notes are grouped into tabs — up to six of them, seven letters each.
+    <p>Notes are grouped into tabs, up to six of them, seven letters each.
     Those two numbers go together: seven letters makes a tab narrow enough that
     three fit across, and the strip is two rows deep, so every tab is always
     visible and nothing can be pushed out of sight.</p>
@@ -145,7 +145,7 @@
     </ul>
     <p>Deleting a tab deletes the notes in it, so it asks twice: the bin turns
     into a tick, and only the tick deletes. The same is true everywhere in
-    Pastemorphic — nothing is ever deleted on one click.</p>
+    Pastemorphic: nothing is ever deleted on one click.</p>
   </section>
 
   <section id="keys" class="numbered">
@@ -161,7 +161,7 @@
     number: it is every shortcut a browser lets an extension arrive with.</p>
     <p>You can change any of them from your browser's own shortcuts page, and
     there is a button in Settings that takes you straight there. Whatever you
-    set is what the list shows — Pastemorphic asks the browser rather than
+    set is what the list shows. Pastemorphic asks the browser rather than
     assuming.</p>
     <p class="small">Alt and a number is deliberately not used. Browsers keep
     that for jumping to a pinned tab and always win.</p>
@@ -173,7 +173,7 @@
     <p>If you have used another snippet extension that also stored its notes as
     bookmarks, Settings will find them and offer to bring them across in one
     click. They are copied, not moved, so nothing of yours is removed. Running
-    it twice is safe — anything already there is skipped.</p>
+    it twice is safe, because anything already there is skipped.</p>
     <p>Settings also has <strong>Save a backup file</strong> and
     <strong>Restore from a file</strong>. A restore adds notes rather than
     replacing what is there. That backup file is also how you move notes between
@@ -233,7 +233,7 @@
     var now = showing();
     /* the icon shows what you are looking at; clicking gives you the other */
     btn.innerHTML = now === 'dark' ? MOON : SUN;
-    btn.title = now === 'dark' ? 'Dark — click for light' : 'Light — click for dark';
+    btn.title = now === 'dark' ? 'Dark, click for light' : 'Light, click for dark';
     btn.setAttribute('aria-label', btn.title);
   }
   btn.addEventListener('click', function () {

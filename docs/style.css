@@ -25,6 +25,7 @@
   --mark: #fbc711;
   --mark-soft: #fde9a4;
   --link: #1f5c53;
+  --on-mark: #3d3103;
   --ribbon-1: #fbc711;
   --ribbon-2: #7fb2a6;
   --ribbon-3: #d98a6a;
@@ -50,6 +51,7 @@
     --rule: #2e2e39;
     --mark-soft: #4a3c07;
     --link: #8ecabe;
+    --on-mark: #3d3103;
   }
 }
 
@@ -61,6 +63,7 @@
   --rule: #2e2e39;
   --mark-soft: #4a3c07;
   --link: #8ecabe;
+  --on-mark: #3d3103;
 }
 
 * { box-sizing: border-box; }
@@ -337,7 +340,7 @@ figcaption {
   top: -0.6rem;
   left: 1.1rem;
   background: var(--mark);
-  color: #3d3103;
+  color: var(--on-mark);
   font-family: var(--mono);
   font-size: 0.625rem;
   letter-spacing: 0.12em;
@@ -488,7 +491,7 @@ footer .spacer { flex: 1 1 auto; }
   left: 1rem;
   top: 1rem;
   background: var(--mark);
-  color: #3d3103;
+  color: var(--on-mark);
   padding: 0.6rem 1rem;
   z-index: 10;
 }
@@ -514,3 +517,7 @@ footer .spacer { flex: 1 1 auto; }
 .themer:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
 .themer svg { width: 17px; height: 17px; display: block; }
 @media (prefers-reduced-motion: reduce) { .themer:hover { transform: none; } }
+
+/* the guidelines ask for this on anything tapped: it removes the browser's
+   300ms wait for a possible double-tap */
+a, button, summary { touch-action: manipulation; }

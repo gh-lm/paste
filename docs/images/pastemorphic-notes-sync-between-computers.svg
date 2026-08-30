@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" role="img"
-     aria-label="One note saved in a bookmark folder, appearing in three different browsers with no server between them.">
+     aria-label="One note saved in a bookmark folder, appearing on a laptop, a desktop and a work machine, with no server between them.">
   <style>
     .ink { fill: none; stroke: #17171c; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
     .thin { fill: none; stroke: #17171c; stroke-width: 1.2; stroke-linecap: round; opacity: .55; }
@@ -57,5 +57,5 @@
 
   <text class="lbl" x="24" y="26">YOUR LAPTOP</text>
   <text class="lbl" x="24" y="286">YOUR DESKTOP</text>
-  <text class="lbl" x="466" y="90">A BORROWED MACHINE</text>
+  <text class="lbl" x="466" y="90">YOUR WORK MACHINE</text>
 </svg>

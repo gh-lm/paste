@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Privacy — Pastemorphic</title>
+<title>Privacy | Pastemorphic</title>
 <meta name="description" content="Pastemorphic collects nothing. No account, no server, no analytics, no network requests of any kind. What it stores, where, and why it asks for each permission." />
 <link rel="canonical" href="https://pastemorphic.lightmorphic.com/privacy.html" />
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="Pastemorphic" />
-<meta property="og:title" content="Privacy — Pastemorphic" />
+<meta property="og:title" content="Privacy | Pastemorphic" />
 <meta property="og:description" content="Pastemorphic collects nothing. No account, no server, no analytics, no network requests of any kind. What it stores, where, and why it asks for each permission." />
 <meta property="og:url" content="https://pastemorphic.lightmorphic.com/privacy.html" />
-<meta property="og:image" content="https://pastemorphic.lightmorphic.com/img/og.png" />
+<meta property="og:image" content="https://pastemorphic.lightmorphic.com/images/pastemorphic-share-card.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)" />
 <meta name="theme-color" content="#14141a" media="(prefers-color-scheme: dark)" />
-<link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
-<link rel="icon" href="img/favicon-32.png" sizes="32x32" />
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="images/favicon-32.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
 <link rel="stylesheet" href="style.css" />
 <script>
 /* Set the theme before anything paints, so there is no flash of the wrong one.
@@ -32,7 +32,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage",
- "name":"Privacy — Pastemorphic",
+ "name":"Privacy | Pastemorphic",
  "url":"https://pastemorphic.lightmorphic.com/privacy.html",
  "inLanguage":"en-GB",
  "about":{"@id":"https://pastemorphic.lightmorphic.com/#app"},
@@ -70,7 +70,7 @@
 <div class="page">
 <a class="skip" href="#main">Skip to the content</a>
 <header class="masthead">
-  <img src="img/favicon.svg" alt="" width="26" height="26" />
+  <img src="images/favicon.svg" alt="" width="26" height="26" />
   <a class="name" href="./">Pastemorphic</a>
   <nav aria-label="Sections">
     <a href="./">Overview</a>
@@ -88,9 +88,8 @@
 
   <h2>What it stores, and where</h2>
   <p>The notes you save are kept as ordinary bookmarks in your own browser, in a
-  folder named Pastemorphic. A few small preferences — your chosen colour, light
-  or dark, which tab you had open — are kept in the browser's own extension
-  storage. That is all of it.</p>
+  folder named Pastemorphic. A few small preferences are kept in the browser's own extension
+  storage: your chosen colour, light or dark, and which tab you had open. That is all of it.</p>
   <p>Nothing is sent anywhere. The extension makes no network requests of any
   kind. There is no server, no account, no sign-in, no analytics, no advertising
   and no tracking. Nobody but you ever sees your notes.</p>
@@ -101,18 +100,18 @@
 
   <h2>Why it asks for each permission</h2>
   <ul class="plain">
-    <li><strong>Bookmarks</strong> — the notes <em>are</em> bookmarks. It reads
+    <li><strong>Bookmarks.</strong> The notes <em>are</em> bookmarks. It reads
     and writes only inside its own folder.</li>
-    <li><strong>Storage</strong> — remembers your colour, light or dark, and
+    <li><strong>Storage.</strong> Remembers your colour, light or dark, and
     which tab you were on.</li>
-    <li><strong>Context menus</strong> — puts "Add to Pastemorphic" on the
+    <li><strong>Context menus.</strong> Puts "Add to Pastemorphic" on the
     right-click menu when you have text selected, and lists your notes when you
     right-click a text box.</li>
-    <li><strong>Active tab</strong> and <strong>scripting</strong> — used only
+    <li><strong>Active tab</strong> and <strong>scripting.</strong> Used only
     at the moment you ask for a paste, to place text into the box you were
     typing in. Nothing is read from the page, and nothing runs on a page until
     you press a shortcut or click a menu item.</li>
-    <li><strong>Clipboard write</strong> — copies a note when you click it.</li>
+    <li><strong>Clipboard write.</strong> Copies a note when you click it.</li>
   </ul>
 
   <h2>What that means for you</h2>
@@ -178,7 +177,7 @@
     var now = showing();
     /* the icon shows what you are looking at; clicking gives you the other */
     btn.innerHTML = now === 'dark' ? MOON : SUN;
-    btn.title = now === 'dark' ? 'Dark — click for light' : 'Light — click for dark';
+    btn.title = now === 'dark' ? 'Dark, click for light' : 'Light, click for dark';
     btn.setAttribute('aria-label', btn.title);
   }
   btn.addEventListener('click', function () {
