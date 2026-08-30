@@ -422,6 +422,12 @@ code {
   line-height: 1.4;
   list-style: none;
 }
+.qa summary h2 {
+  font: inherit;
+  margin: 0;
+  display: inline;
+  letter-spacing: inherit;
+}
 .qa summary::-webkit-details-marker { display: none; }
 .qa summary::after {
   content: '';
