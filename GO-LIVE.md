@@ -83,3 +83,49 @@ rather than pick a side.
   local business.
 - Rankings build over months. The site now deserves them; it will not get them
   overnight.
+
+
+---
+
+# Second pass — 30 August 2026, after the rebrand
+
+Re-run because the rename touched every page. Live at
+https://paste.lightmorphic.com with HTTPS enforced.
+
+## Fixed
+
+**The share card.** This is the image that appears whenever anyone posts a link
+to the site, and it was three revisions out of date: the old name, the ribbons
+that were dropped, and a yellow highlighter stroke behind two words. Redrawn to
+match the current dark artwork, 1200x630, 24-bit with no alpha.
+
+**Two meta descriptions** went over the 160-character limit because
+"Lightmorphic Paste" is longer than the old name. Trimmed on the help and
+privacy pages, in both the meta tag and the matching Open Graph tag.
+
+## Came through the rename clean
+
+No em-dashes, ellipses or banned words. No external calls, no cookies, no
+absolute paths. All four canonicals and og:urls on the new domain; sitemap and
+robots.txt updated; no noindex; no AI crawler blocked. Schema on every page,
+still matching the visible company details. Contrast passes AA in both themes,
+weakest pair 6.7:1. No layout shift when the lazy images load. 58 KB for a
+first visit. Nothing overflows at 390px. The name is written identically in all
+83 places it appears.
+
+## Still flagged
+
+Both items from the first pass stand, unchanged:
+
+1. **The light/dark choice is kept in browser storage.** One value, never sent
+   anywhere, cannot identify anyone. Your rule says nothing is stored without
+   sign-off, so it waits on your word.
+2. **No security headers.** GitHub Pages provides no way to set them. HTTPS is
+   enforced and `.git` is not reachable. Fixing it means Cloudflare in front,
+   which adds a third party, or self-hosting.
+
+## Not run
+
+Section 12 asks for a `vitals-check` skill against the live site. Only
+`vitals-ready`, the pre-launch version, is installed here, and it was run in the
+first pass. If you install `vitals-check` I will run it and report both scores.
