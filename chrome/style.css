@@ -753,3 +753,35 @@ body.popup { position: relative; }
   background-color: var(--scroll-over);
 }
 ::-webkit-scrollbar-button { display: none; }
+
+/* ---- who made it -------------------------------------------------------- */
+
+/* A quiet credit at the foot of the settings page. The mark is a bundled file,
+   never fetched from a server — the extension makes no network requests and
+   that must stay true. */
+.made-by {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8125rem;
+  color: var(--muted-fg);
+}
+.made-by a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--muted-fg);
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 0.15rem 0.3rem;
+  margin: 0 -0.3rem;
+  transition: color 0.14s ease, background-color 0.14s ease;
+}
+.made-by a:hover { color: var(--fg); background: var(--muted); }
+.made-by a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.made-by img { border-radius: 5px; display: block; }
+.made-by strong { color: var(--fg); font-weight: 700; }
+.made-by-sep { opacity: 0.45; }

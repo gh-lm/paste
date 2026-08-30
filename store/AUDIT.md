@@ -59,6 +59,15 @@ telling people not to store them.
   `PM` object but called only inside `store.js`. Exports removed; they remain as
   internals. All 14 test files still pass and both pages load clean.
 
+## Later addition
+
+A credit was added to the foot of the settings page — the Lightmorphic mark
+with a link to lightmorphic.com, plus links to the website and the source. This
+is permitted: it is attribution inside the extension's own page, not
+advertising and not injected into anyone's browsing. The mark is a bundled
+file, never fetched, so the "no network requests of any kind" claim still
+holds.
+
 ## Store readiness
 
 - 128×128 icon: present.
