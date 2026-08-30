@@ -663,16 +663,13 @@ var PM = (function () {
   }
 
   return {
-    ROOT_TITLE: ROOT_TITLE,
     MAX_SLOT: MAX_SLOT,
     MAX_TABS: MAX_TABS,
     MAX_TAB_NAME: MAX_TAB_NAME,
     trimTabName: trimTabName,
-    tabNameProblem: tabNameProblem,
     ACCENTS: ACCENTS,
     normaliseHex: normaliseHex,
     applyAccent: applyAccent,
-    DEFAULTS: DEFAULTS,
     encodeNote: encodeNote,
     decodeNote: decodeNote,
     labelFor: labelFor,
