@@ -1,29 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800">
-  <rect width="1280" height="800" fill="#f6f3ec"/>
-  <g>
-    <path d="M1140 0h22v58l-11-9-11 9z" fill="#fbc711"/>
-    <path d="M1170 0h22v42l-11-7-11 7z" fill="#7fb2a6"/>
-    <path d="M1200 0h22v74l-11-10-11 10z" fill="#d98a6a"/>
-    <path d="M1230 0h22v48l-11-8-11 8z" fill="#8f8bc4"/>
-  </g>
-  <rect x="80" y="72" width="34" height="34" rx="9" fill="#111827"/>
-  <rect x="88" y="81" width="13" height="4.5" rx="2.2" fill="#fbc711"/>
-  <rect x="88" y="89" width="19" height="4.5" rx="2.2" fill="#fbc711"/>
-  <rect x="88" y="97" width="10" height="4.5" rx="2.2" fill="#fbc711"/>
-  <text x="126" y="97" font-family="system-ui, -apple-system, sans-serif"
-        font-weight="700" font-size="21" fill="#17171c">Pastemorphic</text>
+  <defs>
+    <radialGradient id="glow" cx="72%" cy="44%" r="56%">
+      <stop offset="0%"  stop-color="#fbc711" stop-opacity="0.15"/>
+      <stop offset="60%" stop-color="#fbc711" stop-opacity="0.035"/>
+      <stop offset="100%" stop-color="#fbc711" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
 
-  <g font-family="'Iowan Old Style', Palatino, Georgia, serif" fill="#17171c">
-    <text x="80" y="250" font-size="52">Click a line.</text>
-    <text x="80" y="312" font-size="52">It goes where you need it.</text>
-  </g>
+  <rect width="1280" height="800" fill="#0b0b0f"/>
+  <rect width="1280" height="800" fill="url(#glow)"/>
 
-  <g font-family="'Iowan Old Style', Palatino, Georgia, serif" fill="#56545f" font-size="23">
-    <text x="80" y="382">Onto your clipboard, or straight into the box you</text>
-    <text x="80" y="416">were typing in. Every note is an ordinary bookmark,</text>
-    <text x="80" y="450">so they follow you between computers.</text>
-  </g>
+  <rect x="88" y="80" width="40" height="40" rx="11" fill="#fbc711"/>
+  <rect x="97" y="90"  width="15" height="5" rx="2.5" fill="#111827"/>
+  <rect x="97" y="99"  width="22" height="5" rx="2.5" fill="#111827"/>
+  <rect x="97" y="108" width="11" height="5" rx="2.5" fill="#111827"/>
+  <text x="142" y="108" font-family="Manrope" font-weight="800" font-size="23"
+        fill="#fafafa" letter-spacing="-0.4">Pastemorphic</text>
 
-  <text x="80" y="700" font-family="ui-monospace, Menlo, monospace" font-size="13"
-        letter-spacing="2.6" fill="#56545f">NO ACCOUNT · NO SERVER · FREE SOFTWARE</text>
+  <text x="88" y="288" font-family="Manrope" font-weight="800" font-size="60"
+        fill="#fafafa" letter-spacing="-2.2">Click a line.</text>
+  <text x="88" y="364" font-family="Manrope" font-weight="800" font-size="60"
+        fill="#fbc711" letter-spacing="-2.2">It goes where</text>
+  <text x="88" y="440" font-family="Manrope" font-weight="800" font-size="60"
+        fill="#fbc711" letter-spacing="-2.2">you need it.</text>
+
+  <text x="88" y="510" font-family="Manrope" font-weight="500" font-size="23"
+        fill="#a1a1aa">Onto your clipboard, or straight into the box you were</text>
+  <text x="88" y="544" font-family="Manrope" font-weight="500" font-size="23"
+        fill="#a1a1aa">typing in. Every note is an ordinary bookmark.</text>
+
+  <text x="88" y="646" font-family="Manrope" font-weight="700" font-size="14"
+        fill="#6b6b76" letter-spacing="3">NO ACCOUNT · NO SERVER · FREE SOFTWARE</text>
 </svg>

@@ -73,7 +73,10 @@ holds.
 
 - 128×128 icon: present.
 - Screenshot 1280×800: `store/screenshot-1280x800.png`.
-- Promotional tile 440×280: `store/promo-tile-440x280.png`.
+- Small promotional tile 440×280: `store/promo-tile-440x280.png`.
+- Marquee promotional tile 1400×560: `store/marquee-1400x560.png`.
+- All three are 24-bit PNG with no alpha channel, and nothing is clipped at an
+  edge.
 - Privacy policy: live at
   https://pastemorphic.lightmorphic.com/privacy.html (returns 200).
 - Keyboard shortcuts: Ctrl+Shift+1 to 4. None clash with a reserved Chrome
