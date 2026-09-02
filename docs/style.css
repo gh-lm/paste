@@ -22,6 +22,7 @@
   --ink: #17171c;
   --ink-soft: #56545f;
   --rule: #ddd6c7;
+  --control-edge: #8a8579;
   --mark: #fbc711;
   --link: #1f5c53;
   --on-mark: #3d3103;
@@ -48,6 +49,7 @@
     --ink: #f1eee4;
     --ink-soft: #a5a2ae;
     --rule: #2e2e39;
+  --control-edge: #6e6e7b;
     --link: #8ecabe;
     --on-mark: #3d3103;
   }
@@ -59,6 +61,7 @@
   --ink: #f1eee4;
   --ink-soft: #a5a2ae;
   --rule: #2e2e39;
+  --control-edge: #6e6e7b;
   --link: #8ecabe;
   --on-mark: #3d3103;
 }
@@ -84,6 +87,12 @@ body {
    letter, each one sitting at its own slight angle as though it had been laid
    by hand, and rising in a slow wave. The motion is the emphasis. */
 .mark {
+  display: inline-block;
+}
+/* the letters are separate boxes so each can move on its own, which also means
+   a line could break between any two of them. Words are held together here so
+   it only ever breaks at a space. */
+.mark .w {
   display: inline-block;
   white-space: nowrap;
 }
@@ -272,7 +281,7 @@ p { margin: 0 0 1.2rem; }
 
 .small {
   font-family: var(--mono);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--ink-soft);
@@ -457,7 +466,7 @@ footer {
   margin-top: 5rem;
   padding-top: 1.6rem;
   font-family: var(--mono);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   letter-spacing: 0.06em;
   color: var(--ink-soft);
 }
@@ -507,7 +516,7 @@ footer .spacer { flex: 1 1 auto; }
   width: 34px;
   height: 34px;
   padding: 0;
-  border: 1px solid var(--rule);
+  border: 1px solid var(--control-edge);
   border-radius: 50%;
   background: transparent;
   color: var(--ink-soft);
@@ -524,3 +533,19 @@ footer .spacer { flex: 1 1 auto; }
 /* the guidelines ask for this on anything tapped: it removes the browser's
    300ms wait for a possible double-tap */
 a, button, summary { touch-action: manipulation; }
+
+/* On anything without a fine pointer, the standalone controls grow to a size a
+   thumb can hit. Links inside a sentence are left alone: they are exempt, and
+   padding them out would break the line spacing of the prose around them. */
+@media (pointer: coarse), (max-width: 1023px) {
+  .themer { width: 44px; height: 44px; }
+  .masthead nav a,
+  .rail a,
+  .masthead .name,
+  footer a,
+  .skip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
