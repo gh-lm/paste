@@ -2,6 +2,10 @@
 <html lang="en-GB">
 <head>
 <meta charset="utf-8" />
+<!-- GitHub Pages cannot set response headers, so the policy travels in
+     the page. The two inline scripts are allowed by hash, not by
+     'unsafe-inline', so anything injected is refused. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-EKIEvS1TNUYdgF2hYP6ya0N4Og8f6osU7HFrwJkAQMc=' 'sha256-HyI0Hp4MCB6hV9LEXMB4OpmfofLUNdsWF7+cr8101e4='; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Privacy | Lightmorphic Paste</title>
 <meta name="description" content="Lightmorphic Paste collects nothing. No account, no server, no analytics, no network requests at all. What it stores, where, and why each permission is asked." />

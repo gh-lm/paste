@@ -99,9 +99,23 @@ body {
 .mark .l {
   display: inline-block;
   animation: hop 3.4s ease-in-out infinite;
-  animation-delay: calc(var(--i, 0) * 70ms);
   will-change: transform;
 }
+/* the wave runs left to right through each word */
+.mark .l:nth-child(1) { animation-delay: 0ms; }
+.mark .l:nth-child(2) { animation-delay: 70ms; }
+.mark .l:nth-child(3) { animation-delay: 140ms; }
+.mark .l:nth-child(4) { animation-delay: 210ms; }
+.mark .l:nth-child(5) { animation-delay: 280ms; }
+.mark .l:nth-child(6) { animation-delay: 350ms; }
+.mark .l:nth-child(7) { animation-delay: 420ms; }
+.mark .l:nth-child(8) { animation-delay: 490ms; }
+.mark .l:nth-child(9) { animation-delay: 560ms; }
+.mark .l:nth-child(10) { animation-delay: 630ms; }
+.mark .l:nth-child(11) { animation-delay: 700ms; }
+.mark .l:nth-child(12) { animation-delay: 770ms; }
+.mark .l:nth-child(13) { animation-delay: 840ms; }
+.mark .l:nth-child(14) { animation-delay: 910ms; }
 .mark .l:nth-child(odd)  { transform: rotate(-3deg); }
 .mark .l:nth-child(even) { transform: rotate(2.5deg) translateY(0.03em); }
 .mark .l:nth-child(3n)   { transform: rotate(-1.5deg) translateY(-0.02em); }
@@ -567,3 +581,6 @@ a, button, summary { touch-action: manipulation; }
 }
 .legal a { color: var(--ink-soft); }
 .legal a:hover, .legal a:focus-visible { color: var(--ink); }
+
+/* the link on to the next page, set apart from the section above it */
+.onward { margin-top: 2.4rem; }

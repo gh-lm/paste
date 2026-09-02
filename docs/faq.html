@@ -2,6 +2,10 @@
 <html lang="en-GB">
 <head>
 <meta charset="utf-8" />
+<!-- GitHub Pages cannot set response headers, so the policy travels in
+     the page. The two inline scripts are allowed by hash, not by
+     'unsafe-inline', so anything injected is refused. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-EKIEvS1TNUYdgF2hYP6ya0N4Og8f6osU7HFrwJkAQMc=' 'sha256-HyI0Hp4MCB6hV9LEXMB4OpmfofLUNdsWF7+cr8101e4='; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Questions and answers | Lightmorphic Paste</title>
 <meta name="description" content="Plain answers about Lightmorphic Paste: what it costs, where notes are stored, whether they sync, which browsers work, and why passwords do not belong in it." />
@@ -213,7 +217,7 @@
 </header>
 
 <main id="main">
-  <h1>Questions <span class="mark" aria-label="and answers"><span class="w"><span class="l" aria-hidden="true" style="--i:0">a</span><span class="l" aria-hidden="true" style="--i:1">n</span><span class="l" aria-hidden="true" style="--i:2">d</span></span> <span class="w"><span class="l" aria-hidden="true" style="--i:3">a</span><span class="l" aria-hidden="true" style="--i:4">n</span><span class="l" aria-hidden="true" style="--i:5">s</span><span class="l" aria-hidden="true" style="--i:6">w</span><span class="l" aria-hidden="true" style="--i:7">e</span><span class="l" aria-hidden="true" style="--i:8">r</span><span class="l" aria-hidden="true" style="--i:9">s</span></span></span></h1>
+  <h1>Questions <span class="mark" aria-label="and answers"><span class="w"><span class="l" aria-hidden="true">a</span><span class="l" aria-hidden="true">n</span><span class="l" aria-hidden="true">d</span></span> <span class="w"><span class="l" aria-hidden="true">a</span><span class="l" aria-hidden="true">n</span><span class="l" aria-hidden="true">s</span><span class="l" aria-hidden="true">w</span><span class="l" aria-hidden="true">e</span><span class="l" aria-hidden="true">r</span><span class="l" aria-hidden="true">s</span></span></span></h1>
   <p class="lead">If something here is unclear or missing, the answer is
   probably in the <a href="help.html">help page</a>, or ask on
   <a href="https://github.com/lightmorphic/paste/issues">GitHub</a>.</p>
