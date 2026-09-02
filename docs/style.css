@@ -23,7 +23,6 @@
   --ink-soft: #56545f;
   --rule: #ddd6c7;
   --mark: #fbc711;
-  --mark-soft: #fde9a4;
   --link: #1f5c53;
   --on-mark: #3d3103;
   --ribbon-1: #fbc711;
@@ -49,7 +48,6 @@
     --ink: #f1eee4;
     --ink-soft: #a5a2ae;
     --rule: #2e2e39;
-    --mark-soft: #4a3c07;
     --link: #8ecabe;
     --on-mark: #3d3103;
   }
@@ -61,7 +59,6 @@
   --ink: #f1eee4;
   --ink-soft: #a5a2ae;
   --rule: #2e2e39;
-  --mark-soft: #4a3c07;
   --link: #8ecabe;
   --on-mark: #3d3103;
 }
