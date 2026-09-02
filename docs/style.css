@@ -549,3 +549,15 @@ a, button, summary { touch-action: manipulation; }
     min-height: 44px;
   }
 }
+
+/* the legal row, under the address block */
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.4rem;
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+}
+.legal a { color: var(--ink-soft); }
+.legal a:hover, .legal a:focus-visible { color: var(--ink); }

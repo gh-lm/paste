@@ -10,7 +10,7 @@ Licence: GNU GPL v3. Version 1.0.0.
 Published by Lightmorphic Ltd, 82a James Carter Road, Mildenhall, IP28 7DE,
 United Kingdom. Registered in England and Wales, company number 17423646:
 https://find-and-update.company-information.service.gov.uk/company/17423646
-Contact: paste@lightmorphic.com
+Contact: newsletter@lightmorphic.com
 Works in Chrome, Brave, Vivaldi, Edge and other Chromium browsers, and Firefox.
 
 ## Key facts
