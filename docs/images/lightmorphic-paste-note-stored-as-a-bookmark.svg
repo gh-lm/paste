@@ -35,7 +35,7 @@
     <text class="lbl" x="0" y="0">ITS WEB ADDRESS</text>
     <rect class="paper" x="0" y="10" width="600" height="34" rx="4"/>
     <rect class="thin" x="0" y="10" width="600" height="34" rx="4"/>
-    <text class="code" x="12" y="32">https://lightmorphic.invalid/#pm1:%7B%22c%22%3A%22charlie%40example.com%22%7D</text>
+    <text class="code" x="12" y="32">https://lightmorphic.invalid/#pm1:%7B%22c%22%3A%22alex%40example.com%22%7D</text>
     <path class="mark" d="M232 15h330v24H232z" opacity=".35"/>
     <text class="lbl" x="232" y="60">THE NOTE ITSELF LIVES IN HERE</text>
   </g>

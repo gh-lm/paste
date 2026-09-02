@@ -20,9 +20,11 @@
   <!-- header -->
   <rect class="mark" x="24" y="26" width="14" height="14" rx="4"/>
   <text class="t b" x="46" y="38">Lightmorphic Paste</text>
-  <circle class="mark" cx="152" cy="33" r="11"/>
-  <path class="ink" d="M147 30h7M147 34h5" stroke-width="1.4"/>
-  <path class="ink" d="M157 31v6M154 34h6" stroke-width="1.4"/>
+  <!-- the longer name reaches x=167, so the button sits clear of it, midway
+       between the name and the icons the way the popup itself puts it -->
+  <circle class="mark" cx="231" cy="33" r="11"/>
+  <path class="ink" d="M226 30h7M226 34h5" stroke-width="1.4"/>
+  <path class="ink" d="M236 31v6M233 34h6" stroke-width="1.4"/>
   <circle class="thin" cx="300" cy="33" r="6"/><path class="thin" d="M305 38l4 4"/>
   <circle class="thin" cx="330" cy="33" r="7"/>
   <circle class="thin" cx="360" cy="33" r="7"/><circle class="thin" cx="360" cy="33" r="2.5"/>
@@ -39,14 +41,14 @@
   <!-- notes -->
   <g>
     <text class="t" x="24" y="122">Email address</text>
-    <text class="s" x="24" y="138">charlie@example.com</text>
+    <text class="s" x="24" y="138">alex@example.com</text>
     <rect class="mark" x="286" y="110" width="88" height="16" rx="8"/>
     <text class="s" x="296" y="122">Ctrl+Shift+1</text>
     <path class="thin" d="M24 152h352"/>
   </g>
   <g>
     <text class="t" x="24" y="180">Sign off</text>
-    <text class="s" x="24" y="196">Kind regards, Charlie</text>
+    <text class="s" x="24" y="196">Kind regards, Alex</text>
     <rect class="mark" x="286" y="168" width="88" height="16" rx="8"/>
     <text class="s" x="296" y="180">Ctrl+Shift+2</text>
     <path class="thin" d="M24 210h352"/>
