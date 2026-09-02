@@ -43,6 +43,11 @@ is inside it, not by its name, so nothing breaks.
 
 ## Installing
 
+### From the Chrome Web Store
+
+[Lightmorphic Paste on the Chrome Web Store](https://chromewebstore.google.com/detail/lightmorphic-paste/heefkhhoccopkeecmaainfdgppeljkfb) — works in Chrome, Brave,
+Vivaldi and Edge, and updates arrive on their own.
+
 ### From a release — no Google account needed
 
 1. Download the latest zip from [releases](https://github.com/lightmorphic/paste/releases)
