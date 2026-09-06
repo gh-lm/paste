@@ -460,7 +460,7 @@ footer {
   letter-spacing: 0.06em;
   color: var(--ink-soft);
 }
-.footer-row {
+.project {
   display: flex;
   gap: 1.6rem;
   flex-wrap: wrap;
@@ -504,6 +504,7 @@ a, button, summary { touch-action: manipulation; }
   .rail a,
   .masthead .name,
   footer a,
+  .marks a,
   .skip {
     display: inline-flex;
     align-items: center;
@@ -523,7 +524,7 @@ a, button, summary { touch-action: manipulation; }
 .subfooter {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   gap: 1.2rem 2rem;
   margin-top: 1.4rem;
   padding-top: 1.1rem;
@@ -535,6 +536,8 @@ a, button, summary { touch-action: manipulation; }
   flex-direction: column;
   gap: 0.15rem;
   color: var(--ink-soft);
+  /* each of the three lines is one sentence, so none of them wraps mid-way */
+  max-width: none;
 }
 .subfooter .legal {
   margin-left: auto;
@@ -548,4 +551,45 @@ a, button, summary { touch-action: manipulation; }
 
 @media (max-width: 44rem) {
   .subfooter .legal { margin-left: 0; }
+}
+
+/* The repository band: the two marks on the left, the links about this project
+   on the right. Same shape as the legal band under it, so the footer reads as
+   three rules across the page rather than three unrelated rows. */
+.repo-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 2rem;
+  margin-top: 1.4rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--rule);
+}
+.marks {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.marks a {
+  color: var(--ink-soft);
+  display: inline-flex;
+  transition: color 0.14s ease;
+}
+.marks a:hover,
+.marks a:focus-visible { color: var(--ink); }
+.marks svg { display: block; }
+
+.repo-links {
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.4rem;
+}
+.repo-links a { color: var(--ink-soft); }
+.repo-links a:hover,
+.repo-links a:focus-visible { color: var(--ink); }
+
+@media (max-width: 52rem) {
+  .repo-links { margin-left: 0; }
 }
