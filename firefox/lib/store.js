@@ -117,10 +117,6 @@ var PM = (function () {
   function accentVars(hex) {
     const rgb = toRgb(hex);
     return {
-      '--accent-light': hex,
-      '--accent-hover-light': mix(rgb, BLACK, 0.12),
-      '--accent-container-light': mix(rgb, WHITE, 0.88),
-      '--on-accent-container-light': mix(rgb, BLACK, 0.65),
       '--accent-dark': hex,
       '--accent-hover-dark': mix(rgb, WHITE, 0.12),
       '--accent-container-dark': mix(rgb, BLACK, 0.72),
@@ -655,7 +651,6 @@ var PM = (function () {
     seenNotice: false,
     accent: 'brand',
     accentHex: '',
-    theme: 'system',
     currentTab: '',
     clickPastes: false
   };

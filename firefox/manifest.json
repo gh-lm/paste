@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Lightmorphic Paste",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Keep lines of text in your browser. Click one to copy or paste it. Stored in your bookmarks, so it syncs with no account.",
   "action": {
     "default_icon": {

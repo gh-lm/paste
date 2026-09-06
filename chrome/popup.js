@@ -9,7 +9,6 @@ const ICONS = {
   edit: '<path d="M4 20h4L19.5 8.5a2.1 2.1 0 0 0-3-3L5 17v3Z"/><path d="M14.5 5.5 18.5 9.5"/>',
   trash: '<path d="M4 7h16"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7"/><path d="M6.5 7 7.5 20h9L17.5 7"/>',
   search: '<circle cx="11" cy="11" r="6"/><path d="m15.5 15.5 4 4"/>',
-  // A ring with teeth on it, not a disc with rays — that reads as a sun.
   gear: '<circle cx="12" cy="12" r="7.3"/><circle cx="12" cy="12" r="3"/>' +
     '<path d="M19.3 12h2.5M17.2 17.2l1.7 1.7M12 19.3v2.5M6.8 17.2l-1.7 1.7' +
     'M4.7 12H2.2M6.8 6.8 5.1 5.1M12 4.7V2.2M17.2 6.8l1.7-1.7"/>',
@@ -18,9 +17,6 @@ const ICONS = {
   // a line of text being added, so it is not mistaken for the new-tab plus
   notePlus: '<path d="M4 7h11M4 12h7M4 17h5"/><path d="M17 12v8M13 16h8"/>',
   check: '<path d="m5 12.5 4.5 4.5L19 7.5"/>',
-  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M4.2 4.2l1.5 1.5M18.3 18.3l1.5 1.5M3 12h2M19 12h2M4.2 19.8l1.5-1.5M18.3 5.7l1.5-1.5"/>',
-  moon: '<path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/>',
-  auto: '<circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" stroke="none"/>',
   grip: '<circle cx="9" cy="7" r="1.3"/><circle cx="9" cy="12" r="1.3"/><circle cx="9" cy="17" r="1.3"/><circle cx="15" cy="7" r="1.3"/><circle cx="15" cy="12" r="1.3"/><circle cx="15" cy="17" r="1.3"/>'
 };
 
@@ -83,68 +79,9 @@ function slotTooltip(slot) {
     : 'No keys are set for slot ' + slot + ' — set them from Settings';
 }
 
-/* ---- theme -------------------------------------------------------------- */
-
-const THEME_ICON = { light: 'sun', dark: 'moon' };
-const THEME_WORDS = {
-  system: 'Following the browser',
-  light: 'Always light',
-  dark: 'Always dark'
-};
-
-const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-// What is actually on screen right now, once "follow the browser" is resolved.
-function resolvedTheme(theme) {
-  if (theme === 'light' || theme === 'dark') return theme;
-  return darkQuery.matches ? 'dark' : 'light';
-}
-
 function applySettings(s) {
   state.settings = s;
-  const root = document.documentElement;
-  PM.applyAccent(root, s);
-  if (s.theme === 'light' || s.theme === 'dark') root.setAttribute('data-theme', s.theme);
-  else root.removeAttribute('data-theme');
-  paintThemeButton();
-}
-
-function paintThemeButton() {
-  const button = $('btnTheme');
-  if (!button) return;
-  const theme = (state.settings && state.settings.theme) || 'system';
-  const showing = resolvedTheme(theme);
-
-  // In automatic mode the button shows what is actually on screen, with a small
-  // dot to say the browser is choosing rather than you.
-  button.innerHTML = svg(THEME_ICON[showing]);
-  button.classList.toggle('auto', theme === 'system');
-
-  const now = theme === 'system' ? ' (' + showing + ' just now)' : '';
-  const label = THEME_WORDS[theme] + now + ' — click for ' +
-    THEME_WORDS[nextTheme(theme)].toLowerCase();
-  button.title = label;
-  button.setAttribute('aria-label', label);
-}
-
-// Order the three so the first click always changes what you can see: from
-// automatic you go to the opposite of whatever the browser is doing.
-function themeOrder() {
-  const browser = darkQuery.matches ? 'dark' : 'light';
-  return ['system', browser === 'dark' ? 'light' : 'dark', browser];
-}
-
-function nextTheme(theme) {
-  const order = themeOrder();
-  const at = order.indexOf(theme);
-  return order[at < 0 ? 0 : (at + 1) % order.length];
-}
-
-async function cycleTheme() {
-  const theme = nextTheme((state.settings && state.settings.theme) || 'system');
-  await PM.setSettings({ theme: theme });
-  applySettings(Object.assign({}, state.settings, { theme: theme }));
-  say(THEME_WORDS[theme], true);
+  PM.applyAccent(document.documentElement, s);
 }
 
 /* ---- rendering ---------------------------------------------------------- */
@@ -771,14 +708,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     await PM.setSettings({ seenNotice: true });
   });
 
-  $('btnTheme').addEventListener('click', cycleTheme);
 
   // If the browser flips to dark while this is open, follow it straight away.
-  const onSystemTheme = () => {
-    if (!state.settings || state.settings.theme === 'system') paintThemeButton();
-  };
-  if (darkQuery.addEventListener) darkQuery.addEventListener('change', onSystemTheme);
-  else darkQuery.addListener(onSystemTheme);
 
   $('btnSettings').addEventListener('click', () => {
     // Opening settings always closes the popup, so leave no doubt it happened.

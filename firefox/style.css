@@ -7,146 +7,88 @@
 }
 
 :root {
-  color-scheme: light dark;
-  --bg: #ffffff;  --fg: #09090b;
-  --panel: #ffffff;  --panel-border: rgba(24, 24, 40, 0.10);
-  --border: #e4e4e7;  --muted: #f4f4f5;  --muted-fg: #71717a;
-  --shadow-panel: 0 1px 2px rgba(24,24,40,.05), 0 8px 24px -16px rgba(24,24,40,.18);
-
-  --brand-navy: #111827;
-  --link: #1b74bc;
-  --danger: #cc372d;   --danger-bg: #fef2f1;
-  --success: #38813a;  --success-bg: #f2f9f3;
-  --warning: #8f6c03;  --warning-bg: #fffbee;
-  --info: #1b74bc;     --info-bg: #f0f8fe;
-
-  --radius: 0.875rem;
-  --panel-radius: 1.375rem;
-
-  --scroll: rgba(24, 24, 40, 0.22);
-  --scroll-over: rgba(24, 24, 40, 0.42);
-
-  --on-accent: #645007;
-  --accent: var(--accent-light, #fbc711);
-  --accent-hover: var(--accent-hover-light, #ddaf0f);
-  --accent-container: var(--accent-container-light, #fff8e2);
-  --on-accent-container: var(--on-accent-container-light, #5f4c06);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #09090b;  --fg: #fafafa;
-    --panel: #1b1d29;  --panel-border: rgba(255,255,255,.09);
-    --border: #27272a;  --muted: #1c1c1f;  --muted-fg: #a1a1aa;
-    --shadow-panel: 0 1px 2px rgba(0,0,0,.35), 0 8px 24px -16px rgba(0,0,0,.6);
-    --link: #2295f1;
-    --scroll: rgba(255, 255, 255, 0.20);
-    --scroll-over: rgba(255, 255, 255, 0.38);
-    --danger: #f34236;   --danger-bg: #350f0c;
-    --success: #4bae4f;  --success-bg: #102611;
-    --warning: #ffc006;  --warning-bg: #382a01;
-    --info: #2295f1;     --info-bg: #072135;
-    --accent: var(--accent-dark, #fbc711);
-    --accent-hover: var(--accent-hover-dark, #ddaf0f);
-    --accent-container: var(--accent-container-dark, #4b3c05);
-    --on-accent-container: var(--on-accent-container-dark, #fde694);
-  }
-}
-
-:root[data-theme="dark"] {
+  /* Dark only. There is no light theme and no switch. */
+  color-scheme: dark;
   --bg: #09090b;  --fg: #fafafa;
   --panel: #1b1d29;  --panel-border: rgba(255,255,255,.09);
   --border: #27272a;  --muted: #1c1c1f;  --muted-fg: #a1a1aa;
   --shadow-panel: 0 1px 2px rgba(0,0,0,.35), 0 8px 24px -16px rgba(0,0,0,.6);
+
+  --brand-navy: #111827;
   --link: #2295f1;
   --danger: #f34236;   --danger-bg: #350f0c;
   --success: #4bae4f;  --success-bg: #102611;
   --warning: #ffc006;  --warning-bg: #382a01;
   --info: #2295f1;     --info-bg: #072135;
+
+  --radius: 0.875rem;
+  --panel-radius: 1.375rem;
+
+  --scroll: rgba(255, 255, 255, 0.20);
+  --scroll-over: rgba(255, 255, 255, 0.38);
+
+  --on-accent: #645007;
   --accent: var(--accent-dark, #fbc711);
   --accent-hover: var(--accent-hover-dark, #ddaf0f);
   --accent-container: var(--accent-container-dark, #4b3c05);
   --on-accent-container: var(--on-accent-container-dark, #fde694);
-  --scroll: rgba(255, 255, 255, 0.20);
-  --scroll-over: rgba(255, 255, 255, 0.38);
 }
 
 /* ---- the eleven named accents; brand yellow is the default above, and a
-       colour of your own is applied as inline variables ------------------ */
+       colour of your own is applied as inline variables. Dark only, so only the
+       dark values are kept ------------------------------------------------ */
 
 :root[data-accent="red"] {
-  --accent-light: #f34236; --accent-hover-light: #d63a30;
-  --accent-container-light: #fee8e7; --on-accent-container-light: #5c1915;
   --accent-dark: #f34236; --accent-hover-dark: #f4594e;
   --accent-container-dark: #491410; --on-accent-container-dark: #faaaa5;
   --on-accent: #350f0c;
 }
 :root[data-accent="pink"] {
-  --accent-light: #e8207e; --accent-hover-light: #cc1c6f;
-  --accent-container-light: #fce4f0; --on-accent-container-light: #580c30;
   --accent-dark: #e8207e; --accent-hover-dark: #eb3b8d;
   --accent-container-dark: #460a26; --on-accent-container-dark: #f59bc5;
   --on-accent: #1e0410;
 }
 :root[data-accent="purple"] {
-  --accent-light: #9b26ae; --accent-hover-light: #882199;
-  --accent-container-light: #f3e5f5; --on-accent-container-light: #3b0e42;
   --accent-dark: #b763c5; --accent-hover-dark: #c076cc;
   --accent-container-dark: #46114e; --on-accent-container-dark: #d29ddb;
   --on-accent: #ffffff;
 }
 :root[data-accent="indigo"] {
-  --accent-light: #3d51b4; --accent-hover-light: #36479e;
-  --accent-container-light: #e8eaf6; --on-accent-container-light: #171f44;
   --accent-dark: #7382c9; --accent-hover-dark: #8491cf;
   --accent-container-dark: #1b2451; --on-accent-container-dark: #a8b1dd;
   --on-accent: #ffffff;
 }
 :root[data-accent="blue"] {
-  --accent-light: #2295f1; --accent-hover-light: #1e83d4;
-  --accent-container-light: #e4f2fd; --on-accent-container-light: #0d395c;
   --accent-dark: #2295f1; --accent-hover-dark: #3da2f3;
   --accent-container-dark: #0a2d48; --on-accent-container-dark: #9ccff9;
   --on-accent: #0a2a43;
 }
 :root[data-accent="cyan"] {
-  --accent-light: #00bcd3; --accent-hover-light: #00a5ba;
-  --accent-container-light: #e0f7fa; --on-accent-container-light: #004750;
   --accent-dark: #00bcd3; --accent-hover-dark: #00a9be;
   --accent-container-dark: #00383f; --on-accent-container-dark: #8ce1eb;
   --on-accent: #00464e;
 }
 :root[data-accent="teal"] {
-  --accent-light: #019587; --accent-hover-light: #018377;
-  --accent-container-light: #e1f2f1; --on-accent-container-light: #003933;
   --accent-dark: #019587; --accent-hover-dark: #1fa295;
   --accent-container-dark: #002d29; --on-accent-container-dark: #8dcfc9;
   --on-accent: #00211e;
 }
 :root[data-accent="green"] {
-  --accent-light: #4bae4f; --accent-hover-light: #429946;
-  --accent-container-light: #e9f5ea; --on-accent-container-light: #1c421e;
   --accent-dark: #4bae4f; --accent-hover-dark: #61b864;
   --accent-container-dark: #173418; --on-accent-container-dark: #aedbb0;
   --on-accent: #173618;
 }
 :root[data-accent="orange"] {
-  --accent-light: #fe9700; --accent-hover-light: #e08500;
-  --accent-container-light: #fff3e0; --on-accent-container-light: #613900;
   --accent-dark: #fe9700; --accent-hover-dark: #e58800;
   --accent-container-dark: #4c2d00; --on-accent-container-dark: #ffd08c;
   --on-accent: #5e3800;
 }
 :root[data-accent="brown"] {
-  --accent-light: #795649; --accent-hover-light: #6a4c40;
-  --accent-container-light: #efebe9; --on-accent-container-light: #2e211c;
   --accent-dark: #9f857c; --accent-hover-dark: #aa948c;
   --accent-container-dark: #362721; --on-accent-container-dark: #c3b3ad;
   --on-accent: #ffffff;
 }
 :root[data-accent="grey"] {
-  --accent-light: #9e9d9e; --accent-hover-light: #8b8a8b;
-  --accent-container-light: #f3f3f3; --on-accent-container-light: #3c3c3c;
   --accent-dark: #9e9d9e; --accent-hover-dark: #aaa9aa;
   --accent-container-dark: #2f2f2f; --on-accent-container-dark: #d3d3d3;
   --on-accent: #363536;
@@ -478,19 +420,6 @@ body.popup { position: relative; }
   color: var(--muted-fg);
   border: 1px dashed var(--border);
   padding: 0 6px;
-}
-
-/* the light/dark button, when the browser is the one choosing */
-#btnTheme { position: relative; }
-#btnTheme.auto::after {
-  content: '';
-  position: absolute;
-  right: 4px;
-  bottom: 4px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--accent);
 }
 
 /* tab strip: scrolls when there are more than fit, with a fade at whichever

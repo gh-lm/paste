@@ -1,8 +1,9 @@
 /* ---------------------------------------------------------------------------
-   Lightmorphic Paste — site styles
+   Lightmorphic Paste, site styles
 
-   The look is editorial rather than product-page: a warm paper ground, a serif
-   for anything you actually read, and a monospace only for labels and numbers.
+   The look is editorial rather than product-page: a dark ground, a serif for
+   anything you actually read, and a monospace only for labels and numbers.
+   Dark is the only theme. There is no light mode and no switch.
    The single accent is a marker-pen stroke, drawn behind words rather than
    under them, so nothing on the page is underlined.
 --------------------------------------------------------------------------- */
@@ -15,16 +16,15 @@
 }
 
 :root {
-  color-scheme: light dark;
+  color-scheme: dark;
 
-  --paper: #f6f3ec;
-  --paper-deep: #efeadf;
-  --ink: #17171c;
-  --ink-soft: #56545f;
-  --rule: #ddd6c7;
-  --control-edge: #8a8579;
+  --paper: #14141a;
+  --paper-deep: #1b1b23;
+  --ink: #f1eee4;
+  --ink-soft: #a5a2ae;
+  --rule: #2e2e39;
   --mark: #fbc711;
-  --link: #1f5c53;
+  --link: #8ecabe;
   --on-mark: #3d3103;
   --ribbon-1: #fbc711;
   --ribbon-2: #7fb2a6;
@@ -38,32 +38,6 @@
   --sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --measure: 34rem;
-}
-
-/* Dark comes from the browser by default. The button in the corner overrides
-   it either way, and that choice wins over the browser's. */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper: #14141a;
-    --paper-deep: #1b1b23;
-    --ink: #f1eee4;
-    --ink-soft: #a5a2ae;
-    --rule: #2e2e39;
-  --control-edge: #6e6e7b;
-    --link: #8ecabe;
-    --on-mark: #3d3103;
-  }
-}
-
-:root[data-theme="dark"] {
-  --paper: #14141a;
-  --paper-deep: #1b1b23;
-  --ink: #f1eee4;
-  --ink-soft: #a5a2ae;
-  --rule: #2e2e39;
-  --control-edge: #6e6e7b;
-  --link: #8ecabe;
-  --on-mark: #3d3103;
 }
 
 * { box-sizing: border-box; }
@@ -252,8 +226,6 @@ main { grid-column: 2; min-width: 0; }
   text-transform: uppercase;
 }
 
-/* the light and dark switch sits last, hard against the right edge */
-.masthead .themer { margin-left: 1.4rem; align-self: center; }
 
 /* ---- headings and text -------------------------------------------------- */
 
@@ -500,13 +472,6 @@ footer .spacer { flex: 1 1 auto; }
    where it is registered and its registered office on its own sites, so this
    is quiet but plainly readable rather than hidden behind anything. */
 .who {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  margin-top: 1.6rem;
-  padding-top: 1.2rem;
-  border-top: 1px solid var(--rule);
-  font-style: normal;
   letter-spacing: 0.04em;
   line-height: 1.6;
   max-width: 34rem;
@@ -526,27 +491,6 @@ footer .spacer { flex: 1 1 auto; }
 }
 
 
-/* ---- light and dark ----------------------------------------------------- */
-
-.themer {
-  flex: none;
-  width: 34px;
-  height: 34px;
-  padding: 0;
-  border: 1px solid var(--control-edge);
-  border-radius: 50%;
-  background: transparent;
-  color: var(--ink-soft);
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-  transition: color 0.14s ease, border-color 0.14s ease, transform 0.14s ease;
-}
-.themer:hover { color: var(--ink); border-color: var(--ink); transform: translateY(-2px); }
-.themer:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
-.themer svg { width: 17px; height: 17px; display: block; }
-@media (prefers-reduced-motion: reduce) { .themer:hover { transform: none; } }
-
 /* the guidelines ask for this on anything tapped: it removes the browser's
    300ms wait for a possible double-tap */
 a, button, summary { touch-action: manipulation; }
@@ -555,7 +499,6 @@ a, button, summary { touch-action: manipulation; }
    thumb can hit. Links inside a sentence are left alone: they are exempt, and
    padding them out would break the line spacing of the prose around them. */
 @media (pointer: coarse), (max-width: 1023px) {
-  .themer { width: 44px; height: 44px; }
   .masthead nav a,
   .rail a,
   .masthead .name,
@@ -570,17 +513,38 @@ a, button, summary { touch-action: manipulation; }
   .masthead nav a { min-width: 44px; }
 }
 
-/* the legal row, under the address block */
-.legal {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 1.4rem;
-  margin-top: 1.2rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--rule);
-}
-.legal a { color: var(--ink-soft); }
-.legal a:hover, .legal a:focus-visible { color: var(--ink); }
 
 /* the link on to the next page, set apart from the section above it */
 .onward { margin-top: 2.4rem; }
+
+/* The sub-footer: company details on the left, the legal pages hard against
+   the right edge. On a narrow screen they stack rather than crowd. */
+.subfooter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.2rem 2rem;
+  margin-top: 1.4rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--rule);
+}
+.subfooter .who {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  color: var(--ink-soft);
+}
+.subfooter .legal {
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.4rem;
+}
+.subfooter .legal a { color: var(--ink-soft); }
+.subfooter .legal a:hover,
+.subfooter .legal a:focus-visible { color: var(--ink); }
+
+@media (max-width: 44rem) {
+  .subfooter .legal { margin-left: 0; }
+}
