@@ -3,9 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <!-- GitHub Pages cannot set response headers, so the policy travels in
-     the page. The two inline scripts are allowed by hash, not by
-     'unsafe-inline', so anything injected is refused. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-EKIEvS1TNUYdgF2hYP6ya0N4Og8f6osU7HFrwJkAQMc=' 'sha256-HyI0Hp4MCB6hV9LEXMB4OpmfofLUNdsWF7+cr8101e4='; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'" />
+     the page. The only script is the Lightmorphic app launcher, served from
+     Charlie's own machine rather than a third party, so that one origin is
+     named and nothing else is allowed. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src https://apps.lightmorphic.com; style-src 'self'; img-src 'self' https://apps.lightmorphic.com; font-src 'self'; base-uri 'none'; form-action 'none'" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Terms | Lightmorphic Paste</title>
 <meta name="description" content="What this site is, what the software is licensed under, what is not promised, and which law applies. Short, because nothing here is sold or charged for." />
@@ -17,22 +18,11 @@
 <meta property="og:url" content="https://paste.lightmorphic.com/terms.html" />
 <meta property="og:image" content="https://paste.lightmorphic.com/images/lightmorphic-paste-share-card.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)" />
-<meta name="theme-color" content="#14141a" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#14141a" />
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="images/favicon-32.png" sizes="32x32" />
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
 <link rel="stylesheet" href="style.css" />
-<script>
-/* Set the theme before anything paints, so there is no flash of the wrong one.
-   Nothing is stored until the reader actually chooses. */
-(function () {
-  try {
-    var t = localStorage.getItem('pm-theme');
-    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
-  } catch (e) { /* private window: fall back to the browser's own setting */ }
-})();
-</script>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage",
@@ -58,8 +48,7 @@
     <a href="help.html">Help</a>
     <a href="faq.html">Questions</a>
   </nav>
-  <button class="themer" id="themer" type="button"
-    title="Light or dark" aria-label="Switch between light and dark"></button>
+  <div id="all-apps" data-theme="dark"></div>
 </header>
 <main id="main">
 <h1>Terms</h1>
@@ -132,36 +121,5 @@ England and Wales have jurisdiction.</p>
     </nav>
   </div>
 </footer>
-</div><script>
-(function () {
-  var SUN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M4.4 4.4l1.6 1.6M18 18l1.6 1.6M2.6 12h2.2M19.2 12h2.2M4.4 19.6l1.6-1.6M18 6l1.6-1.6"/></svg>';
-  var MOON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>';
-  var root = document.documentElement;
-  var btn = document.getElementById('themer');
-  if (!btn) return;
-
-  function showing() {
-    var set = root.getAttribute('data-theme');
-    if (set) return set;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-  function paint() {
-    var now = showing();
-    /* the icon shows what you are looking at; clicking gives you the other */
-    btn.innerHTML = now === 'dark' ? MOON : SUN;
-    btn.title = now === 'dark' ? 'Dark, click for light' : 'Light, click for dark';
-    btn.setAttribute('aria-label', btn.title);
-  }
-  btn.addEventListener('click', function () {
-    var next = showing() === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    try { localStorage.setItem('pm-theme', next); } catch (e) {}
-    paint();
-  });
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
-    if (!root.getAttribute('data-theme')) paint();
-  });
-  paint();
-})();
-</script>
+</div><script src="https://apps.lightmorphic.com/launcher.js" defer></script>
 </body></html>
