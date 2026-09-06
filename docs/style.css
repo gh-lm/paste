@@ -1,9 +1,8 @@
 /* ---------------------------------------------------------------------------
-   Lightmorphic Paste, site styles
+   Lightmorphic Paste — site styles
 
-   The look is editorial rather than product-page: a dark ground, a serif for
-   anything you actually read, and a monospace only for labels and numbers.
-   Dark is the only theme. There is no light mode and no switch.
+   The look is editorial rather than product-page: a warm paper ground, a serif
+   for anything you actually read, and a monospace only for labels and numbers.
    The single accent is a marker-pen stroke, drawn behind words rather than
    under them, so nothing on the page is underlined.
 --------------------------------------------------------------------------- */
@@ -16,15 +15,16 @@
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light dark;
 
-  --paper: #14141a;
-  --paper-deep: #1b1b23;
-  --ink: #f1eee4;
-  --ink-soft: #a5a2ae;
-  --rule: #2e2e39;
+  --paper: #f6f3ec;
+  --paper-deep: #efeadf;
+  --ink: #17171c;
+  --ink-soft: #56545f;
+  --rule: #ddd6c7;
+  --control-edge: #8a8579;
   --mark: #fbc711;
-  --link: #8ecabe;
+  --link: #1f5c53;
   --on-mark: #3d3103;
   --ribbon-1: #fbc711;
   --ribbon-2: #7fb2a6;
@@ -38,6 +38,32 @@
   --sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --measure: 34rem;
+}
+
+/* Dark comes from the browser by default. The button in the corner overrides
+   it either way, and that choice wins over the browser's. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #14141a;
+    --paper-deep: #1b1b23;
+    --ink: #f1eee4;
+    --ink-soft: #a5a2ae;
+    --rule: #2e2e39;
+  --control-edge: #6e6e7b;
+    --link: #8ecabe;
+    --on-mark: #3d3103;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #14141a;
+  --paper-deep: #1b1b23;
+  --ink: #f1eee4;
+  --ink-soft: #a5a2ae;
+  --rule: #2e2e39;
+  --control-edge: #6e6e7b;
+  --link: #8ecabe;
+  --on-mark: #3d3103;
 }
 
 * { box-sizing: border-box; }
@@ -226,6 +252,8 @@ main { grid-column: 2; min-width: 0; }
   text-transform: uppercase;
 }
 
+/* the light and dark switch sits last, hard against the right edge */
+.masthead .themer { margin-left: 1.4rem; align-self: center; }
 
 /* ---- headings and text -------------------------------------------------- */
 
@@ -491,6 +519,27 @@ footer .spacer { flex: 1 1 auto; }
 }
 
 
+/* ---- light and dark ----------------------------------------------------- */
+
+.themer {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid var(--control-edge);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: color 0.14s ease, border-color 0.14s ease, transform 0.14s ease;
+}
+.themer:hover { color: var(--ink); border-color: var(--ink); transform: translateY(-2px); }
+.themer:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
+.themer svg { width: 17px; height: 17px; display: block; }
+@media (prefers-reduced-motion: reduce) { .themer:hover { transform: none; } }
+
 /* the guidelines ask for this on anything tapped: it removes the browser's
    300ms wait for a possible double-tap */
 a, button, summary { touch-action: manipulation; }
@@ -499,6 +548,7 @@ a, button, summary { touch-action: manipulation; }
    thumb can hit. Links inside a sentence are left alone: they are exempt, and
    padding them out would break the line spacing of the prose around them. */
 @media (pointer: coarse), (max-width: 1023px) {
+  .themer { width: 44px; height: 44px; }
   .masthead nav a,
   .rail a,
   .masthead .name,

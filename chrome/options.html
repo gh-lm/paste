@@ -23,6 +23,16 @@
       <section class="panel">
         <h2>Look</h2>
         <div class="field">
+          <label for="theme">Light or dark</label>
+          <select class="input" id="theme" style="max-width:300px">
+            <option value="system">Follow the browser (default)</option>
+            <option value="light">Always light</option>
+            <option value="dark">Always dark</option>
+          </select>
+          <p class="hint" style="margin-top:0.5rem">There is a button for this in the
+            list itself, beside the cog. A dot on it means the browser is choosing.</p>
+        </div>
+        <div class="field">
           <label>Accent colour</label>
           <div class="swatches" id="swatches"></div>
           <div class="custom-accent">

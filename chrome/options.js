@@ -4,8 +4,11 @@ const $ = (id) => document.getElementById(id);
 
 let settings = null;
 
-function applyAccent() {
-  PM.applyAccent(document.documentElement, settings);
+function applyTheme() {
+  const root = document.documentElement;
+  PM.applyAccent(root, settings);
+  if (settings.theme === 'light' || settings.theme === 'dark') root.setAttribute('data-theme', settings.theme);
+  else root.removeAttribute('data-theme');
 }
 
 function renderSwatches() {
@@ -53,7 +56,7 @@ async function chooseAccent(key, hex) {
     patch.accentHex = hex;
   }
   await PM.setSettings(patch);
-  applyAccent();
+  applyTheme();
   renderSwatches();
 }
 
@@ -206,7 +209,7 @@ function wireOpenFolder() {
 
 document.addEventListener('DOMContentLoaded', async () => {
   settings = await PM.getSettings();
-  applyAccent();
+  applyTheme();
   renderSwatches();
   wireCustomAccent();
 
@@ -223,11 +226,23 @@ document.addEventListener('DOMContentLoaded', async () => {
   $('wherePath').textContent = path.join('  ›  ');
   wireOpenFolder();
 
+  $('theme').value = settings.theme || 'system';
+  $('theme').addEventListener('change', async (e) => {
+    settings.theme = e.target.value;
+    await PM.setSettings({ theme: settings.theme });
+    applyTheme();
+  });
+
   // The popup has its own light/dark button; keep this page in step with it.
   chrome.storage.onChanged.addListener((changes) => {
+    if (changes.theme) {
+      settings.theme = changes.theme.newValue;
+      $('theme').value = settings.theme;
+      applyTheme();
+    }
     if (changes.accent) {
       settings.accent = changes.accent.newValue;
-      applyAccent();
+      applyTheme();
       renderSwatches();
     }
   });

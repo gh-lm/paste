@@ -88,9 +88,9 @@ extension.
 - The icon and the name sit at the top left, and the round accent-coloured
   button that adds a note sits centred between the name and the search icon
 - Every button sits on the top row: the round accent-coloured one adds a note,
-  then search and settings, then a divider and the two tab controls. There is
-  no footer, so the list gets the rest of the window, and messages appear
-  briefly over the bottom of it
+  then search, light or dark and settings, then a divider and the two tab
+  controls. There is no footer, so the list gets the rest of the window, and
+  messages appear briefly over the bottom of it
 - Tabs are dragged into the order you want, and notes by the grip on the left.
   A thin line shows the gap it will drop into.
   Both are built on pointer events rather than HTML5 drag and drop, because a
@@ -110,7 +110,8 @@ extension.
 - Right-click selected text on a page to save it
 - Right-click inside a text box to paste any note from the current tab
 - Search across every tab
-- Dark, always. There is no light theme and nothing to switch
+- Follows the browser's light or dark setting on its own. A button in the list
+  overrides it either way; a dot on that button means the browser is choosing
 - Twelve accent colours, plus a box for a colour of your own — the lighter and
   darker shades it needs are worked out from whatever you type
 - One-click import of notes left behind by an older snippet extension, found

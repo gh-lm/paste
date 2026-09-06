@@ -1,10 +1,10 @@
-# Chrome Web Store submission — Lightmorphic Paste 1.1.0
+# Chrome Web Store submission — Lightmorphic Paste 1.0.0
 
 Everything the form asks for, in the order it asks. Copy each block as it is.
 
-**Upload this file:** `dist/lightmorphic-paste-chrome-1.1.0.zip` — 84 KB, 18
+**Upload this file:** `dist/lightmorphic-paste-chrome-1.0.0.zip` — 84 KB, 18
 files. Unpacked and checked after building: the manifest says Lightmorphic
-Paste 1.1.0, every file it names is present, every script parses, the GPL and
+Paste 1.0.0, every file it names is present, every script parses, the GPL and
 the font licence are both inside, and no developer-only file is.
 
 ---
@@ -44,6 +44,7 @@ the font licence are both inside, and no developer-only file is.
     • Right-click selected text on any page to save it
     • Right-click inside a text box to paste any note
     • Search across every tab at once
+    • Follows your browser's light or dark setting, with a button to override it
     • Twelve accent colours, or one of your own
     • Already using another snippet extension? Its notes can be brought across
       in one click
@@ -114,7 +115,7 @@ longest of these is 265.
 
 **storage**
 
-    Remembers the chosen accent colour, which tab was last open, and whether a click should paste as well as copy. No personal data is stored.
+    Remembers the chosen accent colour, the light or dark preference, and which tab was last open. No personal data is stored.
 
 **contextMenus**
 
@@ -143,7 +144,7 @@ security policy is `script-src 'self'`.
 
 The question is about data you *collect*, meaning data that leaves the device
 and reaches you or a third party. This extension makes zero network requests,
-so nothing can. Notes go into the user's own bookmarks; five settings go into
+so nothing can. Notes go into the user's own bookmarks; six settings go into
 the browser's own extension storage. The settings ride Chrome's own sync under
 the user's own Google account, which you neither see nor control, and that is
 not collection.
@@ -191,10 +192,6 @@ and address are then published on the listing.
 ---
 
 ## Worth knowing
-
-**1.1.0 removes the light theme.** The extension is dark only now: the light
-palette, the theme setting and the button that cycled it are all gone, and the
-setting they wrote is no longer stored. Nothing else changed.
 
 **The extension was called Pastemorphic until 30 August 2026.** If anyone
 installs this over that version nothing is lost: the bookmark folder is found
