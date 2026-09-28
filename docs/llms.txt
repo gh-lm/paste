@@ -10,7 +10,7 @@ Licence: GNU GPL v3. Version 1.0.0.
 Published by Lightmorphic Ltd, 82A James Carter Road, Mildenhall, IP28 7DE,
 United Kingdom. Registered in England and Wales, company number 17423646:
 https://find-and-update.company-information.service.gov.uk/company/17423646
-Contact: https://github.com/lightmorphic/paste/issues
+Contact: https://paste.lightmorphic.com/bugs
 Works in Chrome, Brave, Vivaldi, Edge and other Chromium browsers, and Firefox.
 
 ## Key facts
@@ -29,7 +29,7 @@ Works in Chrome, Brave, Vivaldi, Edge and other Chromium browsers, and Firefox.
 - Known trade-off: because notes are bookmarks, anyone who can open the browser
   can read them. Passwords and card numbers do not belong in it.
 - Chrome Web Store listing: https://chromewebstore.google.com/detail/lightmorphic-paste/heefkhhoccopkeecmaainfdgppeljkfb
-- Installation without a Google account: download the zip from GitHub releases,
+- Installation without a Google account: download the zip from https://paste.lightmorphic.com/downloads,
   unzip, open the browser's extensions page, enable Developer mode, choose
   Load unpacked.
 
@@ -39,4 +39,4 @@ Works in Chrome, Brave, Vivaldi, Edge and other Chromium browsers, and Firefox.
 - [Help](https://paste.lightmorphic.com/help.html): saving, copying, pasting, tabs, keyboard shortcuts, imports, backups.
 - [Questions and answers](https://paste.lightmorphic.com/faq.html): sixteen plain answers.
 - [Privacy](https://paste.lightmorphic.com/privacy.html): what is stored, where, and why each permission is asked for.
-- [Source code](https://github.com/lightmorphic/paste): the whole extension, nine plain files with no build step.
+- [Source code](https://paste.lightmorphic.com/code): the whole extension, nine plain files with no build step.

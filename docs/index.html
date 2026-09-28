@@ -2,8 +2,7 @@
 <html lang="en-GB">
 <head>
 <meta charset="utf-8" />
-<!-- GitHub Pages cannot set response headers, so the policy travels in
-     the page. The only script is the Lightmorphic app launcher, served from
+<!-- The policy travels in the page as well as in the headers. The only script is the Lightmorphic app launcher, served from
      Charlie's own machine rather than a third party, so that one origin is
      named and nothing else is allowed. -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src https://apps.lightmorphic.com; style-src 'self'; img-src 'self' https://apps.lightmorphic.com; font-src 'self'; base-uri 'none'; form-action 'none'" />
@@ -42,11 +41,11 @@
       "browserRequirements": "Chromium-based browsers (Chrome, Brave, Vivaldi, Edge) and Firefox",
       "description": "A browser extension that stores short pieces of text you paste often and puts one back with a click, onto the clipboard or straight into the field you were typing in. Notes are kept as bookmarks, so they sync between computers with no account and no server.",
       "url": "https://paste.lightmorphic.com/",
-      "downloadUrl": "https://github.com/lightmorphic/paste/releases",
+      "downloadUrl": "https://paste.lightmorphic.com/downloads",
    "installUrl": "https://chromewebstore.google.com/detail/lightmorphic-paste/heefkhhoccopkeecmaainfdgppeljkfb",
    "sameAs": [
     "https://chromewebstore.google.com/detail/lightmorphic-paste/heefkhhoccopkeecmaainfdgppeljkfb",
-    "https://github.com/lightmorphic/paste"
+    "https://paste.lightmorphic.com/code"
    ],
       "softwareVersion": "1.0.0",
       "license": "https://www.gnu.org/licenses/gpl-3.0.html",
@@ -91,10 +90,10 @@
     {
       "@type": "HowTo",
       "@id": "https://paste.lightmorphic.com/#install",
-      "name": "How to install Lightmorphic Paste from GitHub without a Google account",
+      "name": "How to install Lightmorphic Paste without a Google account",
       "totalTime": "PT2M",
       "step": [
-        { "@type": "HowToStep", "position": 1, "name": "Download", "text": "Download the latest zip from the GitHub releases page and unzip it." },
+        { "@type": "HowToStep", "position": 1, "name": "Download", "text": "Download the latest zip from the downloads page and unzip it." },
         { "@type": "HowToStep", "position": 2, "name": "Open the extensions page", "text": "In your browser, open the extensions page: chrome://extensions, brave://extensions, edge://extensions or vivaldi://extensions." },
         { "@type": "HowToStep", "position": 3, "name": "Turn on Developer mode", "text": "Switch on Developer mode, usually a toggle in the top right corner." },
         { "@type": "HowToStep", "position": 4, "name": "Load it", "text": "Click Load unpacked and choose the folder you unzipped." }
@@ -122,6 +121,9 @@
     <a href="./">Overview</a>
     <a href="help.html">Help</a>
     <a href="faq.html">Questions</a>
+    <a href="/blog" data-buildmorphic="blog">Blog</a>
+    <a href="/roadmap" data-buildmorphic="roadmap">Roadmap</a>
+    <a class="join" href="/community" data-buildmorphic="community">Join our community</a>
   </nav>
   <div id="all-apps" data-theme="dark"></div>
 </header>
@@ -192,7 +194,7 @@
     <h2>Two ways to install it</h2>
     <div class="ways">
       <div class="way">
-        <span class="tag">From GitHub</span>
+        <span class="tag">Direct download</span>
         <h3>No Google account needed</h3>
         <p>Download the zip, unzip it, and load the folder in your browser.
         Two minutes, nothing to sign up for, and you can read every line of
@@ -206,10 +208,10 @@
       </div>
     </div>
 
-    <h3>Installing it from GitHub</h3>
+    <h3>Installing it from the zip</h3>
     <ol class="steps">
       <li>Download the latest zip from the
-        <a href="https://github.com/lightmorphic/paste/releases">releases page</a>
+        <a href="/downloads">downloads page</a>
         and unzip it.</li>
       <li>Open your browser's extensions page: <code>chrome://extensions</code>,
         <code>brave://extensions</code>, <code>edge://extensions</code> or
@@ -253,7 +255,7 @@
     You may use it, study it, change it and pass it on, provided anything you
     build from it stays free in the same way. A licence that
     cannot be quietly closed up later.</p>
-    <p><a href="https://github.com/lightmorphic/paste">Read the source on GitHub</a></p>
+    <p><a href="/code">Read the source</a></p>
   </section>
 
   <section id="answers" class="numbered">
@@ -279,7 +281,7 @@
       </details>
       <details>
         <summary>Can I use it without a Google account?</summary>
-        <div><p>Yes. Download it from GitHub and load it yourself. The Chrome
+        <div><p>Yes. Download it from this site and load it yourself. The Chrome
         Web Store is offered only as a convenience for automatic updates.</p></div>
       </details>
       <details>
@@ -297,22 +299,23 @@
   <div class="project">
     <p>Lightmorphic Paste is free software under the GNU GPL v3.</p>
     <span class="spacer"></span>
-    <p><a href="https://github.com/lightmorphic/paste/blob/main/CREDITS.md" title="Third-party licences">Credits</a></p>
+    <p><a href="/code/file/CREDITS.md" title="Third-party licences">Credits</a></p>
   </div>
 
   <div class="repo-row">
     <p class="marks">
-      <a href="https://github.com/lightmorphic/paste" aria-label="This project on GitHub" title="This project on GitHub"><svg viewBox="0 0 16 16" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
       <a href="https://opensource.org/" rel="nofollow" aria-label="Open Source Initiative" title="opensource.org"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="5" r="2.4"/><circle cx="5.5" cy="17" r="2.4"/><circle cx="18.5" cy="17" r="2.4"/><path d="M10.8 7.1 6.7 14.9M13.2 7.1l4.1 7.8M8 17h8"/></svg></a>
     </p>
-    <nav class="repo-links" aria-label="This project on GitHub">
-      <a href="https://github.com/lightmorphic/paste">Repository</a>
-      <a href="https://github.com/lightmorphic/paste#readme">Documentation</a>
-      <a href="https://github.com/lightmorphic/paste/blob/main/SECURITY.md">Security</a>
-      <a href="https://github.com/lightmorphic/paste/blob/main/LICENSE">Licence</a>
-      <a href="https://github.com/lightmorphic/paste/blob/main/CHANGELOG.md">Changelog</a>
-      <a href="https://github.com/lightmorphic/paste/issues">Issues</a>
-      <a href="https://github.com/lightmorphic/paste/releases">Releases</a>
+    <nav class="repo-links" aria-label="This project">
+      <a href="/code">Source code</a>
+      <a href="/code/file/README.md">Documentation</a>
+      <a href="/code/file/SECURITY.md">Security</a>
+      <a href="/code/file/LICENSE">Licence</a>
+      <a href="/whats-new">What's new</a>
+      <a href="/bugs">Bugs</a>
+      <a href="/downloads">Downloads</a>
+      <a href="/roadmap" data-buildmorphic="roadmap">Roadmap</a>
+      <a href="/blog" data-buildmorphic="blog">Blog</a>
     </nav>
   </div>
 
