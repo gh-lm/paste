@@ -27,8 +27,10 @@ done
     [ -z "$d" ] && d="$(date -I)"
     case "$f" in
       index.html) loc="https://paste.lightmorphic.com/"; pri="1.0" ;;
-      help.html|faq.html) loc="https://paste.lightmorphic.com/$f"; pri="0.8" ;;
-      *) loc="https://paste.lightmorphic.com/$f"; pri="0.4" ;;
+      # Cloudflare Pages serves these without the .html and redirects the
+      # extension away, so the sitemap must name the address it actually serves
+      help.html|faq.html) loc="https://paste.lightmorphic.com/${f%.html}"; pri="0.8" ;;
+      *) loc="https://paste.lightmorphic.com/${f%.html}"; pri="0.4" ;;
     esac
     printf '  <url>\n    <loc>%s</loc>\n    <lastmod>%s</lastmod>\n    <priority>%s</priority>\n  </url>\n' "$loc" "$d" "$pri"
   done

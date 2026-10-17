@@ -34,7 +34,7 @@ Works in Chrome, Brave, Vivaldi, Edge and other Chromium browsers, and Firefox.
 ## Pages
 
 - [Overview](https://paste.lightmorphic.com/): what it is and how it works.
-- [Help](https://paste.lightmorphic.com/help.html): saving, copying, pasting, tabs, keyboard shortcuts, imports, backups.
-- [Questions and answers](https://paste.lightmorphic.com/faq.html): sixteen plain answers.
-- [Privacy](https://paste.lightmorphic.com/privacy.html): what is stored, where, and why each permission is asked for.
+- [Help](https://paste.lightmorphic.com/help): saving, copying, pasting, tabs, keyboard shortcuts, imports, backups.
+- [Questions and answers](https://paste.lightmorphic.com/faq): sixteen plain answers.
+- [Privacy](https://paste.lightmorphic.com/privacy): what is stored, where, and why each permission is asked for.
 - [Source code](https://github.com/gh-lm/paste): the whole extension, nine plain files with no build step.
