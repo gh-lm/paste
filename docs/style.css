@@ -18,7 +18,6 @@
 
 :root {
   color-scheme: dark;
-  --bm-content-width: min(62rem, calc(100% - 3rem));
 
   --paper: #14141a;
   --paper-deep: #1b1b23;

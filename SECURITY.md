@@ -7,7 +7,7 @@ open a [private security advisory][advisory] on this repository. Please do not
 open a public issue for anything that could be used against people who have
 the extension installed.
 
-[advisory]: https://github.com/lightmorphic/paste/security/advisories/new
+[advisory]: https://github.com/gh-lm/paste/security/advisories/new
 
 You will get a reply within five working days. If it is a real problem you
 will be told what the fix is and when it will ship, and you will be credited

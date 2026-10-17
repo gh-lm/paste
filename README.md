@@ -5,7 +5,7 @@
 [Website](https://paste.lightmorphic.com/) ·
 [Help](https://paste.lightmorphic.com/help.html) ·
 [Questions](https://paste.lightmorphic.com/faq.html) ·
-[Download](https://github.com/lightmorphic/paste/releases)
+[Download](https://github.com/gh-lm/paste/releases)
 
 A small browser extension for the short pieces of text you type over and over —
 your email address, a postal address, a sign-off, a licence header, a reference
@@ -50,7 +50,7 @@ Vivaldi and Edge, and updates arrive on their own.
 
 ### From a release — no Google account needed
 
-1. Download the latest zip from [releases](https://github.com/lightmorphic/paste/releases)
+1. Download the latest zip from [releases](https://github.com/gh-lm/paste/releases)
    and unzip it
 2. Open `brave://extensions` (or `vivaldi://extensions`, `edge://extensions`,
    `chrome://extensions`)

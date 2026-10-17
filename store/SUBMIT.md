@@ -94,7 +94,7 @@ To remake it from a fresh capture:
 
 **Support URL**
 
-    https://github.com/lightmorphic/paste/issues
+    https://github.com/gh-lm/paste/issues
 
 ---
 
