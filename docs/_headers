@@ -1,0 +1,25 @@
+# Cloudflare Pages sets these as real response headers. GitHub Pages could not,
+# which is why the policy used to travel in a meta tag inside each page. The
+# meta tag has been removed: two copies of a policy is a thing that drifts, and
+# only a real header can carry frame-ancestors or HSTS.
+
+/*
+  Content-Security-Policy: default-src 'none'; script-src https://apps.lightmorphic.com; style-src 'self'; img-src 'self' https://apps.lightmorphic.com; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin
+  X-Frame-Options: DENY
+
+# The font and the drawings never change without changing name, so they can be
+# held for a year. The pages themselves must not be, or an edit takes a year to
+# show.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
