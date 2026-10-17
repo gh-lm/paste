@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# Build the zip files to upload to the Chrome Web Store and to Mozilla.
+# Build the zip files to upload to the Chrome Web Store.
 # Refuses to run if any developer-only file is sitting in a shipping folder.
 set -euo pipefail
 here="$(cd "$(dirname "$0")" && pwd)"
 version="$(python3 -c "import json;print(json.load(open('$here/chrome/manifest.json'))['version'])")"
 
-for folder in chrome firefox; do
+for folder in chrome; do
   strays="$(find "$here/$folder" -name 'dev-*' -o -name '*.map' -o -name '.DS_Store' | head)"
   if [ -n "$strays" ]; then
     echo "Refusing to package: developer files are still in $folder/" >&2
@@ -15,13 +15,11 @@ for folder in chrome firefox; do
   fi
 done
 
-"$here/build-firefox.sh" > /dev/null
-
 # Every script must parse. A rename once turned an identifier into
 # __lightmorphic-pasteReady, which is a syntax error, and the content script
 # would have shipped dead with pasting silently broken.
 if command -v node > /dev/null; then
-  for folder in chrome firefox; do
+  for folder in chrome; do
     while IFS= read -r js; do
       if ! node --check "$js" 2> /dev/null; then
         echo "Refusing to package: $js does not parse." >&2
@@ -34,7 +32,7 @@ fi
 
 rm -rf "$here/dist"
 mkdir -p "$here/dist"
-for folder in chrome firefox; do
+for folder in chrome; do
   out="$here/dist/lightmorphic-paste-$folder-$version.zip"
   # the GPL asks for its text to travel with the work, so it goes in the package
   cp "$here/LICENSE" "$here/$folder/LICENSE"
@@ -44,7 +42,7 @@ for folder in chrome firefox; do
 done
 
 # the font licence must ship beside the font itself
-for folder in chrome firefox; do
+for folder in chrome; do
   if ! unzip -l "$here/dist/lightmorphic-paste-$folder-$version.zip" | grep -q 'fonts/OFL.txt'; then
     echo "Refusing: fonts/OFL.txt is missing from the $folder package." >&2
     echo "Manrope is under the SIL Open Font License, which requires it." >&2

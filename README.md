@@ -105,7 +105,7 @@ Everything is on the extension's settings page. Nothing is needed to start.
 
 ## Where your data lives
 
-Only in your browser's bookmarks, in a folder of their own. There is no server and no copy anywhere else. Bookmark sync keeps notes together within one browser's own sync, so Firefox notes and Vivaldi notes are separate; use the backup file to move between them.
+Only in your browser's bookmarks, in a folder of their own. There is no server and no copy anywhere else. Bookmark sync keeps notes together within one browser's own sync, so notes in Brave and notes in Vivaldi are separate; use the backup file to move between them.
 
 ## Security
 
@@ -135,12 +135,10 @@ The software is provided as it is, with no warranty of any kind. Lightmorphic Lt
       style.css        one stylesheet, no framework
       fonts/           Manrope and its OFL licence, self-hosted
       icons/           the extension's own, plus the Lightmorphic mark
-    firefox/           built from chrome/ by build-firefox.sh
     docs/              the website, served by Cloudflare Pages
     dev/               preview.sh / clean.sh, and the fake-browser stub
     dist/              the zips package.sh builds; not in git
     store/             the listing artwork, the audit, and the submission notes
-    build-firefox.sh   run after changing anything in chrome/
     package.sh         builds the store zips; refuses if a dev file or the font
                        licence is missing, and copies LICENSE into the package
     PRIVACY.md         the privacy statement, served at /privacy on the site
@@ -160,7 +158,7 @@ tab. `package.sh` refuses to build if they are still lying about.
     ./dev/clean.sh
     ./package.sh
 
-Writes `dist/lightmorphic-paste-chrome-<version>.zip` and the Firefox one beside it.
+Writes `dist/lightmorphic-paste-chrome-<version>.zip`.
 
 ## The first-run notice
 
@@ -182,8 +180,7 @@ to live.
 
 ## Notes
 
-- Edit `chrome/` only, then run `./build-firefox.sh`. The two folders are
-  identical apart from the manifest.
+- Edit `chrome/`. It is the only copy of the code.
 - A note's text sits in the bookmark's URL as
   `https://lightmorphic.invalid/#pm1:...`. `.invalid` is a reserved name that
   can never resolve, so a stray click goes nowhere. Notes saved by the very
@@ -191,6 +188,6 @@ to live.
   quietly rewritten the next time you edit them.
 - Restoring a backup **adds** notes; it does not replace what is there.
 - Running the import twice is safe: anything already there is skipped.
-- Bookmark sync keeps notes together within one browser's own sync. Firefox
+- Bookmark sync keeps notes together within one browser's own sync. Brave
   notes and Vivaldi notes are separate; use the backup file to move between
   them.

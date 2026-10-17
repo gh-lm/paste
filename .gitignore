@@ -1,5 +1,4 @@
 chrome/dev-*
-firefox/dev-*
 dist/
 
 # raw desktop grabs: these catch bookmarks, tab titles and whatever else was on
