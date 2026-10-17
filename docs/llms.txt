@@ -29,9 +29,7 @@ Works in Chrome, Brave, Vivaldi, Edge and other Chromium browsers, and Firefox.
 - Known trade-off: because notes are bookmarks, anyone who can open the browser
   can read them. Passwords and card numbers do not belong in it.
 - Chrome Web Store listing: https://chromewebstore.google.com/detail/lightmorphic-paste/heefkhhoccopkeecmaainfdgppeljkfb
-- Installation without a Google account: download the zip from https://paste.lightmorphic.com/downloads,
-  unzip, open the browser's extensions page, enable Developer mode, choose
-  Load unpacked.
+- Installation: the Chrome Web Store is the only place it is published.
 
 ## Pages
 
