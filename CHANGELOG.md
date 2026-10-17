@@ -27,10 +27,8 @@ First release. Published to the Chrome Web Store on 2 September 2026.
   shape of the bookmarks rather than by any folder name
 - Backup to a file, and restore from one
 
-The extension was called Pastemorphic until 30 August 2026. Installing this
-over that version loses nothing: the folder is found by what is inside it,
-both former folder names are still recognised, and notes saved by either
-earlier version are still read.
+Notes saved by any earlier version are still read, and the bookmark folder is
+found by what is inside it, so installing over an older version loses nothing.
 
 ## Website
 

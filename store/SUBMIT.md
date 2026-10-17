@@ -193,11 +193,10 @@ and address are then published on the listing.
 
 ## Worth knowing
 
-**The extension was called Pastemorphic until 30 August 2026.** If anyone
-installs this over that version nothing is lost: the bookmark folder is found
-by what is inside it, both former folder names are still recognised, and notes
-saved by either earlier version are still read. Those two old names are the
-only place the old word survives in the code, and they have to stay.
+**Older notes are still read.** If anyone installs this over an earlier version
+nothing is lost: the bookmark folder is found by what is inside it, and notes
+saved by earlier versions are still read. The two old folder names kept in
+`OLD_TITLES` and `OLD_HEADS` in `lib/store.js` have to stay.
 
 **The popup is 460px wide, not 400.** The longer name wrapped the header onto
 two rows at the old width. Widening it also stopped the longest sample note
