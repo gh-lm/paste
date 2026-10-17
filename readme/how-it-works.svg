@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 300" width="1280" height="300" role="img" aria-label="Three steps, left to right: save a line as a bookmark, your browser syncs the bookmark between computers, click the note and the text is on your clipboard.">
+  <rect width="1280" height="300" fill="#0b0b10"/>
+  <g font-family="Manrope, Helvetica, Arial, sans-serif">
+    <g>
+      <rect x="40" y="40" width="360" height="220" rx="20" fill="#1c1c24"/>
+      <circle cx="84" cy="88" r="20" fill="#fbc711"/><text x="84" y="96" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b10">1</text>
+      <text x="64" y="150" font-size="26" font-weight="700" fill="#ffffff">Save a line</text>
+      <text x="64" y="186" font-size="19" fill="#b4b2bd">It is stored as an ordinary</text>
+      <text x="64" y="212" font-size="19" fill="#b4b2bd">bookmark, in a folder of its own.</text>
+    </g>
+    <path d="M410 150h50m-12-12 12 12-12 12" fill="none" stroke="#fbc711" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <g>
+      <rect x="460" y="40" width="360" height="220" rx="20" fill="#1c1c24"/>
+      <circle cx="504" cy="88" r="20" fill="#fbc711"/><text x="504" y="96" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b10">2</text>
+      <text x="484" y="150" font-size="26" font-weight="700" fill="#ffffff">Your browser syncs it</text>
+      <text x="484" y="186" font-size="19" fill="#b4b2bd">Bookmark sync carries it between</text>
+      <text x="484" y="212" font-size="19" fill="#b4b2bd">your computers. No account here.</text>
+    </g>
+    <path d="M830 150h50m-12-12 12 12-12 12" fill="none" stroke="#fbc711" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <g>
+      <rect x="880" y="40" width="360" height="220" rx="20" fill="#1c1c24"/>
+      <circle cx="924" cy="88" r="20" fill="#fbc711"/><text x="924" y="96" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b10">3</text>
+      <text x="904" y="150" font-size="26" font-weight="700" fill="#ffffff">Click it</text>
+      <text x="904" y="186" font-size="19" fill="#b4b2bd">The text is on your clipboard, or</text>
+      <text x="904" y="212" font-size="19" fill="#b4b2bd">in the box you were typing in.</text>
+    </g>
+  </g>
+</svg>

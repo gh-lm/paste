@@ -1,30 +1,31 @@
-# Lightmorphic Paste
+<p align="center">
+  <img src="readme/banner.svg" alt="Lightmorphic Paste: the lines of text you paste all the time, kept in your bookmarks" width="100%">
+</p>
 
-**The lines of text you paste all the time, kept in your bookmarks.**
+<p align="center">
+  <img src="https://img.shields.io/badge/version-1.0.0-fbc711?style=flat-square&labelColor=1c1c24" alt="Version 1.0.0">
+  <img src="https://img.shields.io/badge/licence-GPL--3.0--or--later-3b82f6?style=flat-square&labelColor=1c1c24" alt="Licence GPL 3.0 or later">
+  <a href="https://chromewebstore.google.com/detail/lightmorphic-paste/heefkhhoccopkeecmaainfdgppeljkfb"><img src="https://img.shields.io/badge/Chrome%20Web%20Store-published-22c55e?style=flat-square&labelColor=1c1c24" alt="Published on the Chrome Web Store"></a>
+  <img src="https://img.shields.io/badge/network%20requests-none-a855f7?style=flat-square&labelColor=1c1c24" alt="Network requests: none">
+</p>
 
-[Website](https://paste.lightmorphic.com/) ·
-[Help](https://paste.lightmorphic.com/help.html) ·
-[Questions](https://paste.lightmorphic.com/faq.html) ·
-[Download](https://github.com/gh-lm/paste/releases)
+**Lightmorphic Paste is a small browser extension for the short pieces of text you type over and over:** your email address, a postal address, a sign-off, a licence header, a reference number. Click the toolbar icon, click the line you want, and it is on your clipboard.
 
-A small browser extension for the short pieces of text you type over and over —
-your email address, a postal address, a sign-off, a licence header, a reference
-number. Click the toolbar icon, click the line you want, and it is on your
-clipboard.
+Every note is an ordinary bookmark, so your notes travel between your computers on your browser's own bookmark sync. There is no account to make, no server to trust and nothing to pay for. It makes no network requests of any kind: no analytics, no advertising, no crash reporting.
 
-The unusual part is where it puts them. **Every note is an ordinary bookmark.**
-That means your notes travel between your computers on your browser's own
-bookmark sync — no account to make, no server to trust, nothing to pay for, and
-nothing that can be switched off from somewhere else.
+<p align="center">
+  <img src="readme/popup.png" alt="The Paste popup open on a tab called Work, listing six notes with their keyboard shortcuts" width="720">
+</p>
 
-It makes **no network requests of any kind**. No server, no analytics, no
-advertising, no crash reporting. The whole thing is nine files of plain
-JavaScript, HTML and CSS with no build step, so what is in this repository is
-exactly what runs in your browser.
+[Website](https://paste.lightmorphic.com/) · [Help](https://paste.lightmorphic.com/help) · [Questions](https://paste.lightmorphic.com/faq)
 
-Licensed under the GNU General Public License, version 3. The interface is set
-in Manrope by Mikhail Sharanda, under the SIL Open Font License — see
-[CREDITS.md](CREDITS.md).
+## How it works
+
+<p align="center">
+  <img src="readme/how-it-works.svg" alt="Three steps: save a line as a bookmark, your browser syncs it between computers, click the note to put the text on your clipboard" width="100%">
+</p>
+
+Notes live in the browser's bookmarks like this:
 
     Other bookmarks/
       Lightmorphic Paste/
@@ -33,51 +34,21 @@ in Manrope by Mikhail Sharanda, under the SIL Open Font License — see
           Home address
         Work/
 
-You can rename that folder or drag it wherever you like. It is found by what
-is inside it, not by its name, so nothing breaks.
+You can rename that folder or drag it wherever you like. It is found by what is inside it, not by its name, so nothing breaks.
 
-> **One thing worth knowing.** Because notes are bookmarks, they are as visible
-> as any other bookmark. Anyone who can open your browser can read them.
-> Lightmorphic Paste says so the first time you open it. Keep passwords and card
-> numbers out of it and use a password manager for those.
+> **One thing worth knowing.** Because notes are bookmarks, they are as visible as any other bookmark. Anyone who can open your browser can read them. Lightmorphic Paste says so the first time you open it. Keep passwords and card numbers out of it and use a password manager for those.
 
-## Installing
+## Quick start
 
-### From the Chrome Web Store
+Install it from the [Chrome Web Store](https://chromewebstore.google.com/detail/lightmorphic-paste/heefkhhoccopkeecmaainfdgppeljkfb). It works in Chrome, Brave, Vivaldi and Edge, and updates arrive on their own.
 
-[Lightmorphic Paste on the Chrome Web Store](https://chromewebstore.google.com/detail/lightmorphic-paste/heefkhhoccopkeecmaainfdgppeljkfb) — works in Chrome, Brave,
-Vivaldi and Edge, and updates arrive on their own.
+Then:
 
-### From a release — no Google account needed
+1. Click the Paste icon in the toolbar, and press the round yellow button to add a note
+2. Click a note to copy it, or turn on copy-and-paste in settings so a click also drops the text into the box you were typing in
+3. Use Ctrl+Shift+1 to Ctrl+Shift+4 to paste the first four notes straight into whatever you are typing in
 
-1. Download the latest zip from [releases](https://github.com/gh-lm/paste/releases)
-   and unzip it
-2. Open `brave://extensions` (or `vivaldi://extensions`, `edge://extensions`,
-   `chrome://extensions`)
-3. Turn on **Developer mode**
-4. **Load unpacked**, and choose the folder you unzipped
-
-### From this repository
-
-Clone it and load the `chrome` folder the same way. That folder is the source
-of truth — there is no build step, so it runs exactly as it is written.
-
-### Firefox
-
-1. Open `about:debugging#/runtime/this-firefox`
-2. **Load Temporary Add-on**, and choose `firefox/manifest.json`
-
-Firefox drops temporary add-ons when it closes, so it has to be loaded again
-each time. Firefox will only keep an add-on permanently if it has been signed
-by Mozilla, which is free.
-
-## Updating
-
-The folder syncs, so the new files arrive by themselves. To make a browser use
-them, restart it — or click the reload arrow on the extension's card.
-
-Your notes are untouched by any of this; they live in bookmarks, not in the
-extension.
+Nothing needs setting up first. Your notes are untouched when the extension updates; they live in bookmarks, not in the extension.
 
 ## What it does
 
@@ -105,23 +76,56 @@ extension.
 - Four keyboard slots, Ctrl+Shift+1 to Ctrl+Shift+4, pasting straight into
   whatever you are typing in. Four because that is every shortcut a browser lets
   an extension arrive with; more slots than keys would only be slots nothing can
-  reach. Alt and a number is deliberately not used — browsers keep that for
+  reach. Alt and a number is deliberately not used: browsers keep that for
   jumping to a pinned tab and always win
 - Right-click selected text on a page to save it
 - Right-click inside a text box to paste any note from the current tab
 - Search across every tab
 - Follows the browser's light or dark setting on its own. A button in the list
   overrides it either way; a dot on that button means the browser is choosing
-- Twelve accent colours, plus a box for a colour of your own — the lighter and
+- Twelve accent colours, plus a box for a colour of your own: the lighter and
   darker shades it needs are worked out from whatever you type
 - One-click import of notes left behind by an older snippet extension, found
   by the shape of the bookmarks rather than by any folder name (it copies;
   nothing is removed)
 - Backup to a JSON file, and restore from one
 
+## Settings
+
+Everything is on the extension's settings page. Nothing is needed to start.
+
+| Setting | Required | Default | What it does |
+|---|---|---|---|
+| Light or dark | No | Follows the browser | A button in the list overrides it either way |
+| Accent colour | No | Yellow | Twelve colours, or a box for your own |
+| Clicking a note | No | Copy | Copy only, or copy and paste into the box you were typing in |
+| Keyboard shortcuts | No | Ctrl+Shift+1 to 4 | Four slots, changed in the browser's own shortcuts page |
+| Bring notes over | No | Off | Copies notes left by an older snippet extension; nothing is removed |
+| Backup | No | None | Saves a JSON file, and restores from one (restoring adds, never replaces) |
+
+## Where your data lives
+
+Only in your browser's bookmarks, in a folder of their own. There is no server and no copy anywhere else. Bookmark sync keeps notes together within one browser's own sync, so Firefox notes and Vivaldi notes are separate; use the backup file to move between them.
+
+## Security
+
+The extension makes no network requests, declares no host permissions, and its content security policy is `script-src 'self'`. It asks for six permissions: `bookmarks`, `storage`, `contextMenus`, `scripting`, `activeTab` and `clipboardWrite`. See [SECURITY.md](SECURITY.md) for what is worth reporting and how to report it privately.
+
+## Building it yourself
+
+There is no build step for Chrome. The `chrome` folder is the source of truth and runs exactly as written, so what is in this repository is what runs in your browser. See Layout below, and [CONTRIBUTING.md](CONTRIBUTING.md) for how to send feedback.
+
+## Licence
+
+Copyright Lightmorphic Ltd. Released under the GNU General Public License, version 3 or (at your option) any later version. The full text is in [LICENSE](LICENSE), and every version since 1.0.0 is under it. What changed and when is in [CHANGELOG.md](CHANGELOG.md). The interface is set in Manrope by Mikhail Sharanda, under the SIL Open Font License; see [CREDITS.md](CREDITS.md).
+
+## Disclaimer
+
+The software is provided as it is, with no warranty of any kind. Lightmorphic Ltd is registered in England and Wales, company number 17423646, registered office 82A James Carter Road, Mildenhall, IP28 7DE.
+
 ## Layout
 
-    chrome/            load this one in Vivaldi, Brave or Edge — this is what ships
+    chrome/            load this one in Vivaldi, Brave or Edge: this is what ships
       manifest.json
       background.js    keyboard slots, right-click menus, paste
       content.js       injected on demand to put text in the focused field
@@ -132,16 +136,16 @@ extension.
       fonts/           Manrope and its OFL licence, self-hosted
       icons/           the extension's own, plus the Lightmorphic mark
     firefox/           built from chrome/ by build-firefox.sh
-    docs/              the website, published by GitHub Pages
+    docs/              the website, served by Cloudflare Pages
     dev/               preview.sh / clean.sh, and the fake-browser stub
     dist/              the zips package.sh builds; not in git
     store/             the listing artwork, the audit, and the submission notes
     build-firefox.sh   run after changing anything in chrome/
     package.sh         builds the store zips; refuses if a dev file or the font
                        licence is missing, and copies LICENSE into the package
-    PRIVACY.md         the privacy statement, served at /privacy.html on the site
+    PRIVACY.md         the privacy statement, served at /privacy on the site
     CHROMEWEBSTORE.md  listing text, single purpose, and permission wording
-    CREDITS.md         third-party licences — Manrope under the SIL OFL
+    CREDITS.md         third-party licences: Manrope under the SIL OFL
 
 ## Previewing without a browser install
 
@@ -186,7 +190,7 @@ to live.
   first build used a `javascript:` URL instead; those are still read, and are
   quietly rewritten the next time you edit them.
 - Restoring a backup **adds** notes; it does not replace what is there.
-- Running the import twice is safe — anything already there is skipped.
+- Running the import twice is safe: anything already there is skipped.
 - Bookmark sync keeps notes together within one browser's own sync. Firefox
   notes and Vivaldi notes are separate; use the backup file to move between
   them.

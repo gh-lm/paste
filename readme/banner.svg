@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" width="1280" height="360" role="img" aria-label="Lightmorphic Paste. The lines of text you paste all the time, kept in your bookmarks.">
+  <rect width="1280" height="360" fill="#0b0b10"/>
+  <rect x="96" y="82" width="72" height="72" rx="16" fill="#fbc711"/>
+  <g fill="#0b0b10"><rect x="116" y="102" width="20" height="8" rx="4"/><rect x="116" y="118" width="32" height="8" rx="4"/><rect x="116" y="134" width="14" height="8" rx="4"/></g>
+  <text x="192" y="132" font-family="Manrope, Helvetica, Arial, sans-serif" font-size="56" font-weight="700" fill="#ffffff">Lightmorphic Paste</text>
+  <text x="96" y="222" font-family="Manrope, Helvetica, Arial, sans-serif" font-size="30" fill="#b4b2bd">The lines of text you paste all the time, kept in your bookmarks.</text>
+  <g font-family="Manrope, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" fill="#fbc711">
+    <rect x="96" y="262" width="150" height="40" rx="20" fill="#2b2a1a"/><text x="171" y="288" text-anchor="middle">No account</text>
+    <rect x="262" y="262" width="140" height="40" rx="20" fill="#2b2a1a"/><text x="332" y="288" text-anchor="middle">No server</text>
+    <rect x="418" y="262" width="170" height="40" rx="20" fill="#2b2a1a"/><text x="503" y="288" text-anchor="middle">Free software</text>
+  </g>
+</svg>

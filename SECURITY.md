@@ -56,9 +56,8 @@ is a bug.
 
 ## The website
 
-paste.lightmorphic.com is static files on GitHub Pages. It stores nothing in
+paste.lightmorphic.com is static files on Cloudflare Pages. It stores nothing in
 the browser and sets no cookies. It loads one thing from another address: the
-Lightmorphic app menu, from Lightmorphic's own machine. GitHub Pages cannot
-set response headers, so the security policy is carried in a meta tag and the
-things a meta tag cannot carry, such as `Strict-Transport-Security`, are not
-set. That is a limit of the hosting rather than an oversight.
+Lightmorphic app menu, from Lightmorphic's own machine. The security policy,
+`Strict-Transport-Security` and the other protective headers are real response
+headers, set from `docs/_headers`.

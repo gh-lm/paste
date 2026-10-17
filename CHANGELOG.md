@@ -6,7 +6,7 @@ goes live as soon as it is pushed.
 
 ## Extension
 
-### 1.0.0 — 30 August 2026
+### 1.0.0, 30 August 2026
 
 First release. Published to the Chrome Web Store on 2 September 2026.
 
@@ -33,6 +33,10 @@ both former folder names are still recognised, and notes saved by either
 earlier version are still read.
 
 ## Website
+
+### Unreleased
+
+- The repository has a new front page, a CONTRIBUTING page, and its security page now describes the Cloudflare Pages hosting and real response headers
 
 ### 6 September 2026
 
