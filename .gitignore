@@ -5,3 +5,5 @@ dist/
 # screen, so they stay local. Only the finished store images are committed.
 screenshots/
 .publish/
+.claude/
+.prismor/
